@@ -1,19 +1,15 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moriah Digital | Vente d'ordinateurs et maintenance informatique à Conakry</title>
-  <meta name="description" content="Moriah Digital propose la vente d'ordinateurs, accessoires et maintenance informatique à Conakry, Guinée. HP Victus, Lenovo, EliteBook, Zbook et plus.">
-  <meta name="keywords" content="ordinateur Conakry, vente ordinateur Guinée, maintenance informatique Conakry, HP Victus Guinée, Lenovo Guinée, Moriah Digital">
-  <meta name="author" content="Moriah Digital">
+  <title>Moriah Digital</title>
 
   <style>
     body{
-      font-family:Arial, sans-serif;
+      font-family: Arial, sans-serif;
       margin:0;
       background:#f2f2f2;
-      color:#222;
     }
 
     header{
@@ -21,22 +17,6 @@
       color:white;
       text-align:center;
       padding:20px;
-    }
-
-    header img{
-      width:110px;
-      border-radius:12px;
-      margin-bottom:10px;
-    }
-
-    header h1{
-      margin:8px 0 5px;
-      font-size:28px;
-    }
-
-    header p{
-      margin:0;
-      font-size:16px;
     }
 
     nav{
@@ -50,7 +30,6 @@
       margin:10px;
       text-decoration:none;
       font-weight:bold;
-      font-size:16px;
     }
 
     .container{
@@ -59,18 +38,9 @@
       margin:auto;
     }
 
-    .intro{
-      background:white;
-      border-radius:12px;
-      padding:18px;
-      margin-bottom:20px;
-      box-shadow:0 0 10px rgba(0,0,0,0.08);
-      text-align:center;
-    }
-
-    .products-grid{
+    .products{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:20px;
     }
 
@@ -85,63 +55,49 @@
     .card img{
       width:100%;
       border-radius:10px;
-      display:block;
-    }
-
-    .card h3{
-      margin:18px 0 10px;
-      font-size:22px;
-    }
-
-    .card p{
-      margin:8px 0;
-      font-size:18px;
     }
 
     .price{
       color:#1b8a3e;
-      font-size:30px;
+      font-size:22px;
       font-weight:bold;
-      margin:14px 0;
+    }
+
+    .badge{
+      font-weight:bold;
+      margin:6px 0;
+    }
+
+    .negociable{
+      color:#e67e22;
+    }
+
+    .stock{
+      color:red;
+    }
+
+    .promo{
+      color:#1b8a3e;
     }
 
     .btn{
       display:inline-block;
       background:#28c76f;
       border:none;
-      padding:12px 24px;
+      padding:12px 25px;
       color:white;
       font-size:16px;
-      border-radius:8px;
+      border-radius:6px;
       text-decoration:none;
-      font-weight:bold;
       margin-top:10px;
     }
 
     .contact{
       background:#111;
       color:white;
-      padding:30px 20px;
+      padding:30px;
       text-align:center;
       margin-top:30px;
-    }
-
-    .contact h2{
-      margin-top:0;
-    }
-
-    .contact p{
-      font-size:17px;
-      margin:8px 0;
-    }
-
-    iframe{
-      width:100%;
-      max-width:900px;
-      border:0;
-      margin-top:20px;
-      border-radius:10px;
-      height:300px;
     }
 
     .whatsapp{
@@ -150,11 +106,10 @@
       right:20px;
       background:#25D366;
       color:white;
-      font-size:22px;
-      padding:14px 17px;
+      font-size:20px;
+      padding:15px 18px;
       border-radius:50%;
       text-decoration:none;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
     }
 
     .call{
@@ -163,88 +118,108 @@
       right:20px;
       background:#1b8a3e;
       color:white;
-      font-size:22px;
-      padding:14px 17px;
+      font-size:20px;
+      padding:15px 18px;
       border-radius:50%;
       text-decoration:none;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="logo.png" alt="Logo Moriah Digital">
-    <h1>Moriah Digital</h1>
-    <p>Vente d'ordinateurs, accessoires et maintenance informatique à Conakry</p>
+    <img src="logo.png" width="120" alt="Logo Moriah Digital">
+    <h2>Moriah Digital</h2>
+    <p>Vente d’ordinateurs et maintenance informatique</p>
   </header>
 
   <nav>
     <a href="#">Accueil</a>
-    <a href="#produits">Produits</a>
+    <a href="#">Produits</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
-    <div class="intro">
-      <h2 id="produits">Nos ordinateurs disponibles</h2>
-      <p>Découvrez nos modèles disponibles et commandez directement sur WhatsApp.</p>
-    </div>
 
-    <div class="products-grid">
+    <h2>Nos ordinateurs</h2>
+
+    <div class="products">
 
       <div class="card">
         <img src="Victus.jpg" alt="HP Victus Gaming">
         <h3>HP Victus Gaming</h3>
-        <p>Core i7 13ème génération</p>
+        <p>Core i7, 13ème génération</p>
+        <p class="badge negociable">Prix négociable</p>
+        <p class="badge stock">Stock limité</p>
+        <p class="badge promo">Nouveaux arrivages</p>
         <div class="price">13.500.000 FG</div>
-        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20commander%20le%20HP%20Victus%20Gaming%20%C3%A0%2013.500.000%20FG." target="_blank">Commander</a>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20Victus%20Gaming." target="_blank">
+          Discuter du prix
+        </a>
       </div>
 
       <div class="card">
         <img src="X360.jpg" alt="Lenovo X360">
         <h3>Lenovo X360</h3>
         <p>Intel Celeron</p>
+        <p class="badge negociable">Prix négociable</p>
+        <p class="badge stock">Stock limité</p>
+        <p class="badge promo">Nouveaux arrivages</p>
         <div class="price">2.900.000 FG</div>
-        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20commander%20le%20Lenovo%20X360%20%C3%A0%202.900.000%20FG." target="_blank">Commander</a>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20Lenovo%20X360." target="_blank">
+          Discuter du prix
+        </a>
       </div>
 
       <div class="card">
         <img src="l13.jpg" alt="Lenovo ThinkPad L13">
         <h3>Lenovo ThinkPad L13</h3>
         <p>10ème génération</p>
+        <p class="badge negociable">Prix négociable</p>
+        <p class="badge stock">Stock limité</p>
+        <p class="badge promo">Nouveaux arrivages</p>
         <div class="price">3.000.000 FG</div>
-        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20commander%20le%20Lenovo%20ThinkPad%20L13%20%C3%A0%203.000.000%20FG." target="_blank">Commander</a>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20Lenovo%20ThinkPad%20L13." target="_blank">
+          Discuter du prix
+        </a>
       </div>
 
       <div class="card">
         <img src="elibook830i5.jpg" alt="HP EliteBook 830">
         <h3>HP EliteBook 830</h3>
-        <p>Core i5 8ème génération</p>
+        <p>Core i5, 8ème génération</p>
+        <p class="badge negociable">Prix négociable</p>
+        <p class="badge stock">Stock limité</p>
+        <p class="badge promo">Nouveaux arrivages</p>
         <div class="price">2.800.000 FG</div>
-        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20commander%20le%20HP%20EliteBook%20830%20%C3%A0%202.800.000%20FG." target="_blank">Commander</a>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20EliteBook%20830." target="_blank">
+          Discuter du prix
+        </a>
       </div>
 
       <div class="card">
-        <img src="Zbook.jpg" alt="HP Zbook">
-        <h3>HP Zbook</h3>
-        <p>Core i7 8ème génération</p>
+        <img src="Zbook.jpg" alt="HP ZBook">
+        <h3>HP ZBook</h3>
+        <p>Core i7, 8ème génération</p>
+        <p class="badge negociable">Prix négociable</p>
+        <p class="badge stock">Stock limité</p>
+        <p class="badge promo">Nouveaux arrivages</p>
         <div class="price">5.500.000 FG</div>
-        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20commander%20le%20HP%20Zbook%20%C3%A0%205.500.000%20FG." target="_blank">Commander</a>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20ZBook." target="_blank">
+          Discuter du prix
+        </a>
       </div>
 
     </div>
+
   </div>
 
   <div class="contact" id="contact">
     <h2>Contactez-nous</h2>
     <p>📞 625 26 26 96 / 666 03 40 07</p>
     <p>📧 motacomdguinee@gmail.com</p>
-    <p>📍 Dixinn Pharmaguinée - Conakry, Guinée</p>
-
-    <iframe
-      src="https://maps.google.com/maps?q=Dixinn%20Pharmaguinee%20Conakry&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
+    <p>📍 Dixinn Pharmaguinée, Conakry</p>
   </div>
 
   <a class="whatsapp" href="https://wa.me/224625262696" target="_blank">💬</a>
