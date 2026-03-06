@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -30,6 +30,7 @@
       margin:10px;
       text-decoration:none;
       font-weight:bold;
+      display:inline-block;
     }
 
     .container{
@@ -92,6 +93,19 @@
       margin-top:10px;
     }
 
+    .section-box{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+      margin-top:20px;
+    }
+
+    .section-box p{
+      line-height:1.7;
+      margin:8px 0;
+    }
+
     .contact{
       background:#111;
       color:white;
@@ -123,6 +137,14 @@
       border-radius:50%;
       text-decoration:none;
     }
+
+    iframe{
+      width:100%;
+      max-width:100%;
+      border:0;
+      border-radius:10px;
+      margin-top:20px;
+    }
   </style>
 </head>
 
@@ -131,18 +153,22 @@
   <header>
     <img src="logo.png" width="120" alt="Logo Moriah Digital">
     <h2>Moriah Digital</h2>
-    <p>Vente d’ordinateurs et maintenance informatique</p>
+    <p>Vente d’ordinateurs, accessoires et maintenance informatique</p>
   </header>
 
   <nav>
     <a href="#">Accueil</a>
-    <a href="#">Produits</a>
+    <a href="#produits">Ordinateurs</a>
+    <a href="#accessoires">Accessoires</a>
+    <a href="#maintenance">Maintenance</a>
+    <a href="#formation">Formation</a>
+    <a href="#assistance">Assistance</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
 
-    <h2>Nos ordinateurs</h2>
+    <h2 id="produits">Nos ordinateurs</h2>
 
     <div class="products">
 
@@ -213,6 +239,95 @@
 
     </div>
 
+    <h2 id="accessoires">Accessoires informatiques</h2>
+
+    <div class="products">
+
+      <div class="card">
+        <h3>Chargeur ordinateur</h3>
+        <p>Compatible avec plusieurs modèles</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20d%27un%20chargeur%20ordinateur." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Souris</h3>
+        <p>Souris USB et sans fil</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20d%27une%20souris." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Disque dur</h3>
+        <p>SSD et HDD disponibles</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20d%27un%20disque%20dur." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>RAM</h3>
+        <p>Pour améliorer la performance de votre ordinateur</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20la%20RAM." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Clavier</h3>
+        <p>Clavier USB et accessoires bureautiques</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20d%27un%20clavier." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Écran</h3>
+        <p>Écrans pour ordinateur de bureau</p>
+        <p class="badge negociable">Prix négociable</p>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20d%27un%20%C3%A9cran." target="_blank">
+          Discuter du prix
+        </a>
+      </div>
+
+    </div>
+
+    <div class="section-box" id="maintenance">
+      <h2>Maintenance informatique</h2>
+      <p>✔ Réparation d’ordinateurs</p>
+      <p>✔ Réinstallation de systèmes</p>
+      <p>✔ Installation de logiciels</p>
+      <p>✔ Nettoyage et optimisation</p>
+      <p>✔ Assistance technique</p>
+    </div>
+
+    <div class="section-box" id="formation">
+      <h2>Formation informatique</h2>
+      <p>✔ Initiation à l’informatique</p>
+      <p>✔ Utilisation des logiciels professionnels</p>
+      <p>✔ Maintenance informatique pratique</p>
+      <p>✔ Assistance en communication digitale</p>
+    </div>
+
+    <div class="section-box" id="assistance">
+      <h2>Assistance</h2>
+      <p><strong>Bienvenue chez Moriah Digital 💻</strong></p>
+      <p>Nous sommes spécialisés dans :</p>
+      <p>✔ Vente d’ordinateurs et accessoires</p>
+      <p>✔ Maintenance et réparation informatique</p>
+      <p>✔ Installation de logiciels professionnels</p>
+      <p>✔ Assistance en communication digitale</p>
+      <p>📍 Dixinn Pharmaguinée</p>
+      <p>📞 625 26 26 96</p>
+    </div>
+
   </div>
 
   <div class="contact" id="contact">
@@ -220,6 +335,11 @@
     <p>📞 625 26 26 96 / 666 03 40 07</p>
     <p>📧 motacomdguinee@gmail.com</p>
     <p>📍 Dixinn Pharmaguinée, Conakry</p>
+
+    <iframe
+      src="https://maps.google.com/maps?q=Dixinn%20Pharmaguinee%20Conakry&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      height="300">
+    </iframe>
   </div>
 
   <a class="whatsapp" href="https://wa.me/224625262696" target="_blank">💬</a>
