@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moriah Digital | Vente d'ordinateurs, accessoires et maintenance informatique</title>
-  <meta name="description" content="Moriah Digital : vente d’ordinateurs, accessoires, maintenance informatique, installation de logiciels professionnels et assistance en communication digitale à Dixinn Pharmaguinée, Conakry." />
+  <title>Moriah Digital | Vente d’ordinateurs et maintenance informatique à Conakry</title>
+  <meta name="description" content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance informatique et installation de logiciels à Dixinn Pharmaguinée, Conakry.">
+  <meta name="keywords" content="ordinateur Conakry, vente ordinateur Guinée, maintenance informatique Conakry, accessoires informatiques, réparation ordinateur, Moriah Digital">
+
   <style>
     *{
       box-sizing:border-box;
@@ -21,12 +23,11 @@
       background:linear-gradient(135deg,#17873a,#0f6f2e);
       color:white;
       text-align:center;
-      padding:24px 16px 30px;
+      padding:24px 16px;
     }
 
     header img{
       width:110px;
-      max-width:100%;
       border-radius:12px;
       background:white;
       padding:6px;
@@ -34,14 +35,13 @@
     }
 
     header h1{
-      margin:8px 0 10px;
-      font-size:2.1rem;
+      margin:8px 0 8px;
+      font-size:2rem;
     }
 
     header p{
-      margin:0 auto;
-      max-width:800px;
-      font-size:1.05rem;
+      margin:0;
+      font-size:1rem;
       line-height:1.5;
     }
 
@@ -51,7 +51,6 @@
       text-align:center;
       padding:12px 14px;
       font-weight:bold;
-      font-size:0.98rem;
     }
 
     nav{
@@ -81,7 +80,7 @@
     }
 
     nav a.active{
-      background:#2ad166;
+      background:#25D366;
       color:white;
     }
 
@@ -104,31 +103,10 @@
       display:block;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr 1fr;
-      gap:22px;
-      align-items:center;
-    }
-
-    .hero-image img{
-      width:100%;
-      border-radius:16px;
-      display:block;
-      object-fit:cover;
-      min-height:240px;
-      max-height:420px;
-    }
-
-    .hero-text h2{
-      margin-top:0;
-      font-size:2rem;
-      line-height:1.2;
-    }
-
-    .hero-text p{
-      line-height:1.7;
-      font-size:1.02rem;
+    .section-title{
+      margin:0 0 16px;
+      font-size:1.8rem;
+      color:#0f6f2e;
     }
 
     .highlight{
@@ -139,6 +117,12 @@
       margin:16px 0;
       font-weight:bold;
       color:#145c29;
+    }
+
+    .welcome-text p{
+      line-height:1.8;
+      margin:8px 0;
+      font-size:1.02rem;
     }
 
     .feature-list{
@@ -161,17 +145,6 @@
       font-size:1.05rem;
     }
 
-    .section-title{
-      margin:0 0 16px;
-      font-size:1.8rem;
-    }
-
-    .sub-title{
-      margin:28px 0 12px;
-      color:#0f6f2e;
-      font-size:1.35rem;
-    }
-
     .search-box{
       margin:8px 0 18px;
       text-align:center;
@@ -190,6 +163,12 @@
     .search-box input:focus{
       border-color:#1b8a3e;
       box-shadow:0 0 0 3px rgba(27,138,62,0.12);
+    }
+
+    .sub-title{
+      margin:24px 0 14px;
+      color:#0f6f2e;
+      font-size:1.35rem;
     }
 
     .products{
@@ -279,7 +258,6 @@
       border:1px solid #e6ecef;
       border-radius:12px;
       padding:16px;
-      text-align:left;
     }
 
     .simple-card h3{
@@ -354,17 +332,12 @@
     }
 
     @media (max-width: 860px){
-      .hero-grid,
       .contact-grid{
         grid-template-columns:1fr;
       }
 
-      .hero-text h2{
-        font-size:1.7rem;
-      }
-
       header h1{
-        font-size:1.8rem;
+        font-size:1.7rem;
       }
     }
   </style>
@@ -393,28 +366,25 @@
 
     <!-- ACCUEIL -->
     <section class="section active" id="accueil">
-      <div class="hero-grid">
-        <div class="hero-image">
-          <img src="logo2.jpg" alt="Moriah Digital - Vente d'ordinateurs et accessoires">
-        </div>
+      <h2 class="section-title">Bienvenue chez Moriah Digital 💻</h2>
 
-        <div class="hero-text">
-          <h2>Bienvenue chez Moriah Digital 💻</h2>
+      <div class="highlight">
+        Des ordinateurs de qualité, des accessoires fiables et une maintenance professionnelle à des prix négociables.
+      </div>
 
-          <div class="highlight">
-            Des ordinateurs de qualité, des accessoires fiables et une maintenance professionnelle à des prix négociables.
-          </div>
+      <div class="welcome-text">
+        <p>Nous sommes spécialisés dans :</p>
+        <p>✔ Vente d’ordinateurs et accessoires</p>
+        <p>✔ Maintenance et réparation informatique</p>
+        <p>✔ Installation de logiciels professionnels</p>
+        <p>✔ Assistance en communication digitale</p>
+        <p>📍 Dixinn Pharmaguinée, Conakry</p>
+        <p>📞 625 26 26 96 / 666 03 40 07</p>
+        <p>📧 motacomdguinee@gmail.com</p>
 
-          <p>Nous sommes spécialisés dans :</p>
-          <p>✔ Vente d’ordinateurs et accessoires</p>
-          <p>✔ Maintenance et réparation informatique</p>
-          <p>✔ Installation de logiciels professionnels</p>
-          <p>✔ Assistance en communication digitale</p>
+        <br>
 
-          <p>📍 Dixinn Pharmaguinée, Conakry</p>
-          <p>📞 625 26 26 96 / 666 03 40 07</p>
-          <p>📧 motacomdguinee@gmail.com</p>
-        </div>
+        <a class="btn" onclick="showSection('produits', getNavLink('produits'))">Voir nos produits</a>
       </div>
 
       <h3 class="sub-title">Pourquoi choisir Moriah Digital ?</h3>
@@ -576,19 +546,16 @@
     <!-- MAINTENANCE -->
     <section class="section" id="maintenance">
       <h2 class="section-title">Maintenance informatique</h2>
-      <div class="products">
-        <div class="card">
-          <img src="Victus.jpg" alt="Réparation d'ordinateurs">
+      <div class="simple-grid">
+        <div class="simple-card">
           <h3>Réparation d’ordinateurs</h3>
           <p>Diagnostic et réparation des pannes matérielles et logicielles.</p>
         </div>
-        <div class="card">
-          <img src="Zbook.jpg" alt="Installation de logiciels">
+        <div class="simple-card">
           <h3>Installation de logiciels</h3>
           <p>Installation de logiciels professionnels, antivirus et outils bureautiques.</p>
         </div>
-        <div class="card">
-          <img src="X360.jpg" alt="Réinstallation système">
+        <div class="simple-card">
           <h3>Réinstallation système</h3>
           <p>Réinstallation Windows, optimisation et configuration complète.</p>
         </div>
@@ -636,8 +603,22 @@
       });
 
       document.getElementById(sectionId).classList.add('active');
-      element.classList.add('active');
+
+      if (element) {
+        element.classList.add('active');
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function getNavLink(sectionId) {
+      const links = document.querySelectorAll('nav a');
+      for (let link of links) {
+        if (link.textContent.toLowerCase() === sectionId.toLowerCase()) {
+          return link;
+        }
+      }
+      return null;
     }
 
     function searchProducts() {
