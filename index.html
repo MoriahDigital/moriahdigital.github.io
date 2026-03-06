@@ -1,30 +1,28 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moriah Digital</title><style>
+<title>Moriah Digital</title>
+
+<style>
 
 body{
 font-family:Arial;
 margin:0;
-background:#f4f4f4;
+background:#f2f2f2;
 }
 
 header{
-background:#0b7a2a;
+background:#1b8a3e;
 color:white;
 text-align:center;
 padding:20px;
 }
 
-header img{
-width:80px;
-}
-
 nav{
-background:#085d1f;
-text-align:center;
+background:#0f6f2e;
 padding:10px;
+text-align:center;
 }
 
 nav a{
@@ -35,103 +33,99 @@ font-weight:bold;
 }
 
 .container{
-width:90%;
-margin:auto;
 padding:20px;
 }
 
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.product{
+.card{
 background:white;
 border-radius:10px;
 padding:15px;
+margin-bottom:25px;
 text-align:center;
 box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-.product img{
+.card img{
 width:100%;
-height:200px;
-object-fit:cover;
-border-radius:8px;
+border-radius:10px;
 }
 
 .price{
-color:#0b7a2a;
+color:#1b8a3e;
+font-size:22px;
 font-weight:bold;
-font-size:18px;
+margin:10px;
 }
 
-.btn{
-display:inline-block;
-background:#25D366;
+button{
+background:#28c76f;
+border:none;
+padding:12px 25px;
 color:white;
-padding:10px 15px;
-text-decoration:none;
+font-size:16px;
 border-radius:6px;
-margin-top:10px;
 }
 
-footer{
-background:#111;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:20px;
-}
+</style>
+</head>
 
-</style></head><body><header>
-<img src="logo.png">
-<h1>Moriah Digital</h1>
-<p>Vente d'ordinateurs et Maintenance Informatique</p>
-</header><nav>
+<body>
+
+<header>
+<h2>Vente d'ordinateurs et Maintenance Informatique</h2>
+</header>
+
+<nav>
 <a href="#">Accueil</a>
 <a href="#">Produits</a>
 <a href="#">Contact</a>
-</nav><div class="container"><h2>Nos Ordinateurs</h2><div class="products"><div class="product">
+</nav>
+
+<div class="container">
+
+<h2>Nos Ordinateurs</h2>
+
+<div class="card">
 <img src="Victus.jpg">
 <h3>HP Victus Gaming</h3>
 <p>Core i7 13ème génération</p>
-<p class="price">13.500.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div><div class="product">
-<img src="elibook830i7.jpg">
-<h3>HP EliteBook 830 G8</h3>
-<p>Core i7 11ème génération</p>
-<p class="price">4.800.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div><div class="product">
-<img src="elibook830.jpg">
-<img src="elibook830i5.jpg">
-<p>Core i5 8ème génération</p>
-<p class="price">2.800.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div><div class="product">
-<img src="Zbook.jpg">
-<h3>HP ZBook</h3>
-<p>Core i7</p>
-<p class="price">5.500.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div><div class="product">
-<img src="X360.jpg">
-<h3>HP X360</h3>
-<p>Ordinateur tactile</p>
-<p class="price">1.900.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div><div class="product">
-<img src="l13.jpg">
-<h3>Lenovo ThinkPad L13</h3>
-<p>10ème génération</p>
-<p class="price">3.000.000 FG</p>
-<a class="btn" href="https://wa.me/224625262696">Commander</a>
-</div></div></div><footer>Contact : 625 26 26 96 / 666 03 40 07<br>
-Email : motacomdguinee@gmail.com<br>
-Adresse : Dixinn Pharmaguinee
+<div class="price">13.500.000 FG</div>
+<button>Commander</button>
+</div>
 
-</footer></body>
+<div class="card">
+<img src="X360.jpg">
+<h3>Lenovo X360</h3>
+<p>Intel Celeron</p>
+<div class="price">2.900.000 FG</div>
+<button>Commander</button>
+</div>
+
+<div class="card">
+<img src="l13.jpg">
+<h3>Lenovo Thinkpad L13</h3>
+<p>10ème génération</p>
+<div class="price">3.000.000 FG</div>
+<button>Commander</button>
+</div>
+
+<div class="card">
+<img src="elibook830i5.jpg">
+<h3>HP EliteBook 830</h3>
+<p>Core i5 8ème génération</p>
+<div class="price">2.800.000 FG</div>
+<button>Commander</button>
+</div>
+
+<div class="card">
+<img src="Zbook.jpg">
+<h3>HP Zbook</h3>
+<p>Core i7 8ème génération</p>
+<div class="price">5.500.000 FG</div>
+<button>Commander</button>
+</div>
+
+</div>
+
+</body>
 </html>
