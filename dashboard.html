@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tableau de bord | Moriah Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
+        <div>
+          <h1 style="color:#0f6f2e; margin-bottom:8px;">Tableau de bord</h1>
+          <p id="welcomeText">Chargement...</p>
+        </div>
+        <button class="btn secondary" id="logoutBtn">Déconnexion</button>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:20px;">
+      <h2 class="section-title">Clients inscrits</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="clientsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { auth, db } from "./firebase-config.js";
+    import {
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import {
+      collection,
+      getDocs
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const welcomeText = document.getElementById("welcomeText");
+    const tableBody = document.getElementById("clientsTableBody");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+        return;
+      }
+
+      welcomeText.textContent = "Connecté en tant que : " + user.email;
+
+      const snapshot = await getDocs(collection(db, "clients"));
+      tableBody.innerHTML = "";
+
+      snapshot.forEach((docItem) => {
+        const data = docItem.data();
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${data.name || ""}</td>
+          <td>${data.email || ""}</td>
+          <td>${data.phone || ""}</td>
+          <td>${data.createdAt || ""}</td>
+        `;
+        tableBody.appendChild(tr);
+      });
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
