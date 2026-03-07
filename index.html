@@ -112,15 +112,17 @@
       text-shadow:0 4px 10px rgba(0,0,0,0.18);
     }
 
-    header p{
+    .header-tagline{
       position:relative;
       z-index:2;
-      margin-top:10px;
-      font-size:1.05rem;
-      line-height:1.6;
-      max-width:760px;
+      margin-top:14px;
+      font-size:1.9rem;
+      line-height:1.5;
+      font-weight:700;
+      max-width:900px;
       margin-left:auto;
       margin-right:auto;
+      text-shadow:0 4px 10px rgba(0,0,0,0.18);
     }
 
     .promo-banner{
@@ -212,6 +214,28 @@
       border:1px solid #dff0e5;
     }
 
+    .guinea-watermark{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .guinea-watermark::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url('guinee.png');
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:320px;
+      opacity:0.08;
+      pointer-events:none;
+    }
+
+    .guinea-watermark > *{
+      position:relative;
+      z-index:1;
+    }
+
     .hero-card h2{
       font-size:2rem;
       line-height:1.2;
@@ -224,6 +248,12 @@
       line-height:1.8;
       color:#333;
       margin-bottom:18px;
+    }
+
+    .big-text{
+      font-size:1.25rem;
+      line-height:1.9;
+      font-weight:500;
     }
 
     .highlight{
@@ -496,8 +526,16 @@
         font-size:1.8rem;
       }
 
+      .header-tagline{
+        font-size:1.45rem;
+      }
+
       .hero-card h2{
         font-size:1.65rem;
+      }
+
+      .big-text{
+        font-size:1.08rem;
       }
 
       .contact-grid{
@@ -513,7 +551,7 @@
       <img src="logo.png" alt="Logo Moriah Digital">
     </div>
     <h1>Moriah Digital</h1>
-    <p>Vente d’ordinateurs, accessoires et maintenance informatique</p>
+    <p class="header-tagline">Vente d’ordinateurs, accessoires et maintenance informatique</p>
   </header>
 
   <div class="promo-banner">
@@ -531,10 +569,10 @@
   <div class="container">
 
     <section class="section active" id="accueil">
-      <div class="hero-card">
+      <div class="hero-card guinea-watermark">
         <h2>Bienvenue chez Moriah Digital 💻</h2>
 
-        <p class="hero-subtitle">
+        <p class="hero-subtitle big-text">
           Votre espace de confiance pour l’achat d’ordinateurs, d’accessoires informatiques et les services de maintenance professionnelle à Conakry.
         </p>
 
