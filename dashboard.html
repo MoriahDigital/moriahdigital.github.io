@@ -1,120 +1,414 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espace client | Moriah Digital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espace client - Moriah Digital</title>
 
-<style>
-body{
-font-family:Arial;
-background:#f5f7f6;
-margin:0;
-padding:0;
-}
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
+    body{
+      font-family:Arial,sans-serif;
+      background:#f4f7f5;
+      color:#1d1d1d;
+    }
 
-.card{
-background:white;
-border-radius:15px;
-padding:20px;
-margin-bottom:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
-}
+    header{
+      background:#0f6f2e;
+      color:white;
+      padding:22px 16px;
+      text-align:center;
+    }
 
-h1{
-color:#0f6f2e;
-}
+    header h1{
+      font-size:2rem;
+      margin-bottom:8px;
+    }
 
-h2{
-color:#0f6f2e;
-}
+    header p{
+      font-size:1rem;
+      line-height:1.6;
+    }
 
-.btn{
-background:#1fb65e;
-color:white;
-border:none;
-padding:12px 18px;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-}
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-margin-top:15px;
-}
+    .top-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
 
-.service{
-background:#f3faf5;
-padding:15px;
-border-radius:10px;
-}
-</style>
+    .welcome-box{
+      background:white;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+      flex:1;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:10px;
+      background:#129a43;
+      color:white;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#0f7f36;
+    }
+
+    .btn-danger{
+      background:#c0392b;
+    }
+
+    .btn-danger:hover{
+      background:#a93226;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:18px;
+      margin-bottom:22px;
+    }
+
+    .card{
+      background:white;
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .card h2{
+      color:#0f6f2e;
+      margin-bottom:12px;
+      font-size:1.3rem;
+    }
+
+    .card p{
+      line-height:1.7;
+      margin-bottom:8px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:18px;
+      margin-top:15px;
+    }
+
+    .product-card{
+      background:white;
+      border-radius:16px;
+      padding:15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .product-card img{
+      width:100%;
+      border-radius:12px;
+      margin-bottom:12px;
+    }
+
+    .product-card h3{
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:1.2rem;
+    }
+
+    .badge{
+      display:inline-block;
+      margin-top:10px;
+      background:#0f6f2e;
+      color:white;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:0.9rem;
+      font-weight:bold;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:12px;
+      background:white;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    th, td{
+      padding:12px;
+      text-align:left;
+      border-bottom:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+
+    th{
+      background:#0f6f2e;
+      color:white;
+    }
+
+    .section-title{
+      color:#0f6f2e;
+      margin:25px 0 12px;
+      font-size:1.6rem;
+    }
+
+    .status{
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.85rem;
+      font-weight:bold;
+      display:inline-block;
+    }
+
+    .status-paid{
+      background:#d4edda;
+      color:#155724;
+    }
+
+    .status-pending{
+      background:#fff3cd;
+      color:#856404;
+    }
+
+    .status-repair{
+      background:#d1ecf1;
+      color:#0c5460;
+    }
+
+    .info-box{
+      background:#eef8f1;
+      border-left:5px solid #129a43;
+      padding:15px;
+      border-radius:10px;
+      margin-top:15px;
+      line-height:1.8;
+    }
+
+    footer{
+      text-align:center;
+      padding:22px;
+      background:#0b4f20;
+      color:white;
+      margin-top:30px;
+    }
+
+    @media (max-width:700px){
+      header h1{
+        font-size:1.6rem;
+      }
+
+      .top-actions{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+  <header>
+    <h1>Espace client Moriah Digital</h1>
+    <p>Suivez vos commandes, réparations, paiements et informations utiles.</p>
+  </header>
 
-<div class="card">
-<h1>Tableau de bord</h1>
-<p id="welcomeText">Bienvenue dans votre espace client Moriah Digital</p>
-<button class="btn" onclick="logout()">Déconnexion</button>
-</div>
+  <div class="container">
 
-<div class="card">
-<h2>Espace client</h2>
-<p>
-Dans cet espace vous pouvez consulter :
-</p>
+    <div class="top-actions">
+      <div class="welcome-box">
+        <h2 style="color:#0f6f2e; margin-bottom:8px;">Bienvenue</h2>
+        <p>Dans votre espace client, vous pouvez consulter les produits, suivre vos réparations, voir vos paiements et votre reste à payer.</p>
+      </div>
 
-<div class="grid">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="index.html" class="btn">Retour au site</a>
+        <button id="logoutBtn" class="btn btn-danger">Déconnexion</button>
+      </div>
+    </div>
 
-<div class="service">
-<b>Ordinateurs à vendre</b><br>
-HP Victus, EliteBook, Lenovo X360, ZBook
-</div>
+    <div class="grid">
+      <div class="card">
+        <h2>Montant payé</h2>
+        <p><strong>2 500 000 GNF</strong></p>
+        <p>Dernier paiement enregistré : 05/03/2026</p>
+      </div>
 
-<div class="service">
-<b>Formation informatique</b><br>
-Initiation informatique et logiciels
-</div>
+      <div class="card">
+        <h2>Reste à payer</h2>
+        <p><strong>1 300 000 GNF</strong></p>
+        <p>Statut : <span class="status status-pending">En attente</span></p>
+      </div>
 
-<div class="service">
-<b>Réparation ordinateur</b><br>
-Maintenance et dépannage
-</div>
+      <div class="card">
+        <h2>Réparation en cours</h2>
+        <p>Ordinateur : HP EliteBook</p>
+        <p>Statut : <span class="status status-repair">Diagnostic en cours</span></p>
+      </div>
 
-<div class="service">
-<b>Accessoires</b><br>
-Souris, clavier, clé USB, écran, chargeur
-</div>
+      <div class="card">
+        <h2>Commande active</h2>
+        <p>Produit : HP Victus Gaming</p>
+        <p>Date : 02/03/2026</p>
+      </div>
+    </div>
 
-</div>
-</div>
+    <h2 class="section-title">Produits disponibles</h2>
+    <div class="product-grid">
 
-<div class="card">
-<h2>Contact</h2>
-📍 Dixinn Pharmaguinée, Conakry<br><br>
-📞 625 26 26 96 / 666 03 40 07
-</div>
+      <div class="product-card">
+        <img src="Victus.jpg" alt="HP Victus Gaming">
+        <h3>HP Victus Gaming</h3>
+        <p>Ordinateur puissant pour travail et gaming.</p>
+        <span class="badge">Disponible</span><br>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20je%20veux%20commander%20le%20HP%20Victus%20Gaming" target="_blank">Commander</a>
+      </div>
 
-</div>
+      <div class="product-card">
+        <img src="X360.jpg" alt="Lenovo X360">
+        <h3>Lenovo X360</h3>
+        <p>Ordinateur pliable tactile pour travail et études.</p>
+        <span class="badge">Disponible</span><br>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20je%20veux%20commander%20le%20Lenovo%20X360" target="_blank">Commander</a>
+      </div>
 
-<script>
-function logout(){
-alert("Déconnexion réussie");
-window.location.href="login.html";
-}
-</script>
+      <div class="product-card">
+        <img src="Zbook.jpg" alt="HP ZBook">
+        <h3>HP ZBook</h3>
+        <p>Ordinateur puissant pour professionnels.</p>
+        <span class="badge">Disponible</span><br>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20je%20veux%20commander%20le%20HP%20ZBook" target="_blank">Commander</a>
+      </div>
+
+      <div class="product-card">
+        <img src="l13.jpg" alt="ThinkPad L13">
+        <h3>ThinkPad L13</h3>
+        <p>Ordinateur fiable pour bureau et études.</p>
+        <span class="badge">Disponible</span><br>
+        <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20je%20veux%20commander%20le%20ThinkPad%20L13" target="_blank">Commander</a>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">Historique des commandes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Produit</th>
+          <th>Montant</th>
+          <th>Montant payé</th>
+          <th>Reste à payer</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>02/03/2026</td>
+          <td>HP Victus Gaming</td>
+          <td>3 800 000 GNF</td>
+          <td>2 500 000 GNF</td>
+          <td>1 300 000 GNF</td>
+          <td><span class="status status-pending">En attente</span></td>
+        </tr>
+        <tr>
+          <td>15/02/2026</td>
+          <td>Chargeur HP</td>
+          <td>250 000 GNF</td>
+          <td>250 000 GNF</td>
+          <td>0 GNF</td>
+          <td><span class="status status-paid">Payé</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">Suivi réparation</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date dépôt</th>
+          <th>Appareil</th>
+          <th>Panne</th>
+          <th>Montant</th>
+          <th>Date de paiement</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>04/03/2026</td>
+          <td>HP EliteBook</td>
+          <td>Ne s’allume pas</td>
+          <td>350 000 GNF</td>
+          <td>—</td>
+          <td><span class="status status-repair">Diagnostic en cours</span></td>
+        </tr>
+        <tr>
+          <td>20/02/2026</td>
+          <td>Dell Latitude</td>
+          <td>Réinstallation Windows</td>
+          <td>180 000 GNF</td>
+          <td>20/02/2026</td>
+          <td><span class="status status-paid">Terminé</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <strong>Informations utiles :</strong><br>
+      Pour toute nouvelle commande, réparation ou précision sur un paiement, contactez directement Moriah Digital sur WhatsApp ou par téléphone.
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Moriah Digital - Espace client</p>
+  </footer>
+
+  <script type="module">
+    import { auth } from "./firebase-config.js";
+    import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        window.location.href = "login.html";
+      } catch (error) {
+        alert("Impossible de se déconnecter pour le moment.");
+      }
+    });
+  </script>
 
 </body>
 </html>
