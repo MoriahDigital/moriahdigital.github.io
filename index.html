@@ -10,29 +10,14 @@
     name="description"
     content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance, installation de logiciels, assistance digitale et formation pratique en informatique à Conakry."
   />
-  <meta
-    name="keywords"
-    content="Moriah Digital, ordinateur Conakry, maintenance informatique Guinée, accessoires informatique, réparation PC, vente laptop Guinée, formation informatique"
-  />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Moriah Digital" />
-  <link rel="canonical" href="https://moriahdigital.org/" />
-
-  <meta property="og:title" content="Moriah Digital | Vente d’ordinateurs à Conakry" />
-  <meta property="og:description" content="Ordinateurs, accessoires, maintenance informatique, logiciels et formation pratique." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://moriahdigital.org/" />
-  <meta property="og:image" content="https://moriahdigital.org/logo.png" />
 
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -53,35 +38,9 @@
       text-align: center;
       padding: 28px 16px 30px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before,
-    header::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    header::before {
-      top: -70px;
-      left: -70px;
-      width: 220px;
-      height: 220px;
-    }
-
-    header::after {
-      bottom: -90px;
-      right: -50px;
-      width: 260px;
-      height: 260px;
     }
 
     .logo-box {
-      position: relative;
-      z-index: 2;
       display: inline-block;
       background: white;
       padding: 8px;
@@ -96,38 +55,19 @@
     }
 
     header h1 {
-      position: relative;
-      z-index: 2;
       margin-top: 18px;
       font-size: 2.3rem;
       font-weight: 800;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.18);
     }
 
     .header-tagline {
-      position: relative;
-      z-index: 2;
       margin-top: 12px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
       font-weight: 700;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .promo-banner {
-      background: linear-gradient(90deg, #ffd54f, #ffec99);
-      color: #2b2b2b;
-      padding: 12px 0;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .promo-banner marquee {
-      font-size: 1rem;
     }
 
     nav {
@@ -149,9 +89,11 @@
       padding: 10px 16px;
       border-radius: 14px;
       transition: 0.25s ease;
+      cursor: pointer;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       background: #17873a;
       transform: translateY(-2px);
     }
@@ -162,13 +104,18 @@
       padding: 22px 16px 50px;
     }
 
-    .section {
+    .tab-section {
+      display: none;
       background: white;
       border-radius: 24px;
       padding: 24px;
       margin-top: 20px;
       box-shadow: 0 18px 35px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
       border: 1px solid #edf1ef;
+    }
+
+    .tab-section.active {
+      display: block;
     }
 
     .section-title {
@@ -178,16 +125,17 @@
       font-weight: 800;
     }
 
-    .hero-card {
+    .hero-card,
+    .about-box {
       background: linear-gradient(135deg, #f8fffa, #eef9f1);
       border-radius: 26px;
-      padding: 30px 24px;
+      padding: 24px;
       box-shadow: 0 22px 38px rgba(15,111,46,0.10);
       border: 1px solid #dff0e5;
     }
 
     .hero-card h2 {
-      font-size: 2.1rem;
+      font-size: 2rem;
       line-height: 1.2;
       margin-bottom: 16px;
       color: #0c5e26;
@@ -215,10 +163,6 @@
       margin-top: 20px;
     }
 
-    .hero-list {
-      font-size: 1.05rem;
-    }
-
     .products-grid,
     .service-grid,
     .contact-grid,
@@ -235,15 +179,6 @@
       padding: 18px;
       border: 1px solid #e4ece7;
       box-shadow: 0 14px 24px rgba(0,0,0,0.06);
-      transition: 0.3s ease;
-    }
-
-    .product-card:hover,
-    .service-card:hover,
-    .contact-card:hover,
-    .feature-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 28px rgba(0,0,0,0.10);
     }
 
     .product-card h3,
@@ -294,11 +229,6 @@
     .btn-primary {
       background: linear-gradient(135deg, #129a43, #1fbb52);
       color: white;
-      box-shadow: 0 12px 20px rgba(18,154,67,0.25);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
     }
 
     .btn-outline {
@@ -310,13 +240,6 @@
     .btn-whatsapp {
       background: #25d366;
       color: white;
-    }
-
-    .about-box {
-      background: linear-gradient(135deg, #f6fff7, #eef8f0);
-      border-radius: 20px;
-      padding: 22px;
-      border: 1px solid #dfeee3;
     }
 
     .contact-card a {
@@ -345,10 +268,6 @@
       text-align: center;
       padding: 26px 16px;
       margin-top: 28px;
-    }
-
-    footer p {
-      margin: 6px 0;
     }
 
     .back-top,
@@ -386,31 +305,17 @@
       font-weight: bold;
     }
 
-    @media (max-width: 900px) {
-      .hero-card h2 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.55rem;
-      }
-
-      .header-tagline {
-        font-size: 1rem;
-      }
-    }
-
     @media (max-width: 600px) {
       header h1 {
         font-size: 1.9rem;
       }
 
-      .hero-card {
-        padding: 22px 18px;
+      .section-title {
+        font-size: 1.5rem;
       }
 
-      .section {
-        padding: 18px;
+      .hero-card h2 {
+        font-size: 1.7rem;
       }
 
       nav a {
@@ -426,7 +331,7 @@
 </head>
 <body>
 
-  <header id="accueil">
+  <header>
     <div class="logo-box">
       <img src="logo.png" alt="Logo Moriah Digital" />
     </div>
@@ -436,23 +341,17 @@
     </p>
   </header>
 
-  <div class="promo-banner">
-    <marquee behavior="scroll" direction="left">
-      Bienvenue chez Moriah Digital • Ordinateurs • Accessoires • Réparation • Réinstallation • Logiciels • Formation pratique en informatique • Service client
-    </marquee>
-  </div>
-
   <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#produits">Produits</a>
-    <a href="#services">Services</a>
-    <a href="#formations">Formations</a>
-    <a href="#espace-client">Espace client</a>
-    <a href="#contact">Contact</a>
+    <a class="tab-link active" data-tab="accueil">Accueil</a>
+    <a class="tab-link" data-tab="produits">Produits</a>
+    <a class="tab-link" data-tab="services">Services</a>
+    <a class="tab-link" data-tab="formations">Formations</a>
+    <a class="tab-link" data-tab="espace-client">Espace client</a>
+    <a class="tab-link" data-tab="contact">Contact</a>
   </nav>
 
   <main class="container">
-    <section class="section" id="accueil-section">
+    <section class="tab-section active" id="accueil">
       <h2 class="section-title">Accueil</h2>
       <div class="hero-card">
         <h2>Bienvenue chez Moriah Digital</h2>
@@ -474,13 +373,13 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn btn-primary" href="#produits">Voir les produits</a>
+          <a class="btn btn-primary tab-button" data-tab="produits">Voir les produits</a>
           <a class="btn btn-whatsapp" href="https://wa.me/224625262696" target="_blank">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="produits">
+    <section class="tab-section" id="produits">
       <h2 class="section-title">Produits</h2>
       <p>
         Cette partie permet aux visiteurs de voir vos produits sans créer de compte
@@ -517,60 +416,10 @@
             <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20HP%20ZBook." target="_blank">Discuter le prix</a>
           </div>
         </div>
-
-        <div class="product-card">
-          <img src="l13.jpg" alt="ThinkPad L13" />
-          <h3>ThinkPad L13</h3>
-          <p>Ordinateur fiable pour bureautique, entreprise et cours en ligne.</p>
-          <span class="price-tag">Disponible</span>
-          <div class="btn-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20ThinkPad%20L13." target="_blank">Discuter le prix</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="x13.jpg" alt="ThinkPad X13" />
-          <h3>ThinkPad X13</h3>
-          <p>Compact, rapide et pratique pour le travail mobile.</p>
-          <span class="price-tag">Disponible</span>
-          <div class="btn-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20ThinkPad%20X13." target="_blank">Discuter le prix</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="elibook830i5.jpg" alt="EliteBook 830 i5" />
-          <h3>EliteBook 830 i5</h3>
-          <p>Bon rapport qualité-prix pour le bureau et l’école.</p>
-          <span class="price-tag">Disponible</span>
-          <div class="btn-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20EliteBook%20830%20i5." target="_blank">Discuter le prix</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="elibook830i7.jpg" alt="EliteBook 830 i7" />
-          <h3>EliteBook 830 i7</h3>
-          <p>Plus de puissance pour les utilisateurs exigeants.</p>
-          <span class="price-tag">Disponible</span>
-          <div class="btn-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20EliteBook%20830%20i7." target="_blank">Discuter le prix</a>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="logo2.jpg" alt="Accessoires informatiques" />
-          <h3>Accessoires informatiques</h3>
-          <p>Souris, clavier, chargeurs, écrans, RAM, disque dur, clés USB et plus.</p>
-          <span class="price-tag">En stock</span>
-          <div class="btn-row">
-            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20des%20accessoires%20informatiques." target="_blank">Discuter le prix</a>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="tab-section" id="services">
       <h2 class="section-title">Services</h2>
       <div class="service-grid">
         <div class="service-card">
@@ -596,7 +445,7 @@
       </div>
     </section>
 
-    <section class="section" id="formations">
+    <section class="tab-section" id="formations">
       <h2 class="section-title">Formations</h2>
       <div class="feature-list">
         <div class="feature-card">
@@ -609,7 +458,7 @@
       </div>
     </section>
 
-    <section class="section" id="espace-client">
+    <section class="tab-section" id="espace-client">
       <h2 class="section-title">Espace client</h2>
       <div class="about-box">
         <p>
@@ -624,7 +473,7 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="tab-section" id="contact">
       <h2 class="section-title">Contact</h2>
       <div class="contact-grid">
         <div class="contact-card">
@@ -672,6 +521,42 @@
 
   <script>
     const backTop = document.getElementById("backTop");
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const sections = document.querySelectorAll(".tab-section");
+
+    function openTab(tabId) {
+      sections.forEach(section => {
+        section.classList.remove("active");
+      });
+
+      tabLinks.forEach(link => {
+        link.classList.remove("active");
+      });
+
+      const activeSection = document.getElementById(tabId);
+      const activeLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+
+      if (activeSection) activeSection.classList.add("active");
+      if (activeLink) activeLink.classList.add("active");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    tabLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        openTab(link.dataset.tab);
+      });
+    });
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        openTab(button.dataset.tab);
+      });
+    });
 
     window.addEventListener("scroll", () => {
       if (window.scrollY > 300) {
