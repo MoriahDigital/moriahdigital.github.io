@@ -1,9 +1,6 @@
-// Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Configuration Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAuC2URKTGD6MrnmkdSD3xTKcyS5BPE0e0",
   authDomain: "moriahdigital-141f4.firebaseapp.com",
@@ -14,12 +11,7 @@ const firebaseConfig = {
   measurementId: "G-PES2PBLM6S"
 };
 
-// Initialiser Firebase
 const app = initializeApp(firebaseConfig);
-
-// Activer les services
 const auth = getAuth(app);
-const db = getFirestore(app);
 
-// Exporter pour le site
-export { auth, db };
+export { auth };
