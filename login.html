@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Créer un compte | Moriah Digital</title>
-  <meta name="description" content="Créez votre compte client Moriah Digital ou connectez-vous à votre espace client.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connexion - Moriah Digital</title>
   <style>
     *{
       box-sizing:border-box;
@@ -13,354 +12,191 @@
     }
 
     body{
-      font-family:Arial, sans-serif;
+      font-family:Arial,sans-serif;
       background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
       color:#1d1d1d;
       min-height:100vh;
     }
 
-    .auth-wrap{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 14px;
+    .container{
+      max-width:500px;
+      margin:40px auto;
+      padding:20px;
     }
 
-    .auth-card{
-      width:100%;
-      max-width:620px;
-      background:white;
-      border-radius:26px;
-      padding:28px 20px;
-      box-shadow:0 18px 35px rgba(0,0,0,0.08);
-      border:1px solid #edf1ef;
-    }
-
-    .top-brand{
-      text-align:center;
-      margin-bottom:22px;
-    }
-
-    .logo-box{
-      display:inline-block;
+    .card{
       background:#fff;
-      padding:8px;
-      border-radius:18px;
-      box-shadow:0 12px 25px rgba(0,0,0,0.10);
-      margin-bottom:14px;
+      border-radius:24px;
+      padding:28px 22px;
+      box-shadow:0 18px 35px rgba(0,0,0,0.08);
+      border:1px solid #e7eeea;
     }
 
-    .logo-box img{
-      width:90px;
-      display:block;
-      border-radius:12px;
+    .logo{
+      text-align:center;
+      margin-bottom:18px;
     }
 
-    .brand-title{
-      font-size:2rem;
+    .logo img{
+      width:95px;
+      border-radius:16px;
+      background:#fff;
+      padding:6px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    h1{
+      text-align:center;
       color:#0f6f2e;
-      font-weight:800;
-      margin-bottom:8px;
+      margin-bottom:10px;
+      font-size:2rem;
     }
 
-    .brand-subtitle{
+    .subtitle{
+      text-align:center;
       color:#555;
+      margin-bottom:24px;
       line-height:1.7;
-      font-size:1rem;
+    }
+
+    label{
+      display:block;
+      margin:14px 0 8px;
+      color:#145c29;
+      font-weight:700;
+      font-size:1.1rem;
+    }
+
+    input{
+      width:100%;
+      padding:16px;
+      border:1px solid #cfd8d3;
+      border-radius:18px;
+      font-size:1.05rem;
+      outline:none;
+    }
+
+    input:focus{
+      border-color:#129a43;
+      box-shadow:0 0 0 3px rgba(18,154,67,0.12);
+    }
+
+    button{
+      width:100%;
+      margin-top:22px;
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      background:#148c3a;
+      color:#fff;
+      font-size:1.2rem;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#0f7631;
+    }
+
+    .message{
+      margin-top:18px;
+      text-align:center;
+      font-weight:700;
+      min-height:28px;
+      line-height:1.5;
+    }
+
+    .success{
+      color:#148c3a;
+    }
+
+    .error{
+      color:#b3261e;
+    }
+
+    .bottom-text{
+      margin-top:24px;
+      text-align:center;
+      color:#666;
+      line-height:1.8;
     }
 
     .back-link{
       display:inline-block;
-      margin-bottom:16px;
-      text-decoration:none;
-      color:#0f6f2e;
-      font-weight:bold;
-      font-size:1rem;
-    }
-
-    .section-box{
-      background:linear-gradient(180deg,#ffffff,#f9fcfa);
-      border:1px solid #e8efe9;
-      border-radius:20px;
-      padding:20px 16px;
-      margin-top:16px;
-    }
-
-    .section-box h2{
-      text-align:center;
-      color:#0f6f2e;
-      font-size:2rem;
-      margin-bottom:10px;
-    }
-
-    .section-box p{
-      text-align:center;
-      color:#555;
-      line-height:1.8;
-      margin-bottom:18px;
-    }
-
-    .form-grid{
-      display:grid;
-      gap:16px;
-    }
-
-    .form-group label{
-      display:block;
-      font-weight:bold;
-      color:#145c29;
-      margin-bottom:8px;
-      font-size:1rem;
-    }
-
-    .form-group input{
-      width:100%;
-      padding:15px;
-      border:1px solid #cfd8dc;
-      border-radius:14px;
-      font-size:16px;
-      outline:none;
-      background:#fff;
-      transition:0.2s ease;
-    }
-
-    .form-group input:focus{
-      border-color:#1b8a3e;
-      box-shadow:0 0 0 4px rgba(27,138,62,0.12);
-    }
-
-    .btn{
-      width:100%;
-      background:linear-gradient(135deg,#28c76f,#1fb65e);
-      color:white;
-      border:none;
-      padding:15px 18px;
-      border-radius:14px;
-      font-size:1.05rem;
-      font-weight:bold;
-      cursor:pointer;
-      transition:0.25s ease;
-      box-shadow:0 12px 22px rgba(40,199,111,0.22);
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .btn.secondary{
-      background:linear-gradient(135deg,#0f6f2e,#17873a);
-      box-shadow:0 12px 22px rgba(15,111,46,0.22);
-    }
-
-    .status-message{
-      margin-top:14px;
-      text-align:center;
-      font-weight:bold;
-      line-height:1.7;
-      color:#0f6f2e;
-      min-height:28px;
-    }
-
-    .error-message{
-      color:#c62828;
-    }
-
-    hr{
-      margin:24px 0;
-      border:none;
-      border-top:1px solid #e2e8e4;
-    }
-
-    .bottom-note{
       margin-top:18px;
       text-align:center;
-      color:#666;
-      line-height:1.8;
-      font-size:0.95rem;
-    }
-
-    @media (max-width: 700px){
-      .auth-card{
-        padding:22px 14px;
-      }
-
-      .brand-title{
-        font-size:1.7rem;
-      }
-
-      .section-box h2{
-        font-size:1.7rem;
-      }
+      width:100%;
+      color:#0f6f2e;
+      font-weight:700;
+      text-decoration:none;
     }
   </style>
 </head>
 <body>
-  <div class="auth-wrap">
-    <div class="auth-card">
-
-      <a href="index.html" class="back-link">← Retour au site</a>
-
-      <div class="top-brand">
-        <div class="logo-box">
-          <img src="logo.png" alt="Logo Moriah Digital">
-        </div>
-        <div class="brand-title">Moriah Digital</div>
-        <div class="brand-subtitle">
-          Vente d’ordinateurs, accessoires et maintenance informatique.<br>
-          Accédez à votre espace client en toute simplicité.
-        </div>
+  <div class="container">
+    <div class="card">
+      <div class="logo">
+        <img src="logo.png" alt="Logo Moriah Digital">
       </div>
 
-      <div class="section-box">
-        <h2>Créer un compte</h2>
-        <p>
-          Inscrivez-vous avec votre e-mail pour accéder à votre espace client.
-        </p>
+      <h1>Connexion</h1>
+      <p class="subtitle">
+        Connectez-vous à votre compte existant pour accéder à votre espace client.
+      </p>
 
-        <form class="form-grid" id="registerForm">
-          <div class="form-group">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" placeholder="Entrez votre nom complet" required>
-          </div>
+      <form id="loginForm">
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" placeholder="Entrez votre adresse e-mail" required>
 
-          <div class="form-group">
-            <label for="phone">Téléphone</label>
-            <input type="text" id="phone" placeholder="Entrez votre numéro" required>
-          </div>
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
 
-          <div class="form-group">
-            <label for="email">Adresse e-mail</label>
-            <input type="email" id="email" placeholder="Entrez votre e-mail" required>
-          </div>
+        <button type="submit" id="loginBtn">Se connecter</button>
+      </form>
 
-          <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" placeholder="Choisissez un mot de passe" required>
-          </div>
+      <div id="message" class="message"></div>
 
-          <button class="btn" type="submit">Créer mon compte</button>
-        </form>
-
-        <p id="registerMessage" class="status-message"></p>
-      </div>
-
-      <hr>
-
-      <div class="section-box">
-        <h2>Connexion</h2>
-        <p>
-          Connectez-vous à votre compte existant pour accéder à votre espace client.
-        </p>
-
-        <form class="form-grid" id="loginForm">
-          <div class="form-group">
-            <label for="loginEmail">Adresse e-mail</label>
-            <input type="email" id="loginEmail" placeholder="Entrez votre e-mail" required>
-          </div>
-
-          <div class="form-group">
-            <label for="loginPassword">Mot de passe</label>
-            <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
-          </div>
-
-          <button class="btn secondary" type="submit">Se connecter</button>
-        </form>
-
-        <p id="loginMessage" class="status-message"></p>
-      </div>
-
-      <div class="bottom-note">
+      <p class="bottom-text">
         En vous connectant, vous pouvez retrouver plus facilement les services,
         produits et informations de Moriah Digital.
-      </div>
+      </p>
 
+      <a href="index.html" class="back-link">← Retour au site</a>
     </div>
   </div>
 
   <script type="module">
     import { auth } from "./firebase-config.js";
-    import {
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-    const registerForm = document.getElementById("registerForm");
-    const loginForm = document.getElementById("loginForm");
-    const registerMessage = document.getElementById("registerMessage");
-    const loginMessage = document.getElementById("loginMessage");
+    const form = document.getElementById("loginForm");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const message = document.getElementById("message");
+    const loginBtn = document.getElementById("loginBtn");
 
-    function formatRegisterError(code) {
-      switch (code) {
-        case "auth/email-already-in-use":
-          return "Cet e-mail est déjà utilisé. Connectez-vous à votre compte.";
-        case "auth/invalid-email":
-          return "L’adresse e-mail n’est pas valide.";
-        case "auth/weak-password":
-          return "Le mot de passe est trop faible. Choisissez-en un plus fort.";
-        default:
-          return "Une erreur s’est produite lors de la création du compte.";
-      }
-    }
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-    function formatLoginError(code) {
-      switch (code) {
-        case "auth/invalid-email":
-          return "L’adresse e-mail n’est pas valide.";
-        case "auth/invalid-credential":
-        case "auth/user-not-found":
-        case "auth/wrong-password":
-          return "E-mail ou mot de passe incorrect.";
-        default:
-          return "Impossible de se connecter pour le moment.";
-      }
-    }
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
 
-    if (registerForm) {
-      registerForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
+      message.textContent = "";
+      message.className = "message";
+      loginBtn.disabled = true;
+      loginBtn.textContent = "Connexion...";
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        message.textContent = "Connexion réussie. Redirection...";
+        message.classList.add("success");
 
-        try {
-          await createUserWithEmailAndPassword(auth, email, password);
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
+      } catch (error) {
+        let errorText = "Impossible de se connecter pour le moment.";
 
-          registerMessage.textContent = "Compte créé avec succès. Redirection...";
-          registerMessage.classList.remove("error-message");
-
-          setTimeout(() => {
-            window.location.href = "dashboard.html";
-          }, 1200);
-        } catch (error) {
-          registerMessage.textContent = "Erreur : " + formatRegisterError(error.code);
-          registerMessage.classList.add("error-message");
-        }
-      });
-    }
-
-    if (loginForm) {
-      loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const email = document.getElementById("loginEmail").value.trim();
-        const password = document.getElementById("loginPassword").value;
-
-        try {
-          await signInWithEmailAndPassword(auth, email, password);
-
-          loginMessage.textContent = "Connexion réussie. Redirection...";
-          loginMessage.classList.remove("error-message");
-
-          setTimeout(() => {
-            window.location.href = "dashboard.html";
-          }, 1000);
-        } catch (error) {
-          loginMessage.textContent = "Erreur : " + formatLoginError(error.code);
-          loginMessage.classList.add("error-message");
-        }
-      });
-    }
-  </script>
-</body>
-</html>
+        if (error.code === "auth/invalid-credential") {
+          errorText = "E-mail ou mot de passe incorrect.";
+        } else if (error.code === "auth/user-not-found")
