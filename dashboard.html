@@ -1,299 +1,120 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Espace client | Moriah Digital</title>
-  <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace client | Moriah Digital</title>
 
-    body{
-      font-family:Arial, sans-serif;
-      background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
-      color:#1d1d1d;
-      min-height:100vh;
-    }
+<style>
+body{
+font-family:Arial;
+background:#f5f7f6;
+margin:0;
+padding:0;
+}
 
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:24px 14px 50px;
-    }
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
 
-    .dash-grid{
-      display:grid;
-      gap:20px;
-    }
+.card{
+background:white;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
 
-    .panel{
-      background:linear-gradient(180deg,#ffffff,#f8fbf9);
-      border-radius:22px;
-      padding:22px;
-      border:1px solid #e4ece7;
-      box-shadow:0 14px 24px rgba(0,0,0,0.06);
-    }
+h1{
+color:#0f6f2e;
+}
 
-    .panel h1,
-    .panel h2{
-      color:#0f6f2e;
-      margin-bottom:14px;
-    }
+h2{
+color:#0f6f2e;
+}
 
-    .panel h1{
-      font-size:2.2rem;
-    }
+.btn{
+background:#1fb65e;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
 
-    .panel h2{
-      font-size:1.7rem;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:15px;
+}
 
-    .lead{
-      font-size:1.05rem;
-      line-height:1.9;
-      color:#444;
-    }
-
-    .top-bar{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-
-    .simple-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:18px;
-      margin-top:16px;
-    }
-
-    .simple-card{
-      background:linear-gradient(180deg,#ffffff,#f7fbf8);
-      border-radius:18px;
-      padding:18px;
-      border:1px solid #e4ece7;
-      box-shadow:0 12px 22px rgba(0,0,0,0.05);
-      transition:0.25s ease;
-    }
-
-    .simple-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 18px 28px rgba(0,0,0,0.10);
-    }
-
-    .simple-card h3{
-      color:#0f6f2e;
-      margin-bottom:10px;
-      font-size:1.1rem;
-    }
-
-    .simple-card p{
-      line-height:1.7;
-      color:#444;
-    }
-
-    .tag-list{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
-
-    .tag{
-      background:#eef7f0;
-      color:#0f6f2e;
-      border:1px solid #d7e9da;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:0.92rem;
-      font-weight:bold;
-    }
-
-    .action-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .btn{
-      display:inline-block;
-      background:linear-gradient(135deg,#28c76f,#1fb65e);
-      color:white;
-      text-decoration:none;
-      text-align:center;
-      padding:13px 18px;
-      border-radius:12px;
-      font-weight:bold;
-      cursor:pointer;
-      border:none;
-      box-shadow:0 12px 22px rgba(40,199,111,0.22);
-    }
-
-    .btn.secondary{
-      background:linear-gradient(135deg,#0f6f2e,#17873a);
-      box-shadow:0 12px 22px rgba(15,111,46,0.22);
-    }
-
-    .welcome-box{
-      background:linear-gradient(135deg,#f8fffa,#eef9f1);
-      border-left:6px solid #21b85a;
-    }
-
-    .error-box{
-      background:#fff3f3;
-      color:#b00020;
-      border:1px solid #f0c6c6;
-      border-radius:14px;
-      padding:14px;
-      line-height:1.7;
-      display:none;
-    }
-
-    @media (max-width:860px){
-      .panel h1{
-        font-size:1.8rem;
-      }
-
-      .panel h2{
-        font-size:1.45rem;
-      }
-    }
-  </style>
+.service{
+background:#f3faf5;
+padding:15px;
+border-radius:10px;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="dash-grid">
 
-      <div class="panel">
-        <div class="top-bar">
-          <div>
-            <h1>Tableau de bord</h1>
-            <p id="welcomeText" class="lead">Chargement de votre espace client...</p>
-          </div>
-          <button class="btn secondary" id="logoutBtn">Déconnexion</button>
-        </div>
-      </div>
+<div class="container">
 
-      <div id="errorBox" class="error-box"></div>
+<div class="card">
+<h1>Tableau de bord</h1>
+<p id="welcomeText">Bienvenue dans votre espace client Moriah Digital</p>
+<button class="btn" onclick="logout()">Déconnexion</button>
+</div>
 
-      <div class="panel welcome-box">
-        <h2>Espace client</h2>
-        <p class="lead">
-          Bienvenue dans votre espace client Moriah Digital.
-          Vous pouvez découvrir ici nos ordinateurs à vendre,
-          nos formations en informatique, nos services de réparation d’ordinateurs
-          ainsi que nos accessoires informatiques disponibles.
-        </p>
-        <div class="tag-list">
-          <span class="tag">Ordinateurs</span>
-          <span class="tag">Formations</span>
-          <span class="tag">Réparation</span>
-          <span class="tag">Accessoires</span>
-          <span class="tag">Maintenance</span>
-          <span class="tag">Logiciels</span>
-        </div>
-      </div>
+<div class="card">
+<h2>Espace client</h2>
+<p>
+Dans cet espace vous pouvez consulter :
+</p>
 
-      <div class="panel">
-        <h2>Services disponibles</h2>
-        <div class="simple-grid">
-          <div class="simple-card">
-            <h3>Ordinateurs à vendre</h3>
-            <p>Découvrez nos ordinateurs disponibles pour les études, le bureau et l’usage professionnel.</p>
-          </div>
+<div class="grid">
 
-          <div class="simple-card">
-            <h3>Formation en informatique</h3>
-            <p>Profitez de nos formations pratiques pour apprendre l’informatique et mieux utiliser les outils numériques.</p>
-          </div>
+<div class="service">
+<b>Ordinateurs à vendre</b><br>
+HP Victus, EliteBook, Lenovo X360, ZBook
+</div>
 
-          <div class="simple-card">
-            <h3>Réparation d’ordinateurs</h3>
-            <p>Nous prenons en charge le diagnostic, la maintenance et la réparation de vos ordinateurs.</p>
-          </div>
+<div class="service">
+<b>Formation informatique</b><br>
+Initiation informatique et logiciels
+</div>
 
-          <div class="simple-card">
-            <h3>Accessoires informatiques</h3>
-            <p>Souris, clé USB, clavier, écran, carte mère, chargeur, accessoires bureautiques et bien d’autres.</p>
-          </div>
-        </div>
-      </div>
+<div class="service">
+<b>Réparation ordinateur</b><br>
+Maintenance et dépannage
+</div>
 
-      <div class="panel">
-        <h2>Catégories proposées</h2>
-        <div class="simple-grid">
-          <div class="simple-card">
-            <h3>Ordinateurs</h3>
-            <p>HP Victus, Lenovo X360, ThinkPad L13, HP EliteBook, HP ZBook et autres modèles disponibles.</p>
-          </div>
+<div class="service">
+<b>Accessoires</b><br>
+Souris, clavier, clé USB, écran, chargeur
+</div>
 
-          <div class="simple-card">
-            <h3>Accessoires</h3>
-            <p>Souris, clé USB, clavier, écran, disque dur, RAM, carte mère, chargeur et accessoires bureautiques.</p>
-          </div>
+</div>
+</div>
 
-          <div class="simple-card">
-            <h3>Maintenance</h3>
-            <p>Installation Windows, nettoyage, optimisation, remplacement de pièces et réparation informatique.</p>
-          </div>
+<div class="card">
+<h2>Contact</h2>
+📍 Dixinn Pharmaguinée, Conakry<br><br>
+📞 625 26 26 96 / 666 03 40 07
+</div>
 
-          <div class="simple-card">
-            <h3>Formations</h3>
-            <p>Initiation informatique, logiciels professionnels, maintenance informatique et communication digitale.</p>
-          </div>
-        </div>
-      </div>
+</div>
 
-      <div class="panel">
-        <h2>Accès rapide</h2>
-        <div class="action-row">
-          <a class="btn" href="index.html">Retour au site</a>
-          <a class="btn secondary" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20souhaite%20avoir%20plus%20d%27informations." target="_blank">WhatsApp</a>
-        </div>
-      </div>
+<script>
+function logout(){
+alert("Déconnexion réussie");
+window.location.href="login.html";
+}
+</script>
 
-    </div>
-  </div>
-
-  <script type="module">
-    const errorBox = document.getElementById("errorBox");
-    const welcomeText = document.getElementById("welcomeText");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    function showError(message) {
-      errorBox.style.display = "block";
-      errorBox.textContent = message;
-    }
-
-    try {
-      const firebaseModule = await import("./firebase-config.js");
-      const auth = firebaseModule.auth;
-
-      const authLib = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-      const { onAuthStateChanged, signOut } = authLib;
-
-      onAuthStateChanged(auth, (user) => {
-        if (!user) {
-          window.location.href = "login.html";
-          return;
-        }
-        welcomeText.textContent = "Connecté en tant que : " + user.email;
-      });
-
-      logoutBtn.addEventListener("click", async () => {
-        await signOut(auth);
-        window.location.href = "login.html";
-      });
-    } catch (error) {
-      console.error(error);
-      showError("Erreur de chargement du tableau de bord. Vérifiez firebase-config.js puis rechargez la page.");
-    }
-  </script>
 </body>
 </html>
