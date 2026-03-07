@@ -3,36 +3,243 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tableau de bord | Moriah Digital</title>
+  <title>Tableau de gestion commerciale | Moriah Digital</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .dash-grid{display:grid;gap:20px}
+    .panel{
+      background:linear-gradient(180deg,#ffffff,#f8fbf9);
+      border-radius:22px;
+      padding:22px;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+    }
+    .panel h2{color:#0f6f2e;margin-bottom:16px;font-size:1.8rem}
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+    }
+    .stat-card{
+      background:linear-gradient(135deg,#0f6f2e,#1f9c4a);
+      color:#fff;
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 14px 24px rgba(15,111,46,0.18);
+    }
+    .stat-card h3{font-size:0.95rem;margin-bottom:8px;opacity:0.95}
+    .stat-card .value{font-size:1.5rem;font-weight:800}
+    .form-grid{display:grid;gap:16px}
+    .double-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .triple-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+    .form-group label{
+      display:block;
+      font-weight:bold;
+      color:#145c29;
+      margin-bottom:8px;
+    }
+    .form-group input,.form-group select,.form-group textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #cfd8dc;
+      border-radius:12px;
+      font-size:16px;
+      outline:none;
+      background:#fff;
+    }
+    .form-group textarea{min-height:110px;resize:vertical}
+    .small-note{color:#666;margin-top:8px;line-height:1.6;font-size:0.95rem}
+    .total-box{
+      background:#f6fbf7;
+      border:1px solid #dcebdd;
+      border-radius:14px;
+      padding:14px;
+      line-height:1.9;
+    }
+    .table-wrap{overflow:auto;margin-top:16px}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background:#fff;
+      min-width:1200px;
+    }
+    th,td{
+      border:1px solid #dde5df;
+      padding:12px;
+      text-align:left;
+      font-size:0.95rem;
+      vertical-align:top;
+    }
+    th{background:#0f6f2e;color:#fff}
+    .status{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.85rem;
+      font-weight:bold;
+      background:#eef7f0;
+      color:#0f6f2e;
+    }
+    .danger{color:#c62828;font-weight:bold}
+    .ok{color:#0f6f2e;font-weight:bold}
+    .muted{color:#666}
+    @media (max-width:860px){
+      .double-grid,.triple-grid{grid-template-columns:1fr}
+      .panel h2{font-size:1.45rem}
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <div class="panel">
-      <div style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
-        <div>
-          <h1 style="color:#0f6f2e; margin-bottom:8px;">Tableau de bord</h1>
-          <p id="welcomeText">Chargement...</p>
-        </div>
-        <button class="btn secondary" id="logoutBtn">Déconnexion</button>
-      </div>
-    </div>
+    <div class="dash-grid">
 
-    <div class="panel" style="margin-top:20px;">
-      <h2 class="section-title">Clients inscrits</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>Email</th>
-              <th>Téléphone</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody id="clientsTableBody"></tbody>
-        </table>
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
+          <div>
+            <h2>Tableau de gestion commerciale</h2>
+            <p id="welcomeText">Chargement...</p>
+          </div>
+          <button class="btn secondary" id="logoutBtn">Déconnexion</button>
+        </div>
       </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Chiffre d’affaires total</h3>
+          <div class="value" id="statTotal">0 FG</div>
+        </div>
+        <div class="stat-card">
+          <h3>Montant payé</h3>
+          <div class="value" id="statPaid">0 FG</div>
+        </div>
+        <div class="stat-card">
+          <h3>Reste à payer</h3>
+          <div class="value" id="statRemaining">0 FG</div>
+        </div>
+        <div class="stat-card">
+          <h3>Nombre de clients</h3>
+          <div class="value" id="statClients">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Commandes</h3>
+          <div class="value" id="statOrders">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Réparations</h3>
+          <div class="value" id="statRepairs">0</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Nouvelle opération</h2>
+
+        <form class="form-grid" id="orderForm">
+          <div class="double-grid">
+            <div class="form-group">
+              <label for="clientName">Nom du client</label>
+              <input type="text" id="clientName" required>
+            </div>
+            <div class="form-group">
+              <label for="clientPhone">Téléphone</label>
+              <input type="text" id="clientPhone" required>
+            </div>
+          </div>
+
+          <div class="double-grid">
+            <div class="form-group">
+              <label for="serviceType">Type d’opération</label>
+              <select id="serviceType" required>
+                <option value="">Choisir</option>
+                <option value="Commande produit">Commande produit</option>
+                <option value="Réparation">Rendez-vous réparation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="productChoice">Produit / service</label>
+              <select id="productChoice">
+                <option value="">Choisir</option>
+                <option value="HP Victus Gaming">HP Victus Gaming</option>
+                <option value="Lenovo X360">Lenovo X360</option>
+                <option value="Lenovo ThinkPad L13">Lenovo ThinkPad L13</option>
+                <option value="HP EliteBook 830">HP EliteBook 830</option>
+                <option value="HP ZBook">HP ZBook</option>
+                <option value="Chargeur ordinateur">Chargeur ordinateur</option>
+                <option value="Souris">Souris</option>
+                <option value="Disque dur">Disque dur</option>
+                <option value="RAM">RAM</option>
+                <option value="Clavier">Clavier</option>
+                <option value="Écran">Écran</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="double-grid">
+            <div class="form-group">
+              <label for="repairDate">Date du rendez-vous</label>
+              <input type="date" id="repairDate">
+            </div>
+            <div class="form-group">
+              <label for="repairTime">Heure du rendez-vous</label>
+              <input type="time" id="repairTime">
+            </div>
+          </div>
+
+          <div class="triple-grid">
+            <div class="form-group">
+              <label for="totalAmount">Montant total (FG)</label>
+              <input type="number" id="totalAmount" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label for="paidAmount">Montant payé (FG)</label>
+              <input type="number" id="paidAmount" min="0" value="0">
+            </div>
+            <div class="form-group">
+              <label for="paymentDate">Date de paiement</label>
+              <input type="date" id="paymentDate">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Détails / Problème / Remarque</label>
+            <textarea id="details" placeholder="Exemple : réservation HP EliteBook 830, écran cassé, batterie à changer..."></textarea>
+          </div>
+
+          <div class="total-box">
+            <div>Reste à payer : <strong id="remainingAmount">0 FG</strong></div>
+            <div class="small-note">Le reste à payer se calcule automatiquement.</div>
+          </div>
+
+          <button class="btn" type="submit">Enregistrer l’opération</button>
+          <p id="orderMessage" class="status-message"></p>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Historique commercial</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Téléphone</th>
+                <th>Type</th>
+                <th>Produit / Service</th>
+                <th>Rendez-vous</th>
+                <th>Montant total</th>
+                <th>Payé</th>
+                <th>Reste</th>
+                <th>Date paiement</th>
+                <th>Détails</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -44,40 +251,168 @@
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     import {
       collection,
-      getDocs
+      addDoc,
+      getDocs,
+      query,
+      orderBy,
+      serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const welcomeText = document.getElementById("welcomeText");
-    const tableBody = document.getElementById("clientsTableBody");
     const logoutBtn = document.getElementById("logoutBtn");
+    const orderForm = document.getElementById("orderForm");
+    const ordersTableBody = document.getElementById("ordersTableBody");
+    const orderMessage = document.getElementById("orderMessage");
+
+    const totalAmountInput = document.getElementById("totalAmount");
+    const paidAmountInput = document.getElementById("paidAmount");
+    const remainingAmountText = document.getElementById("remainingAmount");
+
+    function formatFG(value) {
+      return Number(value || 0).toLocaleString("fr-FR") + " FG";
+    }
+
+    function updateRemaining() {
+      const total = Number(totalAmountInput.value || 0);
+      const paid = Number(paidAmountInput.value || 0);
+      const remaining = Math.max(total - paid, 0);
+      remainingAmountText.textContent = formatFG(remaining);
+      remainingAmountText.className = remaining > 0 ? "danger" : "ok";
+    }
+
+    totalAmountInput.addEventListener("input", updateRemaining);
+    paidAmountInput.addEventListener("input", updateRemaining);
+    updateRemaining();
+
+    function renderStats(rows) {
+      let totalCA = 0;
+      let totalPaid = 0;
+      let totalRemaining = 0;
+      let orders = 0;
+      let repairs = 0;
+      const clientsSet = new Set();
+
+      rows.forEach((data) => {
+        const total = Number(data.totalAmount || 0);
+        const paid = Number(data.paidAmount || 0);
+        const remaining = Math.max(total - paid, 0);
+
+        totalCA += total;
+        totalPaid += paid;
+        totalRemaining += remaining;
+
+        if (data.clientPhone) clientsSet.add(data.clientPhone);
+        else if (data.clientName) clientsSet.add(data.clientName);
+
+        if (data.serviceType === "Commande produit") orders++;
+        if (data.serviceType === "Réparation") repairs++;
+      });
+
+      document.getElementById("statTotal").textContent = formatFG(totalCA);
+      document.getElementById("statPaid").textContent = formatFG(totalPaid);
+      document.getElementById("statRemaining").textContent = formatFG(totalRemaining);
+      document.getElementById("statClients").textContent = clientsSet.size;
+      document.getElementById("statOrders").textContent = orders;
+      document.getElementById("statRepairs").textContent = repairs;
+    }
+
+    async function loadOrders() {
+      ordersTableBody.innerHTML = "";
+
+      const q = query(collection(db, "orders"), orderBy("createdAt", "desc"));
+      const snapshot = await getDocs(q);
+
+      const rows = [];
+
+      snapshot.forEach((docItem) => {
+        const data = docItem.data();
+        rows.push(data);
+
+        const total = Number(data.totalAmount || 0);
+        const paid = Number(data.paidAmount || 0);
+        const remaining = Math.max(total - paid, 0);
+
+        const datePart = data.repairDate || "";
+        const timePart = data.repairTime || "";
+        const rdv = (datePart || timePart) ? `${datePart} ${timePart}`.trim() : "-";
+
+        const statusLabel = remaining > 0 ? "Paiement partiel" : "Soldé";
+
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+          <td>${data.clientName || ""}</td>
+          <td>${data.clientPhone || ""}</td>
+          <td>${data.serviceType || ""}</td>
+          <td>${data.productChoice || "-"}</td>
+          <td>${rdv}</td>
+          <td>${formatFG(total)}</td>
+          <td>${formatFG(paid)}</td>
+          <td>${formatFG(remaining)}</td>
+          <td>${data.paymentDate || "-"}</td>
+          <td>${data.details || "-"}</td>
+          <td><span class="status">${statusLabel}</span></td>
+        `;
+        ordersTableBody.appendChild(tr);
+      });
+
+      renderStats(rows);
+    }
 
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
         window.location.href = "login.html";
         return;
       }
-
       welcomeText.textContent = "Connecté en tant que : " + user.email;
-
-      const snapshot = await getDocs(collection(db, "clients"));
-      tableBody.innerHTML = "";
-
-      snapshot.forEach((docItem) => {
-        const data = docItem.data();
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${data.name || ""}</td>
-          <td>${data.email || ""}</td>
-          <td>${data.phone || ""}</td>
-          <td>${data.createdAt || ""}</td>
-        `;
-        tableBody.appendChild(tr);
-      });
+      await loadOrders();
     });
 
     logoutBtn.addEventListener("click", async () => {
       await signOut(auth);
       window.location.href = "login.html";
+    });
+
+    orderForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const clientName = document.getElementById("clientName").value.trim();
+      const clientPhone = document.getElementById("clientPhone").value.trim();
+      const serviceType = document.getElementById("serviceType").value;
+      const productChoice = document.getElementById("productChoice").value;
+      const repairDate = document.getElementById("repairDate").value;
+      const repairTime = document.getElementById("repairTime").value;
+      const totalAmount = Number(document.getElementById("totalAmount").value || 0);
+      const paidAmount = Number(document.getElementById("paidAmount").value || 0);
+      const paymentDate = document.getElementById("paymentDate").value;
+      const details = document.getElementById("details").value.trim();
+      const remainingAmount = Math.max(totalAmount - paidAmount, 0);
+
+      try {
+        await addDoc(collection(db, "orders"), {
+          clientName,
+          clientPhone,
+          serviceType,
+          productChoice,
+          repairDate,
+          repairTime,
+          totalAmount,
+          paidAmount,
+          paymentDate,
+          remainingAmount,
+          details,
+          createdAt: serverTimestamp()
+        });
+
+        orderMessage.textContent = "Opération enregistrée avec succès.";
+        orderMessage.classList.remove("error-message");
+
+        orderForm.reset();
+        updateRemaining();
+        await loadOrders();
+      } catch (error) {
+        orderMessage.textContent = "Erreur : " + error.message;
+        orderMessage.classList.add("error-message");
+      }
     });
   </script>
 </body>
