@@ -64,12 +64,16 @@
     }
 
     .brand-title{
-      font-size:2.5rem;
+      font-size:2.6rem;
       font-weight:800;
       margin-bottom:12px;
       position:relative;
       z-index:2;
-      text-shadow:0 3px 10px rgba(0,0,0,0.22);
+      text-shadow:
+        0 1px 0 #d7ffd7,
+        0 2px 0 #bceebc,
+        0 3px 0 #95d695,
+        0 4px 12px rgba(0,0,0,0.25);
     }
 
     .brand-subtitle{
@@ -221,6 +225,8 @@
       text-decoration:none;
       font-weight:700;
       transition:0.25s ease;
+      border:none;
+      cursor:pointer;
     }
 
     .btn-primary{
@@ -262,14 +268,19 @@
       margin-bottom:6px;
     }
 
-    .cards-grid{
+    .cards-grid,
+    .products-grid,
+    .services-grid,
+    .formations-grid,
+    .contact-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:18px;
       margin-top:20px;
     }
 
-    .card{
+    .card,
+    .product{
       background:#fff;
       border:1px solid #e6ece8;
       border-radius:18px;
@@ -277,18 +288,11 @@
       box-shadow:0 8px 18px rgba(0,0,0,0.04);
     }
 
-    .card h3{
+    .card h3,
+    .product h3{
       color:#0f6f2e;
       margin-bottom:10px;
       font-size:1.2rem;
-    }
-
-    .product{
-      border:1px solid #e8e8e8;
-      padding:15px;
-      border-radius:16px;
-      background:#fff;
-      box-shadow:0 8px 18px rgba(0,0,0,0.05);
     }
 
     .product img{
@@ -298,28 +302,62 @@
       margin-bottom:12px;
     }
 
-    .product h3{
-      color:#0f6f2e;
-      font-size:1.2rem;
-      margin-bottom:8px;
-    }
-
-    .products-grid,
-    .services-grid,
-    .formations-grid,
-    .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:18px;
-      margin-top:18px;
-    }
-
     .contact-card iframe{
       width:100%;
       height:250px;
       border:0;
       border-radius:12px;
       margin-top:10px;
+    }
+
+    .client-box{
+      background:linear-gradient(135deg,#f8fff9,#edf8f1);
+      border:1px solid #d8eadc;
+      border-radius:24px;
+      padding:26px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.05);
+    }
+
+    .client-box p{
+      margin-bottom:12px;
+      line-height:1.8;
+      font-size:1.05rem;
+    }
+
+    .client-list{
+      margin:14px 0 18px 20px;
+    }
+
+    .client-list li{
+      margin-bottom:8px;
+    }
+
+    .client-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .feature-strip{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .feature-mini{
+      background:white;
+      border:1px solid #e5ede7;
+      border-radius:16px;
+      padding:16px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.04);
+    }
+
+    .feature-mini strong{
+      color:#0f6f2e;
+      display:block;
+      margin-bottom:8px;
     }
 
     .whatsapp-float{
@@ -552,14 +590,36 @@
 
     <div id="client" class="page">
       <h2 class="section-title">Espace client</h2>
-      <div class="card">
-        <h3>Dans cet espace vous pourrez :</h3>
-        <p>• Voir les produits</p>
-        <p>• Faire une commande</p>
-        <p>• Demander réparation</p>
-        <p>• Voir paiement effectué</p>
-        <p>• Voir reste à payer</p>
-        <a class="btn btn-primary" href="login.html">Se connecter</a>
+      <div class="client-box">
+        <p>
+          Dans votre espace client, vous pouvez consulter les produits,
+          faire une commande, demander une réparation, suivre vos paiements
+          et voir le reste à payer.
+        </p>
+
+        <ul class="client-list">
+          <li>Voir les produits</li>
+          <li>Faire une commande</li>
+          <li>Demander réparation</li>
+          <li>Voir paiement effectué</li>
+          <li>Voir reste à payer</li>
+        </ul>
+
+        <div class="feature-strip">
+          <div class="feature-mini">
+            <strong>Créer un compte</strong>
+            Créez rapidement votre compte client pour accéder à votre espace personnel.
+          </div>
+          <div class="feature-mini">
+            <strong>Connexion</strong>
+            Connectez-vous pour retrouver vos commandes, réparations et paiements.
+          </div>
+        </div>
+
+        <div class="client-actions">
+          <a class="btn btn-primary" href="login.html">Connexion</a>
+          <a class="btn btn-outline" href="login.html">Créer un compte</a>
+        </div>
       </div>
     </div>
 
@@ -617,4 +677,4 @@
   </script>
 
 </body>
-</html>
+                                       </html>
