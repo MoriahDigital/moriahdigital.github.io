@@ -1,282 +1,811 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="DhaJo-M0P4SusYsN9ZCLdC-XwDWQ_qe1ljlJUzJZWyg" />
 
-<meta name="google-site-verification" content="DhaJo-M0P4SusYsN9ZCLdC-XwDWQ_qe1ljlJUzJZWyg" />
+  <title>Moriah Digital | Vente d’ordinateurs et maintenance informatique à Conakry</title>
+  <meta name="description" content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance informatique et installation de logiciels à Dixinn Pharmaguinée, Conakry.">
+  <meta name="keywords" content="ordinateur Conakry, vente ordinateur Guinée, maintenance informatique Conakry, accessoires informatiques, Moriah Digital">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://moriahdigital.org/">
 
-<title>Moriah Digital | Vente d’ordinateurs à Conakry</title>
+  <meta property="og:title" content="Moriah Digital | Vente d’ordinateurs à Conakry">
+  <meta property="og:description" content="Ordinateurs, accessoires et maintenance informatique à Dixinn Pharmaguinée, Conakry.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moriahdigital.org/">
+  <meta property="og:image" content="https://moriahdigital.org/logo.png">
 
-<meta name="description" content="Moriah Digital vend ordinateurs, accessoires et maintenance informatique à Dixinn Pharmaguinée Conakry.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moriah Digital | Vente d’ordinateurs à Conakry">
+  <meta name="twitter:description" content="Ordinateurs, accessoires et maintenance informatique à Conakry.">
+  <meta name="twitter:image" content="https://moriahdigital.org/logo.png">
 
-<meta name="keywords" content="ordinateur Conakry, vente ordinateur Guinée, maintenance informatique Conakry, accessoires ordinateur">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComputerStore",
+    "name": "Moriah Digital",
+    "url": "https://moriahdigital.org/",
+    "logo": "https://moriahdigital.org/logo.png",
+    "image": "https://moriahdigital.org/logo.png",
+    "telephone": "+224625262696",
+    "email": "motacomdguinee@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dixinn Pharmaguinée, juste après le centre de santé",
+      "addressLocality": "Conakry",
+      "addressCountry": "GN"
+    }
+  }
+  </script>
 
-<meta name="robots" content="index, follow">
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-<link rel="canonical" href="https://moriahdigital.org">
+    body{
+      font-family:Arial, sans-serif;
+      background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
+      color:#1d1d1d;
+    }
 
-<style>
+    header{
+      background:linear-gradient(135deg,#0f6f2e,#1f9c4a 55%,#2ec866);
+      color:white;
+      text-align:center;
+      padding:28px 16px 22px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:hidden;
+    }
 
-body{
-font-family: Arial;
-margin:0;
-background:#f5f5f5;
-}
+    header::before{
+      content:"";
+      position:absolute;
+      top:-60px;
+      left:-60px;
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,0.10);
+      border-radius:50%;
+    }
 
-header{
-background:#1f8f43;
-color:white;
-text-align:center;
-padding:25px;
-}
+    header::after{
+      content:"";
+      position:absolute;
+      bottom:-80px;
+      right:-40px;
+      width:220px;
+      height:220px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+    }
 
-header img{
-width:120px;
-}
+    .logo-box{
+      position:relative;
+      z-index:2;
+      display:inline-block;
+      background:white;
+      padding:8px;
+      border-radius:18px;
+      box-shadow:0 12px 25px rgba(0,0,0,0.20);
+    }
 
-nav{
-background:#157636;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-}
+    header img{
+      width:110px;
+      display:block;
+      border-radius:12px;
+    }
 
-nav button{
-background:none;
-border:none;
-color:white;
-padding:15px;
-font-size:16px;
-cursor:pointer;
-}
+    header h1{
+      position:relative;
+      z-index:2;
+      margin-top:18px;
+      font-size:2.2rem;
+      font-weight:800;
+      text-shadow:0 4px 10px rgba(0,0,0,0.18);
+    }
 
-nav button:hover{
-background:#1f8f43;
-}
+    header p{
+      position:relative;
+      z-index:2;
+      margin-top:10px;
+      font-size:1.05rem;
+      line-height:1.6;
+      max-width:760px;
+      margin-left:auto;
+      margin-right:auto;
+    }
 
-.section{
-display:none;
-padding:20px;
-}
+    .promo-banner{
+      background:linear-gradient(90deg,#ffd54f,#ffec99);
+      color:#2b2b2b;
+      text-align:center;
+      padding:12px 14px;
+      font-weight:bold;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    }
 
-.active{
-display:block;
-}
+    nav{
+      background:#0c5e26;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      padding:14px 10px;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      padding:11px 18px;
+      border-radius:12px;
+      cursor:pointer;
+      transition:0.25s ease;
+    }
 
-.product{
-margin-bottom:20px;
-}
+    nav a:hover{
+      background:#17873a;
+      transform:translateY(-1px);
+    }
 
-.product img{
-width:100%;
-border-radius:8px;
-}
+    nav a.active{
+      background:linear-gradient(135deg,#2ed067,#25b85a);
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
+    }
 
-.float{
-position:fixed;
-right:20px;
-bottom:20px;
-}
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:22px 16px 50px;
+    }
 
-.call{
-background:#1f8f43;
-color:white;
-padding:15px;
-border-radius:50%;
-margin-bottom:10px;
-text-align:center;
-}
+    .section{
+      display:none;
+      background:white;
+      border-radius:22px;
+      padding:24px;
+      margin-top:20px;
+      box-shadow:0 18px 35px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
+      border:1px solid #edf1ef;
+    }
 
-.whatsapp{
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-text-align:center;
-}
+    .section.active{
+      display:block;
+      animation:fadeUp 0.35s ease;
+    }
 
-</style>
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(10px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
 
+    .section-title{
+      font-size:1.9rem;
+      color:#0f6f2e;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg,#f8fffa,#eef9f1);
+      border-radius:24px;
+      padding:28px 22px;
+      box-shadow:0 22px 38px rgba(15,111,46,0.10), inset 0 1px 0 rgba(255,255,255,0.7);
+      border:1px solid #dff0e5;
+    }
+
+    .hero-card h2{
+      font-size:2rem;
+      line-height:1.2;
+      margin-bottom:14px;
+      color:#0c5e26;
+    }
+
+    .hero-subtitle{
+      font-size:1.08rem;
+      line-height:1.8;
+      color:#333;
+      margin-bottom:18px;
+    }
+
+    .highlight{
+      background:white;
+      border-left:6px solid #21b85a;
+      padding:16px;
+      border-radius:14px;
+      margin:18px 0;
+      font-weight:bold;
+      color:#145c29;
+      box-shadow:0 10px 24px rgba(0,0,0,0.06);
+    }
+
+    .hero-list{
+      display:grid;
+      gap:10px;
+      margin:18px 0;
+      font-size:1.03rem;
+      line-height:1.8;
+    }
+
+    .hero-contact{
+      margin-top:16px;
+      line-height:1.9;
+      font-size:1.03rem;
+      font-weight:600;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:linear-gradient(135deg,#28c76f,#1fb65e);
+      color:white;
+      text-decoration:none;
+      text-align:center;
+      padding:13px 18px;
+      border-radius:12px;
+      font-weight:bold;
+      box-shadow:0 12px 22px rgba(40,199,111,0.25);
+      transition:0.25s ease;
+      cursor:pointer;
+      border:none;
+      margin-top:12px;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f6f2e,#17873a);
+      box-shadow:0 12px 22px rgba(15,111,46,0.25);
+    }
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:24px;
+    }
+
+    .feature-card{
+      background:linear-gradient(180deg,#ffffff,#f8fbf9);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+    }
+
+    .feature-card h3{
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:1.08rem;
+    }
+
+    .feature-card p{
+      line-height:1.7;
+      color:#444;
+    }
+
+    .search-box{
+      margin:8px 0 18px;
+      text-align:center;
+    }
+
+    .search-box input{
+      width:100%;
+      max-width:560px;
+      padding:15px 16px;
+      border:1px solid #cfd8dc;
+      border-radius:14px;
+      font-size:16px;
+      outline:none;
+      box-shadow:inset 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .search-box input:focus{
+      border-color:#1b8a3e;
+      box-shadow:0 0 0 4px rgba(27,138,62,0.12);
+    }
+
+    .sub-title{
+      margin:26px 0 14px;
+      color:#0f6f2e;
+      font-size:1.35rem;
+      font-weight:800;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,#ffffff,#fafdfb);
+      border-radius:20px;
+      padding:14px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.06), 0 5px 12px rgba(0,0,0,0.04);
+      border:1px solid #edf1f3;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .card img{
+      width:100%;
+      border-radius:14px;
+      display:block;
+      object-fit:cover;
+      max-height:260px;
+      background:#f1f1f1;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3{
+      margin:14px 0 8px;
+      font-size:1.25rem;
+      color:#163a22;
+    }
+
+    .card p{
+      margin:6px 0;
+      line-height:1.55;
+    }
+
+    .price{
+      color:#17873a;
+      font-size:1.6rem;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    .negociable{
+      color:#d97a00;
+      font-weight:bold;
+    }
+
+    .stock{
+      color:#d32f2f;
+      font-weight:bold;
+    }
+
+    .promo{
+      color:#17873a;
+      font-weight:bold;
+    }
+
+    .simple-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-top:18px;
+    }
+
+    .simple-card{
+      background:linear-gradient(180deg,#ffffff,#f8fbf9);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+    }
+
+    .simple-card h3{
+      margin-bottom:10px;
+      color:#0f6f2e;
+      font-size:1.08rem;
+    }
+
+    .simple-card p{
+      line-height:1.7;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .contact-box{
+      background:linear-gradient(180deg,#ffffff,#f7faf8);
+      border-radius:18px;
+      padding:20px;
+      font-size:1.05rem;
+      line-height:1.9;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+    }
+
+    iframe{
+      width:100%;
+      min-height:320px;
+      border:0;
+      border-radius:18px;
+      box-shadow:0 14px 24px rgba(0,0,0,0.08);
+    }
+
+    .footer-note{
+      text-align:center;
+      color:#666;
+      font-size:0.95rem;
+      margin-top:24px;
+    }
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      font-size:22px;
+      width:58px;
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:0 12px 22px rgba(0,0,0,0.20);
+      z-index:100;
+    }
+
+    .call{
+      position:fixed;
+      bottom:88px;
+      right:20px;
+      background:#17873a;
+      color:white;
+      font-size:22px;
+      width:58px;
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:0 12px 22px rgba(0,0,0,0.20);
+      z-index:100;
+    }
+
+    @media (max-width: 860px){
+      header h1{
+        font-size:1.8rem;
+      }
+
+      .hero-card h2{
+        font-size:1.65rem;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-
-<img src="logo.png">
-
-<h1>Moriah Digital</h1>
-
-<p>Vente d’ordinateurs, accessoires et maintenance informatique</p>
-
-</header>
-
-<nav>
-
-<button onclick="show('accueil')">Accueil</button>
-<button onclick="show('produits')">Produits</button>
-<button onclick="show('formation')">Formation</button>
-<button onclick="show('maintenance')">Maintenance</button>
-<button onclick="show('contact')">Contact</button>
-
-</nav>
-
-<!-- ACCUEIL -->
-
-<section id="accueil" class="section active">
-
-<div class="card">
-
-<h2>Bienvenue chez Moriah Digital 💻</h2>
-
-<p>Nous sommes spécialisés dans :</p>
-
-<p>✔ Vente d’ordinateurs et accessoires</p>
-<p>✔ Maintenance et réparation informatique</p>
-<p>✔ Installation de logiciels professionnels</p>
-<p>✔ Assistance en communication digitale</p>
-
-<p>📍 Dixinn Pharmaguinée</p>
-<p>📞 625 26 26 96</p>
-
-</div>
-
-</section>
-
-<!-- PRODUITS -->
-
-<section id="produits" class="section">
-
-<div class="card">
-
-<h2>Nos Produits</h2>
-
-<p>Nous vendons :</p>
-
-<p>✔ Ordinateurs portables</p>
-<p>✔ Chargeurs</p>
-<p>✔ Souris</p>
-<p>✔ Disques durs</p>
-<p>✔ RAM</p>
-<p>✔ Claviers</p>
-<p>✔ Écrans</p>
-
-<p><b>Prix négociable</b></p>
-<p><b>Stock limité</b></p>
-<p><b>Nouveaux arrivages</b></p>
-
-</div>
-
-<div class="product">
-<img src="Victus.jpg">
-</div>
-
-<div class="product">
-<img src="X360.jpg">
-</div>
-
-<div class="product">
-<img src="Zbook.jpg">
-</div>
-
-<div class="product">
-<img src="l13.jpg">
-</div>
-
-</section>
-
-<!-- FORMATION -->
-
-<section id="formation" class="section">
-
-<div class="card">
-
-<h2>Formations</h2>
-
-<p>Nous proposons des formations pratiques :</p>
-
-<p>✔ Maintenance informatique</p>
-<p>✔ Installation de logiciels</p>
-<p>✔ Initiation à l’informatique</p>
-
-</div>
-
-</section>
-
-<!-- MAINTENANCE -->
-
-<section id="maintenance" class="section">
-
-<div class="card">
-
-<h2>Maintenance Informatique</h2>
-
-<p>✔ Réparation ordinateur</p>
-<p>✔ Installation Windows</p>
-<p>✔ Installation logiciels professionnels</p>
-<p>✔ Nettoyage système</p>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="section">
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p>📍 Dixinn Pharmaguinée</p>
-
-<p>📞 625 26 26 96</p>
-
-<p>✉ motacomdguinee@gmail.com</p>
-
-<p>Contactez-nous pour discuter du prix.</p>
-
-</div>
-
-</section>
-
-<!-- BOUTONS FLOTTANTS -->
-
-<div class="float">
-
-<a href="tel:625262696">
-<div class="call">📞</div>
-</a>
-
-<a href="https://wa.me/224625262696">
-<div class="whatsapp">💬</div>
-</a>
-
-</div>
-
-<script>
-
-function show(section){
-
-let sections=document.querySelectorAll('.section');
-
-sections.forEach(s=>s.classList.remove('active'));
-
-document.getElementById(section).classList.add('active');
-
-}
-
-</script>
+  <header>
+    <div class="logo-box">
+      <img src="logo.png" alt="Logo Moriah Digital">
+    </div>
+    <h1>Moriah Digital</h1>
+    <p>Vente d’ordinateurs, accessoires et maintenance informatique</p>
+  </header>
+
+  <div class="promo-banner">
+    🔥 Nouveaux arrivages disponibles chez Moriah Digital — Prix négociables sur plusieurs produits
+  </div>
+
+  <nav>
+    <a class="active" onclick="showSection('accueil', this)">Accueil</a>
+    <a onclick="showSection('produits', this)">Produits</a>
+    <a onclick="showSection('formation', this)">Formation</a>
+    <a onclick="showSection('maintenance', this)">Maintenance</a>
+    <a onclick="showSection('contact', this)">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <section class="section active" id="accueil">
+      <div class="hero-card">
+        <h2>Bienvenue chez Moriah Digital 💻</h2>
+
+        <p class="hero-subtitle">
+          Votre espace de confiance pour l’achat d’ordinateurs, d’accessoires informatiques et les services de maintenance professionnelle à Conakry.
+        </p>
+
+        <div class="highlight">
+          Des ordinateurs de qualité, des accessoires fiables et une maintenance professionnelle à des prix négociables.
+        </div>
+
+        <div class="hero-list">
+          <p>✔ Vente d’ordinateurs et accessoires</p>
+          <p>✔ Maintenance et réparation informatique</p>
+          <p>✔ Installation de logiciels professionnels</p>
+          <p>✔ Assistance en communication digitale</p>
+        </div>
+
+        <div class="hero-contact">
+          <p>📍 Dixinn Pharmaguinée, juste après le centre de santé, Conakry</p>
+          <p>📞 625 26 26 96 / 666 03 40 07</p>
+          <p>📧 motacomdguinee@gmail.com</p>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn" onclick="showSection('produits', getNavLink('produits'))">Voir nos produits</a>
+          <a class="btn secondary" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20souhaite%20avoir%20plus%20d%27informations." target="_blank">Nous écrire sur WhatsApp</a>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Pourquoi choisir Moriah Digital ?</h3>
+      <div class="feature-list">
+        <div class="feature-card">
+          <h3>Produits de qualité</h3>
+          <p>Nous proposons des ordinateurs et accessoires fiables pour un usage personnel, scolaire ou professionnel.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Prix négociables</h3>
+          <p>Nous offrons la possibilité de discuter les prix selon le produit et la disponibilité en stock.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Nouveaux arrivages</h3>
+          <p>Des nouveautés sont régulièrement disponibles pour répondre aux besoins actuels du marché.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Service rapide</h3>
+          <p>Nous vous accompagnons avec sérieux pour la maintenance, les logiciels et l’assistance technique.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produits">
+      <h2 class="section-title">Nos produits</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Rechercher un ordinateur ou un accessoire...">
+      </div>
+
+      <h3 class="sub-title">Ordinateurs</h3>
+      <div class="products" id="productList">
+
+        <div class="card product-card">
+          <img src="Victus.jpg" alt="HP Victus Gaming">
+          <h3>HP Victus Gaming</h3>
+          <p>Core i7, 13ème génération</p>
+          <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
+          <p class="promo">Nouveaux arrivages</p>
+          <div class="price">13.500.000 FG</div>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20Victus%20Gaming." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <img src="X360.jpg" alt="Lenovo X360">
+          <h3>Lenovo X360</h3>
+          <p>Intel Celeron</p>
+          <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
+          <div class="price">2.900.000 FG</div>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20Lenovo%20X360." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <img src="l13.jpg" alt="Lenovo ThinkPad L13">
+          <h3>Lenovo ThinkPad L13</h3>
+          <p>10ème génération</p>
+          <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
+          <div class="price">3.000.000 FG</div>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20Lenovo%20ThinkPad%20L13." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <img src="elibook830i5.jpg" alt="HP EliteBook 830">
+          <h3>HP EliteBook 830</h3>
+          <p>Core i5, 8ème génération</p>
+          <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
+          <div class="price">2.800.000 FG</div>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20EliteBook%20830." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <img src="Zbook.jpg" alt="HP ZBook">
+          <h3>HP ZBook</h3>
+          <p>Core i7, 8ème génération</p>
+          <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
+          <div class="price">5.500.000 FG</div>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20ZBook." target="_blank">Discuter du prix</a>
+        </div>
+
+      </div>
+
+      <h3 class="sub-title">Accessoires informatiques</h3>
+      <div class="products">
+
+        <div class="card product-card">
+          <h3>Chargeur ordinateur</h3>
+          <p>Compatible avec plusieurs modèles</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20chargeur%20ordinateur." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <h3>Souris</h3>
+          <p>Souris USB et sans fil</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20la%20souris." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <h3>Disque dur</h3>
+          <p>SSD et HDD disponibles</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20disque%20dur." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <h3>RAM</h3>
+          <p>Pour améliorer la performance de votre ordinateur</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20la%20RAM." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <h3>Clavier</h3>
+          <p>Clavier USB et bureautique</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20clavier." target="_blank">Discuter du prix</a>
+        </div>
+
+        <div class="card product-card">
+          <h3>Écran</h3>
+          <p>Écrans pour ordinateur de bureau</p>
+          <p class="negociable">Prix négociable</p>
+          <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20l%27%C3%A9cran." target="_blank">Discuter du prix</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="formation">
+      <h2 class="section-title">Formation</h2>
+      <div class="simple-grid">
+        <div class="simple-card">
+          <h3>Initiation à l’informatique</h3>
+          <p>Apprenez les bases essentielles pour bien utiliser un ordinateur au quotidien.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Logiciels professionnels</h3>
+          <p>Formation pratique sur les logiciels utiles pour le travail et les activités professionnelles.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Maintenance informatique</h3>
+          <p>Découverte des techniques de base pour entretenir et réparer un ordinateur.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Communication digitale</h3>
+          <p>Accompagnement pour mieux utiliser les outils numériques et développer votre activité.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="maintenance">
+      <h2 class="section-title">Maintenance informatique</h2>
+      <div class="simple-grid">
+        <div class="simple-card">
+          <h3>Réparation d’ordinateurs</h3>
+          <p>Diagnostic et réparation des pannes matérielles et logicielles.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Installation de logiciels</h3>
+          <p>Installation de logiciels professionnels, antivirus et outils bureautiques.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Réinstallation système</h3>
+          <p>Réinstallation Windows, optimisation et configuration complète.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <p>📞 625 26 26 96</p>
+          <p>📞 666 03 40 07</p>
+          <p>📧 motacomdguinee@gmail.com</p>
+          <p>📍 Dixinn Pharmaguinée, juste après le centre de santé, Conakry</p>
+          <p>🕒 Disponible pour la vente, l’assistance et la maintenance informatique.</p>
+        </div>
+
+        <iframe
+          src="https://maps.google.com/maps?q=9.5474119,-13.6696543&z=18&output=embed"
+          height="320"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      © Moriah Digital — Vente d’ordinateurs, accessoires et maintenance informatique
+    </div>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/224625262696" target="_blank">💬</a>
+  <a class="call" href="tel:625262696">📞</a>
+
+  <script>
+    function showSection(sectionId, element) {
+      const sections = document.querySelectorAll('.section');
+      const links = document.querySelectorAll('nav a');
+
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      document.getElementById(sectionId).classList.add('active');
+
+      if (element) {
+        element.classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function getNavLink(sectionId) {
+      const links = document.querySelectorAll('nav a');
+      for (let link of links) {
+        if (link.textContent.toLowerCase() === sectionId.toLowerCase()) {
+          return link;
+        }
+      }
+      return null;
+    }
+
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const cards = document.querySelectorAll(".product-card");
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
