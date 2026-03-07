@@ -143,10 +143,15 @@
     .promo-banner{
       background:linear-gradient(90deg,#ffd54f,#ffec99);
       color:#2b2b2b;
-      text-align:center;
-      padding:12px 14px;
+      padding:12px 0;
       font-weight:bold;
       box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      overflow:hidden;
+      white-space:nowrap;
+    }
+
+    .promo-banner marquee{
+      font-size:1.05rem;
     }
 
     nav{
@@ -413,15 +418,8 @@
       text-align:center;
       margin-top:10px;
       color:#0f6f2e;
-      font-weight:600;
+      font-weight:bold;
       min-height:20px;
-    }
-
-    .sub-title{
-      margin:26px 0 14px;
-      color:#0f6f2e;
-      font-size:1.35rem;
-      font-weight:800;
     }
 
     .products{
@@ -444,7 +442,7 @@
     }
 
     .card:hover{
-      transform:perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-8px);
+      transform:perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-8px) scale(1.02);
       box-shadow:0 28px 38px rgba(0,0,0,0.14), 0 10px 18px rgba(0,0,0,0.08);
     }
 
@@ -638,6 +636,10 @@
       .card:hover{
         transform:translateY(-4px);
       }
+
+      .promo-banner marquee{
+        font-size:0.95rem;
+      }
     }
   </style>
 </head>
@@ -652,7 +654,9 @@
   </header>
 
   <div class="promo-banner">
-    🔥 Nouveaux arrivages disponibles chez Moriah Digital — Prix négociables sur plusieurs produits
+    <marquee behavior="scroll" direction="left">
+      Chez Moriah Digital le prix est négociable sur plusieurs produits • Vente d’ordinateurs • Maintenance informatique professionnelle • Accessoires disponibles
+    </marquee>
   </div>
 
   <nav>
@@ -661,6 +665,7 @@
     <a onclick="showSection('formation', this)">Formation</a>
     <a onclick="showSection('maintenance', this)">Maintenance</a>
     <a onclick="showSection('contact', this)">Contact</a>
+    <a href="inscription.html">Créer un compte</a>
   </nav>
 
   <div class="container">
@@ -696,7 +701,7 @@
         </div>
       </div>
 
-      <h3 class="sub-title">Pourquoi choisir Moriah Digital ?</h3>
+      <h2 class="section-title" style="margin-top:24px;">Pourquoi choisir Moriah Digital ?</h2>
       <div class="feature-list">
         <div class="feature-card">
           <h3>Produits de qualité</h3>
@@ -707,8 +712,8 @@
           <p>Nous offrons la possibilité de discuter les prix selon le produit et la disponibilité en stock.</p>
         </div>
         <div class="feature-card">
-          <h3>Nouveaux arrivages</h3>
-          <p>Des nouveautés sont régulièrement disponibles pour répondre aux besoins actuels du marché.</p>
+          <h3>Nouveaux services</h3>
+          <p>Nous développons progressivement nos services pour mieux répondre aux besoins de nos clients.</p>
         </div>
         <div class="feature-card">
           <h3>Service rapide</h3>
@@ -726,14 +731,13 @@
       </div>
 
       <div class="products" id="productList">
-
         <div class="card product-card">
           <img src="Victus.jpg" alt="HP Victus Gaming">
           <h3>HP Victus Gaming</h3>
           <p>Core i7, 13ème génération</p>
           <p class="negociable">Prix négociable</p>
           <p class="stock">Stock limité</p>
-          <p class="promo">Nouveaux arrivages</p>
+          <p class="promo">Disponible</p>
           <div class="price">13.500.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20Victus%20Gaming." target="_blank">Discuter du prix</a>
         </div>
@@ -819,7 +823,6 @@
           <p class="negociable">Prix négociable</p>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20l%27%C3%A9cran." target="_blank">Discuter du prix</a>
         </div>
-
       </div>
     </section>
 
@@ -893,7 +896,7 @@
   <script>
     function showSection(sectionId, element) {
       const sections = document.querySelectorAll('.section');
-      const links = document.querySelectorAll('nav a');
+      const links = document.querySelectorAll('nav a[onclick]');
 
       sections.forEach(section => {
         section.classList.remove('active');
