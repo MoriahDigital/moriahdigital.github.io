@@ -3,12 +3,12 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "REMPLACE_ICI",
-  authDomain: "REMPLACE_ICI",
-  projectId: "REMPLACE_ICI",
-  storageBucket: "REMPLACE_ICI",
-  messagingSenderId: "REMPLACE_ICI",
-  appId: "REMPLACE_ICI"
+  apiKey: "AIzaSyAuC2URKTGD6MrnmkdSD3",
+  authDomain: "moriahdigital-141f4.firebaseapp.com",
+  projectId: "moriahdigital-141f4",
+  storageBucket: "moriahdigital-141f4.appspot.com",
+  messagingSenderId: "743291676320",
+  appId: "1:743291676320:web:baf76020"
 };
 
 const app = initializeApp(firebaseConfig);
