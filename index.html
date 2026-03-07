@@ -409,6 +409,14 @@
       box-shadow:0 0 0 4px rgba(27,138,62,0.12);
     }
 
+    .search-status{
+      text-align:center;
+      margin-top:10px;
+      color:#0f6f2e;
+      font-weight:600;
+      min-height:20px;
+    }
+
     .sub-title{
       margin:26px 0 14px;
       color:#0f6f2e;
@@ -486,6 +494,10 @@
     .promo{
       color:#17873a;
       font-weight:bold;
+    }
+
+    .hidden-card{
+      display:none !important;
     }
 
     .simple-grid{
@@ -679,6 +691,7 @@
         </div>
 
         <div class="btn-row">
+          <a class="btn" href="inscription.html">Créer un compte</a>
           <a class="btn secondary" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20souhaite%20avoir%20plus%20d%27informations." target="_blank">Nous écrire sur WhatsApp</a>
         </div>
       </div>
@@ -709,6 +722,7 @@
 
       <div class="search-box">
         <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Rechercher un ordinateur ou un accessoire...">
+        <div id="searchStatus" class="search-status"></div>
       </div>
 
       <h3 class="sub-title">Ordinateurs</h3>
@@ -764,11 +778,6 @@
           <div class="price">5.500.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20ZBook." target="_blank">Discuter du prix</a>
         </div>
-
-      </div>
-
-      <h3 class="sub-title">Accessoires informatiques</h3>
-      <div class="products">
 
         <div class="card product-card">
           <h3>Chargeur ordinateur</h3>
@@ -904,28 +913,29 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function getNavLink(sectionId) {
-      const links = document.querySelectorAll('nav a');
-      for (let link of links) {
-        if (link.textContent.toLowerCase() === sectionId.toLowerCase()) {
-          return link;
-        }
-      }
-      return null;
-    }
-
     function searchProducts() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
-      const cards = document.querySelectorAll(".product-card");
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
+      const allCards = document.querySelectorAll(".product-card");
+      const searchStatus = document.getElementById("searchStatus");
+      let visibleCount = 0;
 
-      cards.forEach(card => {
+      allCards.forEach(card => {
         const text = card.innerText.toLowerCase();
-        if (text.includes(input)) {
-          card.style.display = "";
+        if (input === "" || text.includes(input)) {
+          card.classList.remove("hidden-card");
+          visibleCount++;
         } else {
-          card.style.display = "none";
+          card.classList.add("hidden-card");
         }
       });
+
+      if (input === "") {
+        searchStatus.textContent = "";
+      } else if (visibleCount > 0) {
+        searchStatus.textContent = visibleCount + " résultat(s) trouvé(s)";
+      } else {
+        searchStatus.textContent = "Aucun résultat trouvé";
+      }
     }
   </script>
 
