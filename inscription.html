@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Créer un compte | Moriah Digital</title>
+  <meta name="description" content="Créez votre compte client Moriah Digital en remplissant le formulaire d'inscription.">
   <style>
     *{
       box-sizing:border-box;
@@ -18,15 +19,24 @@
     }
 
     .container{
-      max-width:700px;
+      max-width:760px;
       margin:40px auto;
       padding:20px;
     }
 
+    .back-link{
+      display:inline-block;
+      margin-bottom:18px;
+      text-decoration:none;
+      color:#0f6f2e;
+      font-weight:bold;
+      font-size:1rem;
+    }
+
     .card{
       background:white;
-      border-radius:22px;
-      padding:28px 22px;
+      border-radius:24px;
+      padding:30px 22px;
       box-shadow:0 18px 35px rgba(0,0,0,0.08);
       border:1px solid #edf1ef;
     }
@@ -41,8 +51,9 @@
     .subtitle{
       text-align:center;
       color:#444;
-      margin-bottom:24px;
-      line-height:1.7;
+      margin-bottom:26px;
+      line-height:1.8;
+      font-size:1rem;
     }
 
     form{
@@ -50,10 +61,14 @@
       gap:16px;
     }
 
+    .form-group{
+      display:block;
+    }
+
     label{
       font-weight:bold;
       color:#145c29;
-      margin-bottom:6px;
+      margin-bottom:8px;
       display:block;
     }
 
@@ -64,6 +79,7 @@
       border-radius:12px;
       font-size:16px;
       outline:none;
+      background:#fff;
     }
 
     input:focus, textarea:focus{
@@ -80,23 +96,38 @@
       background:linear-gradient(135deg,#28c76f,#1fb65e);
       color:white;
       border:none;
-      padding:14px 18px;
+      padding:15px 18px;
       border-radius:12px;
       font-size:16px;
       font-weight:bold;
       cursor:pointer;
+      transition:0.25s ease;
     }
 
     .btn:hover{
-      opacity:0.95;
+      transform:translateY(-2px);
     }
 
-    .back-link{
-      display:inline-block;
-      margin-bottom:18px;
-      text-decoration:none;
-      color:#0f6f2e;
-      font-weight:bold;
+    .note{
+      margin-top:18px;
+      font-size:0.95rem;
+      color:#666;
+      text-align:center;
+      line-height:1.7;
+    }
+
+    @media (max-width: 700px){
+      .container{
+        margin:24px auto;
+      }
+
+      .card{
+        padding:24px 16px;
+      }
+
+      h1{
+        font-size:1.7rem;
+      }
     }
   </style>
 </head>
@@ -107,36 +138,41 @@
     <div class="card">
       <h1>Créer un compte</h1>
       <p class="subtitle">
-        Remplissez ce formulaire avec vos informations.
+        Remplissez ce formulaire avec vos informations pour entrer en contact avec Moriah Digital.
       </p>
 
       <form action="https://formsubmit.co/motacomdguinee@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="Nouvelle inscription client - Moriah Digital">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://moriahdigital.github.io/merci.html">
 
-        <div>
+        <div class="form-group">
           <label for="nom">Nom complet</label>
           <input type="text" id="nom" name="Nom complet" placeholder="Entrez votre nom complet" required>
         </div>
 
-        <div>
+        <div class="form-group">
           <label for="email">Adresse e-mail</label>
           <input type="email" id="email" name="Email" placeholder="Entrez votre e-mail" required>
         </div>
 
-        <div>
+        <div class="form-group">
           <label for="telephone">Téléphone</label>
           <input type="tel" id="telephone" name="Téléphone" placeholder="Entrez votre numéro" required>
         </div>
 
-        <div>
+        <div class="form-group">
           <label for="message">Message</label>
           <textarea id="message" name="Message" placeholder="Votre demande ou besoin"></textarea>
         </div>
 
         <button type="submit" class="btn">Envoyer mon inscription</button>
       </form>
+
+      <p class="note">
+        Après envoi, votre demande sera transmise à Moriah Digital par e-mail.
+      </p>
     </div>
   </div>
 </body>
