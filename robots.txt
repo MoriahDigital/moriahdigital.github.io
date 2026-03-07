@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://moriahdigital.org/sitemap.xml
