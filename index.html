@@ -4,14 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="DhaJo-M0P4SusYsN9ZCLdC-XwDWQ_qe1ljlJUzJZWyg" />
-
-  <title>Moriah Digital | Vente d’ordinateurs, maintenance et accessoires à Conakry</title>
-  <meta
-    name="description"
-    content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance, installation de logiciels, assistance digitale et formation pratique en informatique à Conakry."
-  />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Moriah Digital" />
+  <title>Moriah Digital</title>
 
   <style>
     * {
@@ -22,7 +15,7 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #edf4ef 0%, #f8f8f8 100%);
+      background: #f3f6f4;
       color: #1d1d1d;
       line-height: 1.6;
       overflow-x: hidden;
@@ -44,34 +37,33 @@
       display: inline-block;
       background: white;
       padding: 8px;
-      border-radius: 22px;
-      box-shadow: 0 14px 28px rgba(0,0,0,0.22);
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
     }
 
     header img {
-      width: 110px;
+      width: 100px;
       display: block;
-      border-radius: 14px;
+      border-radius: 12px;
     }
 
     header h1 {
-      margin-top: 18px;
-      font-size: 2.3rem;
+      margin-top: 16px;
+      font-size: 2.2rem;
       font-weight: 800;
     }
 
     .header-tagline {
-      margin-top: 12px;
+      margin-top: 10px;
       font-size: 1.05rem;
-      line-height: 1.7;
       font-weight: 700;
-      max-width: 900px;
+      max-width: 850px;
       margin-left: auto;
       margin-right: auto;
     }
 
     nav {
-      background: #0c5e26;
+      background: #0b6623;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -83,111 +75,97 @@
       box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
-    nav a {
+    nav button {
+      border: none;
+      background: transparent;
       color: white;
       font-weight: bold;
       padding: 10px 16px;
-      border-radius: 14px;
-      transition: 0.25s ease;
+      border-radius: 12px;
       cursor: pointer;
+      font-size: 1rem;
     }
 
-    nav a:hover,
-    nav a.active {
-      background: #17873a;
-      transform: translateY(-2px);
+    nav button.active,
+    nav button:hover {
+      background: #1b8f39;
     }
 
     .container {
-      max-width: 1180px;
+      max-width: 1150px;
       margin: auto;
-      padding: 22px 16px 50px;
+      padding: 20px 14px 50px;
     }
 
-    .tab-section {
+    .page {
       display: none;
       background: white;
-      border-radius: 24px;
-      padding: 24px;
-      margin-top: 20px;
-      box-shadow: 0 18px 35px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
-      border: 1px solid #edf1ef;
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.08);
+      border: 1px solid #e7eeea;
     }
 
-    .tab-section.active {
+    .page.active {
       display: block;
     }
 
     .section-title {
-      font-size: 1.9rem;
       color: #0f6f2e;
-      margin-bottom: 16px;
+      font-size: 1.9rem;
       font-weight: 800;
+      margin-bottom: 16px;
     }
 
-    .hero-card,
-    .about-box {
-      background: linear-gradient(135deg, #f8fffa, #eef9f1);
-      border-radius: 26px;
-      padding: 24px;
-      box-shadow: 0 22px 38px rgba(15,111,46,0.10);
-      border: 1px solid #dff0e5;
+    .hero-box,
+    .info-box {
+      background: linear-gradient(135deg, #f8fffa, #edf8f0);
+      border: 1px solid #dcecdf;
+      border-radius: 22px;
+      padding: 22px;
     }
 
-    .hero-card h2 {
+    .hero-box h2 {
+      color: #0b6623;
       font-size: 2rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      color: #0c5e26;
-      font-weight: 800;
+      margin-bottom: 14px;
     }
 
     .highlight {
-      background: white;
-      border-left: 6px solid #21b85a;
-      padding: 16px;
-      border-radius: 14px;
       margin: 18px 0;
+      background: white;
+      border-left: 6px solid #24b45c;
+      padding: 14px;
+      border-radius: 12px;
       font-weight: bold;
       color: #145c29;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.05);
     }
 
-    .hero-list,
-    .service-grid,
-    .contact-grid,
-    .products-grid,
-    .feature-list {
+    .list-box {
       display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 16px;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
-    .products-grid,
-    .service-grid,
-    .contact-grid,
-    .feature-list {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .product-card,
-    .service-card,
-    .contact-card,
-    .feature-card {
-      background: linear-gradient(180deg, #ffffff, #f8fbf9);
+    .card {
+      background: #fbfdfb;
+      border: 1px solid #e2ebe4;
       border-radius: 18px;
-      padding: 18px;
-      border: 1px solid #e4ece7;
-      box-shadow: 0 14px 24px rgba(0,0,0,0.06);
+      padding: 16px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.05);
     }
 
-    .product-card h3,
-    .service-card h3,
-    .contact-card h3,
-    .feature-card h3 {
+    .card h3 {
       color: #0f6f2e;
       margin-bottom: 10px;
-      font-weight: 700;
       font-size: 1.1rem;
     }
 
@@ -197,10 +175,10 @@
       object-fit: cover;
       border-radius: 14px;
       margin-bottom: 12px;
-      background: #f2f2f2;
+      background: #eee;
     }
 
-    .price-tag {
+    .badge {
       display: inline-block;
       margin-top: 10px;
       background: #0f6f2e;
@@ -208,7 +186,6 @@
       padding: 8px 12px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.95rem;
     }
 
     .btn-row {
@@ -221,20 +198,13 @@
     .btn {
       display: inline-block;
       padding: 12px 18px;
-      border-radius: 14px;
+      border-radius: 12px;
       font-weight: 700;
-      transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #129a43, #1fbb52);
+      background: #149942;
       color: white;
-    }
-
-    .btn-outline {
-      border: 2px solid #129a43;
-      color: #129a43;
-      background: white;
     }
 
     .btn-whatsapp {
@@ -242,8 +212,14 @@
       color: white;
     }
 
+    .btn-outline {
+      border: 2px solid #149942;
+      color: #149942;
+      background: white;
+    }
+
     .contact-card a {
-      color: #0c5e26;
+      color: #0b6623;
       font-weight: bold;
       word-break: break-word;
     }
@@ -252,8 +228,8 @@
       margin-top: 20px;
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 14px 24px rgba(0,0,0,0.08);
       border: 1px solid #dfe7e1;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     }
 
     .map-box iframe {
@@ -263,15 +239,19 @@
     }
 
     footer {
+      margin-top: 24px;
       background: #0b4f20;
       color: white;
       text-align: center;
-      padding: 26px 16px;
-      margin-top: 28px;
+      padding: 24px 16px;
     }
 
-    .back-top,
-    .whatsapp-float {
+    footer p {
+      margin: 5px 0;
+    }
+
+    .whatsapp-float,
+    .back-top {
       position: fixed;
       right: 18px;
       width: 52px;
@@ -285,9 +265,15 @@
       z-index: 999;
     }
 
+    .whatsapp-float {
+      bottom: 82px;
+      background: #25d366;
+      color: white;
+    }
+
     .back-top {
       bottom: 18px;
-      background: #119540;
+      background: #149942;
       color: white;
       border: none;
       cursor: pointer;
@@ -298,29 +284,26 @@
       display: flex;
     }
 
-    .whatsapp-float {
-      bottom: 82px;
-      background: #25d366;
-      color: white;
-      font-weight: bold;
-    }
-
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
+      }
+
+      .header-tagline {
+        font-size: 0.98rem;
       }
 
       .section-title {
         font-size: 1.5rem;
       }
 
-      .hero-card h2 {
-        font-size: 1.7rem;
+      .hero-box h2 {
+        font-size: 1.6rem;
       }
 
-      nav a {
+      nav button {
+        font-size: 0.95rem;
         padding: 9px 12px;
-        font-size: 0.92rem;
       }
 
       .map-box iframe {
@@ -330,7 +313,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo-box">
       <img src="logo.png" alt="Logo Moriah Digital" />
@@ -342,18 +324,18 @@
   </header>
 
   <nav>
-    <a class="tab-link active" data-tab="accueil">Accueil</a>
-    <a class="tab-link" data-tab="produits">Produits</a>
-    <a class="tab-link" data-tab="services">Services</a>
-    <a class="tab-link" data-tab="formations">Formations</a>
-    <a class="tab-link" data-tab="espace-client">Espace client</a>
-    <a class="tab-link" data-tab="contact">Contact</a>
+    <button class="tab-btn active" data-page="accueil">Accueil</button>
+    <button class="tab-btn" data-page="produits">Produits</button>
+    <button class="tab-btn" data-page="services">Services</button>
+    <button class="tab-btn" data-page="formations">Formations</button>
+    <button class="tab-btn" data-page="espace-client">Espace client</button>
+    <button class="tab-btn" data-page="contact">Contact</button>
   </nav>
 
   <main class="container">
-    <section class="tab-section active" id="accueil">
+    <section class="page active" id="accueil">
       <h2 class="section-title">Accueil</h2>
-      <div class="hero-card">
+      <div class="hero-box">
         <h2>Bienvenue chez Moriah Digital</h2>
         <p>
           Votre partenaire informatique à Conakry pour la vente d’ordinateurs,
@@ -364,7 +346,7 @@
           Des solutions simples, professionnelles et adaptées à vos besoins.
         </div>
 
-        <div class="hero-list">
+        <div class="list-box">
           <div>✅ Vente d’ordinateurs portables et bureautiques</div>
           <div>✅ Réparation, installation et réinstallation</div>
           <div>✅ Vente de chargeurs, souris, claviers, écrans, RAM, SSD, clés USB</div>
@@ -373,82 +355,132 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn btn-primary tab-button" data-tab="produits">Voir les produits</a>
+          <a class="btn btn-primary" href="#" onclick="openPage('produits'); return false;">Voir les produits</a>
           <a class="btn btn-whatsapp" href="https://wa.me/224625262696" target="_blank">WhatsApp</a>
         </div>
       </div>
     </section>
 
-    <section class="tab-section" id="produits">
+    <section class="page" id="produits">
       <h2 class="section-title">Produits</h2>
       <p>
         Cette partie permet aux visiteurs de voir vos produits sans créer de compte
         et de discuter directement les prix sur WhatsApp.
       </p>
 
-      <div class="products-grid">
-        <div class="product-card">
+      <div class="grid">
+        <div class="card product-card">
           <img src="Victus.jpg" alt="HP Victus Gaming" />
           <h3>HP Victus Gaming</h3>
           <p>Ordinateur performant pour bureautique avancée, graphisme et gaming.</p>
-          <span class="price-tag">Disponible</span>
+          <span class="badge">Disponible</span>
           <div class="btn-row">
             <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20HP%20Victus%20Gaming." target="_blank">Discuter le prix</a>
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="card product-card">
           <img src="X360.jpg" alt="HP X360" />
           <h3>HP X360</h3>
           <p>Ordinateur tactile polyvalent, pratique pour le travail et les études.</p>
-          <span class="price-tag">Disponible</span>
+          <span class="badge">Disponible</span>
           <div class="btn-row">
             <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20HP%20X360." target="_blank">Discuter le prix</a>
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="card product-card">
           <img src="Zbook.jpg" alt="HP ZBook" />
           <h3>HP ZBook</h3>
           <p>Machine puissante pour les professionnels et les tâches lourdes.</p>
-          <span class="price-tag">Disponible</span>
+          <span class="badge">Disponible</span>
           <div class="btn-row">
             <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20HP%20ZBook." target="_blank">Discuter le prix</a>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="l13.jpg" alt="ThinkPad L13" />
+          <h3>ThinkPad L13</h3>
+          <p>Ordinateur fiable pour bureautique, entreprise et cours en ligne.</p>
+          <span class="badge">Disponible</span>
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20ThinkPad%20L13." target="_blank">Discuter le prix</a>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="x13.jpg" alt="ThinkPad X13" />
+          <h3>ThinkPad X13</h3>
+          <p>Compact, rapide et pratique pour le travail mobile.</p>
+          <span class="badge">Disponible</span>
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20ThinkPad%20X13." target="_blank">Discuter le prix</a>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="elibook830i5.jpg" alt="EliteBook 830 i5" />
+          <h3>EliteBook 830 i5</h3>
+          <p>Bon rapport qualité-prix pour le bureau et l’école.</p>
+          <span class="badge">Disponible</span>
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20EliteBook%20830%20i5." target="_blank">Discuter le prix</a>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="elibook830i7.jpg" alt="EliteBook 830 i7" />
+          <h3>EliteBook 830 i7</h3>
+          <p>Plus de puissance pour les utilisateurs exigeants.</p>
+          <span class="badge">Disponible</span>
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20du%20EliteBook%20830%20i7." target="_blank">Discuter le prix</a>
+          </div>
+        </div>
+
+        <div class="card product-card">
+          <img src="logo2.jpg" alt="Accessoires informatiques" />
+          <h3>Accessoires informatiques</h3>
+          <p>Souris, clavier, chargeurs, écrans, RAM, disque dur, clés USB et plus.</p>
+          <span class="badge">En stock</span>
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20le%20prix%20des%20accessoires%20informatiques." target="_blank">Discuter le prix</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="tab-section" id="services">
+    <section class="page" id="services">
       <h2 class="section-title">Services</h2>
-      <div class="service-grid">
-        <div class="service-card">
+      <div class="grid">
+        <div class="card">
           <h3>Maintenance informatique</h3>
           <p>Diagnostic, réparation, nettoyage et optimisation de vos appareils.</p>
         </div>
-        <div class="service-card">
+        <div class="card">
           <h3>Réparation d’ordinateur</h3>
           <p>Réparation des pannes matérielles et logicielles.</p>
         </div>
-        <div class="service-card">
+        <div class="card">
           <h3>Installation de logiciels</h3>
           <p>Installation de logiciels utiles et professionnels.</p>
         </div>
-        <div class="service-card">
+        <div class="card">
           <h3>Réinstallation Windows</h3>
           <p>Réinstallation propre avec configuration complète.</p>
         </div>
-        <div class="service-card">
+        <div class="card">
           <h3>Assistance digitale</h3>
           <p>Accompagnement digital et conseils techniques pratiques.</p>
         </div>
       </div>
     </section>
 
-    <section class="tab-section" id="formations">
+    <section class="page" id="formations">
       <h2 class="section-title">Formations</h2>
-      <div class="feature-list">
-        <div class="feature-card">
+      <div class="grid">
+        <div class="card">
           <h3>Formation pratique en informatique</h3>
           <p>
             Formation simple et concrète pour apprendre à utiliser l’ordinateur,
@@ -458,9 +490,9 @@
       </div>
     </section>
 
-    <section class="tab-section" id="espace-client">
+    <section class="page" id="espace-client">
       <h2 class="section-title">Espace client</h2>
-      <div class="about-box">
+      <div class="info-box">
         <p>
           L’espace client permet au client connecté de retrouver les produits,
           faire une commande, demander une réparation, prendre rendez-vous,
@@ -473,26 +505,26 @@
       </div>
     </section>
 
-    <section class="tab-section" id="contact">
+    <section class="page" id="contact">
       <h2 class="section-title">Contact</h2>
-      <div class="contact-grid">
-        <div class="contact-card">
+      <div class="grid">
+        <div class="card contact-card">
           <h3>Téléphone</h3>
           <p><a href="tel:+224625262696">625 26 26 96</a></p>
           <p><a href="tel:+224666034007">666 03 40 07</a></p>
         </div>
 
-        <div class="contact-card">
+        <div class="card contact-card">
           <h3>Email</h3>
           <p><a href="mailto:motacomdguinee@gmail.com">motacomdguinee@gmail.com</a></p>
         </div>
 
-        <div class="contact-card">
+        <div class="card contact-card">
           <h3>Adresse</h3>
           <p>Dixinn Pharmaguinée, Conakry, Guinée</p>
         </div>
 
-        <div class="contact-card">
+        <div class="card contact-card">
           <h3>WhatsApp</h3>
           <p><a href="https://wa.me/224625262696" target="_blank">Discuter sur WhatsApp</a></p>
         </div>
@@ -520,41 +552,31 @@
   <button class="back-top" id="backTop" title="Retour en haut">↑</button>
 
   <script>
+    const buttons = document.querySelectorAll(".tab-btn");
+    const pages = document.querySelectorAll(".page");
     const backTop = document.getElementById("backTop");
-    const tabLinks = document.querySelectorAll(".tab-link");
-    const tabButtons = document.querySelectorAll(".tab-button");
-    const sections = document.querySelectorAll(".tab-section");
 
-    function openTab(tabId) {
-      sections.forEach(section => {
-        section.classList.remove("active");
+    function openPage(pageId) {
+      pages.forEach((page) => {
+        page.classList.remove("active");
       });
 
-      tabLinks.forEach(link => {
-        link.classList.remove("active");
+      buttons.forEach((btn) => {
+        btn.classList.remove("active");
       });
 
-      const activeSection = document.getElementById(tabId);
-      const activeLink = document.querySelector(`.tab-link[data-tab="${tabId}"]`);
+      const page = document.getElementById(pageId);
+      const button = document.querySelector(`[data-page="${pageId}"]`);
 
-      if (activeSection) activeSection.classList.add("active");
-      if (activeLink) activeLink.classList.add("active");
+      if (page) page.classList.add("active");
+      if (button) button.classList.add("active");
 
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    tabLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        openTab(link.dataset.tab);
-      });
-    });
-
-    tabButtons.forEach(button => {
+    buttons.forEach((button) => {
       button.addEventListener("click", () => {
-        openTab(button.dataset.tab);
+        openPage(button.dataset.page);
       });
     });
 
@@ -567,10 +589,7 @@
     });
 
     backTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 </body>
