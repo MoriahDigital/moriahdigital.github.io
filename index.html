@@ -4,18 +4,607 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="DhaJo-M0P4SusYsN9ZCLdC-XwDWQ_qe1ljlJUzJZWyg" />
-  <meta name="description" content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance informatique et assistance digitale à Conakry.">
-  <meta name="keywords" content="ordinateur Conakry, maintenance informatique Guinée, accessoires informatiques, Moriah Digital">
+
+  <title>Moriah Digital | Vente d’ordinateurs, accessoires et maintenance informatique à Conakry</title>
+  <meta name="description" content="Moriah Digital est spécialisé dans la vente d’ordinateurs, accessoires informatiques, maintenance informatique, installation de logiciels et assistance digitale à Dixinn Pharmaguinée, Conakry.">
+  <meta name="keywords" content="ordinateur Conakry, vente ordinateur Guinée, maintenance informatique Conakry, accessoires informatiques Conakry, réparation ordinateur Conakry, Moriah Digital">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Moriah Digital">
   <meta name="geo.region" content="GN">
   <meta name="geo.placename" content="Conakry">
   <meta name="geo.position" content="9.5474119;-13.6696543">
   <meta name="ICBM" content="9.5474119, -13.6696543">
-  <title>Moriah Digital | Site officiel</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://moriahdigital.org/">
+
+  <meta property="og:title" content="Moriah Digital | Vente d’ordinateurs à Conakry">
+  <meta property="og:description" content="Ordinateurs, accessoires et maintenance informatique à Dixinn Pharmaguinée, Conakry.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moriahdigital.org/">
+  <meta property="og:image" content="https://moriahdigital.org/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moriah Digital | Vente d’ordinateurs à Conakry">
+  <meta name="twitter:description" content="Ordinateurs, accessoires et maintenance informatique à Conakry.">
+  <meta name="twitter:image" content="https://moriahdigital.org/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComputerStore",
+    "name": "Moriah Digital",
+    "url": "https://moriahdigital.org/",
+    "logo": "https://moriahdigital.org/logo.png",
+    "image": "https://moriahdigital.org/logo.png",
+    "telephone": "+224625262696",
+    "email": "motacomdguinee@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Dixinn Pharmaguinée, juste après le centre de santé",
+      "addressLocality": "Conakry",
+      "addressCountry": "GN"
+    }
+  }
+  </script>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
+      color:#1d1d1d;
+      overflow-x:hidden;
+    }
+
+    header{
+      background:linear-gradient(135deg,#0f6f2e,#1f9c4a 55%,#2ec866);
+      color:white;
+      text-align:center;
+      padding:28px 16px 26px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      top:-70px;
+      left:-70px;
+      width:220px;
+      height:220px;
+      background:rgba(255,255,255,0.10);
+      border-radius:50%;
+      animation:floatShape 8s ease-in-out infinite;
+    }
+
+    header::after{
+      content:"";
+      position:absolute;
+      bottom:-90px;
+      right:-50px;
+      width:260px;
+      height:260px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      animation:floatShape 10s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatShape{
+      0%,100%{transform:translateY(0) translateX(0);}
+      50%{transform:translateY(10px) translateX(8px);}
+    }
+
+    .logo-box{
+      position:relative;
+      z-index:2;
+      display:inline-block;
+      background:white;
+      padding:8px;
+      border-radius:22px;
+      box-shadow:0 14px 28px rgba(0,0,0,0.22);
+      animation:fadeSlideDown 0.8s ease;
+    }
+
+    header img{
+      width:110px;
+      display:block;
+      border-radius:14px;
+    }
+
+    header h1{
+      position:relative;
+      z-index:2;
+      margin-top:18px;
+      font-size:2.4rem;
+      font-weight:800;
+      text-shadow:0 4px 10px rgba(0,0,0,0.18);
+      animation:fadeSlideUp 0.9s ease;
+    }
+
+    .header-tagline{
+      position:relative;
+      z-index:2;
+      margin-top:14px;
+      font-size:2.2rem;
+      line-height:1.5;
+      font-weight:700;
+      max-width:980px;
+      margin-left:auto;
+      margin-right:auto;
+      text-shadow:0 4px 10px rgba(0,0,0,0.18);
+      animation:fadeSlideUp 1s ease;
+    }
+
+    .promo-banner{
+      background:linear-gradient(90deg,#ffd54f,#ffec99);
+      color:#2b2b2b;
+      padding:12px 0;
+      font-weight:bold;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      overflow:hidden;
+      white-space:nowrap;
+    }
+
+    .promo-banner marquee{
+      font-size:1.05rem;
+    }
+
+    nav{
+      background:#0c5e26;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      padding:14px 10px;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      padding:11px 18px;
+      border-radius:14px;
+      cursor:pointer;
+      transition:0.25s ease;
+    }
+
+    nav a:hover{
+      background:#17873a;
+      transform:translateY(-2px);
+    }
+
+    nav a.active{
+      background:linear-gradient(135deg,#2ed067,#25b85a);
+      box-shadow:0 10px 18px rgba(0,0,0,0.20);
+    }
+
+    .container{
+      max-width:1180px;
+      margin:auto;
+      padding:22px 16px 50px;
+    }
+
+    .section{
+      display:none;
+      background:white;
+      border-radius:24px;
+      padding:24px;
+      margin-top:20px;
+      box-shadow:0 18px 35px rgba(0,0,0,0.08), 0 4px 10px rgba(0,0,0,0.05);
+      border:1px solid #edf1ef;
+    }
+
+    .section.active{
+      display:block;
+      animation:fadeUp 0.45s ease;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(14px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes fadeSlideUp{
+      from{opacity:0;transform:translateY(16px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes fadeSlideDown{
+      from{opacity:0;transform:translateY(-16px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .section-title{
+      font-size:1.95rem;
+      color:#0f6f2e;
+      margin-bottom:16px;
+      font-weight:800;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg,#f8fffa,#eef9f1);
+      border-radius:26px;
+      padding:30px 24px;
+      box-shadow:0 22px 38px rgba(15,111,46,0.10), inset 0 1px 0 rgba(255,255,255,0.7);
+      border:1px solid #dff0e5;
+    }
+
+    .guinea-watermark{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .guinea-watermark::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url('Guineecarte.png');
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:340px;
+      opacity:0.08;
+      pointer-events:none;
+      animation:softPulse 7s ease-in-out infinite;
+    }
+
+    @keyframes softPulse{
+      0%,100%{opacity:0.06; transform:scale(1);}
+      50%{opacity:0.10; transform:scale(1.03);}
+    }
+
+    .guinea-watermark > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-card h2{
+      font-size:2.45rem;
+      line-height:1.2;
+      margin-bottom:16px;
+      color:#0c5e26;
+      font-weight:800;
+    }
+
+    .hero-subtitle{
+      color:#333;
+      margin-bottom:18px;
+    }
+
+    .big-text{
+      font-size:1.45rem;
+      line-height:2;
+      font-weight:500;
+    }
+
+    .highlight{
+      background:white;
+      border-left:6px solid #21b85a;
+      padding:16px;
+      border-radius:14px;
+      margin:18px 0;
+      font-weight:bold;
+      color:#145c29;
+      box-shadow:0 10px 24px rgba(0,0,0,0.06);
+    }
+
+    .hero-list{
+      display:grid;
+      gap:14px;
+      margin:22px 0;
+      font-size:1.28rem;
+      line-height:1.9;
+    }
+
+    .hero-contact{
+      margin-top:18px;
+      line-height:2;
+      font-size:1.2rem;
+      font-weight:600;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:linear-gradient(135deg,#28c76f,#1fb65e);
+      color:white;
+      text-decoration:none;
+      text-align:center;
+      padding:13px 18px;
+      border-radius:12px;
+      font-weight:bold;
+      box-shadow:0 12px 22px rgba(40,199,111,0.25);
+      transition:0.25s ease;
+      cursor:pointer;
+      border:none;
+      margin-top:12px;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px) scale(1.01);
+    }
+
+    .btn.secondary{
+      background:linear-gradient(135deg,#0f6f2e,#17873a);
+      box-shadow:0 12px 22px rgba(15,111,46,0.25);
+    }
+
+    .feature-list,
+    .simple-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:24px;
+    }
+
+    .feature-card,
+    .simple-card{
+      background:linear-gradient(180deg,#ffffff,#f8fbf9);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+      transition:0.3s ease;
+    }
+
+    .feature-card:hover,
+    .simple-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 28px rgba(0,0,0,0.10);
+    }
+
+    .feature-card h3,
+    .simple-card h3{
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:1.08rem;
+    }
+
+    .feature-card p,
+    .simple-card p{
+      line-height:1.7;
+      color:#444;
+    }
+
+    .search-box{
+      margin:8px 0 18px;
+      text-align:center;
+    }
+
+    .search-box input{
+      width:100%;
+      max-width:560px;
+      padding:15px 16px;
+      border:1px solid #cfd8dc;
+      border-radius:14px;
+      font-size:16px;
+      outline:none;
+      box-shadow:inset 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .search-box input:focus{
+      border-color:#1b8a3e;
+      box-shadow:0 0 0 4px rgba(27,138,62,0.12);
+    }
+
+    .search-status{
+      text-align:center;
+      margin-top:10px;
+      color:#0f6f2e;
+      font-weight:bold;
+      min-height:20px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,#ffffff,#fafdfb);
+      border-radius:20px;
+      padding:14px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.06), 0 5px 12px rgba(0,0,0,0.04);
+      border:1px solid #edf1f3;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+      transform-style:preserve-3d;
+      transition:transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover{
+      transform:perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-8px) scale(1.02);
+      box-shadow:0 28px 38px rgba(0,0,0,0.14), 0 10px 18px rgba(0,0,0,0.08);
+    }
+
+    .card img{
+      width:100%;
+      border-radius:14px;
+      display:block;
+      object-fit:cover;
+      max-height:260px;
+      background:#f1f1f1;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      transition:transform 0.35s ease;
+    }
+
+    .card:hover img{
+      transform:scale(1.02);
+    }
+
+    .card h3{
+      margin:14px 0 8px;
+      font-size:1.25rem;
+      color:#163a22;
+    }
+
+    .card p{
+      margin:6px 0;
+      line-height:1.55;
+    }
+
+    .price{
+      color:#17873a;
+      font-size:1.6rem;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    .negociable{
+      color:#d97a00;
+      font-weight:bold;
+    }
+
+    .stock{
+      color:#d32f2f;
+      font-weight:bold;
+    }
+
+    .promo{
+      color:#17873a;
+      font-weight:bold;
+    }
+
+    .hidden-card{
+      display:none !important;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .contact-box{
+      background:linear-gradient(180deg,#ffffff,#f7faf8);
+      border-radius:18px;
+      padding:20px;
+      font-size:1.05rem;
+      line-height:1.9;
+      border:1px solid #e4ece7;
+      box-shadow:0 14px 24px rgba(0,0,0,0.06);
+    }
+
+    iframe{
+      width:100%;
+      min-height:320px;
+      border:0;
+      border-radius:18px;
+      box-shadow:0 14px 24px rgba(0,0,0,0.08);
+    }
+
+    .footer-note{
+      text-align:center;
+      color:#666;
+      font-size:0.95rem;
+      margin-top:24px;
+    }
+
+    .whatsapp{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      font-size:22px;
+      width:58px;
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:0 12px 22px rgba(0,0,0,0.20);
+      z-index:100;
+      transition:0.25s ease;
+    }
+
+    .call{
+      position:fixed;
+      bottom:88px;
+      right:20px;
+      background:#17873a;
+      color:white;
+      font-size:22px;
+      width:58px;
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      text-decoration:none;
+      box-shadow:0 12px 22px rgba(0,0,0,0.20);
+      z-index:100;
+      transition:0.25s ease;
+    }
+
+    .whatsapp:hover,
+    .call:hover{
+      transform:scale(1.08);
+    }
+
+    @media (max-width: 860px){
+      header h1{
+        font-size:2rem;
+      }
+
+      .header-tagline{
+        font-size:1.65rem;
+      }
+
+      .hero-card h2{
+        font-size:2rem;
+      }
+
+      .big-text{
+        font-size:1.18rem;
+      }
+
+      .hero-list{
+        font-size:1.1rem;
+      }
+
+      .hero-contact{
+        font-size:1.05rem;
+      }
+
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .card:hover{
+        transform:translateY(-4px);
+      }
+
+      .promo-banner marquee{
+        font-size:0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <div class="logo-box">
       <img src="logo.png" alt="Logo Moriah Digital">
@@ -40,10 +629,12 @@
   </nav>
 
   <div class="container">
+
     <section class="section active" id="accueil">
       <div class="hero-card guinea-watermark">
         <h2>Bienvenue chez Moriah Digital 💻</h2>
-        <p class="big-text">
+
+        <p class="hero-subtitle big-text">
           Votre espace de confiance pour l’achat d’ordinateurs, d’accessoires informatiques et les services de maintenance professionnelle à Conakry.
         </p>
 
@@ -65,7 +656,7 @@
         </div>
 
         <div class="btn-row">
-          <a class="btn" href="login.html">Créer un compte</a>
+          <a class="btn secondary" onclick="showSection('produits', document.querySelector('nav a:nth-child(2)'))">Voir nos produits</a>
           <a class="btn secondary" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20souhaite%20avoir%20plus%20d%27informations." target="_blank">Nous écrire sur WhatsApp</a>
         </div>
       </div>
@@ -100,12 +691,14 @@
       </div>
 
       <div class="products" id="productList">
+
         <div class="card product-card">
           <img src="Victus.jpg" alt="HP Victus Gaming">
           <h3>HP Victus Gaming</h3>
           <p>Core i7, 13ème génération</p>
           <p class="negociable">Prix négociable</p>
           <p class="stock">Stock limité</p>
+          <p class="promo">Disponible</p>
           <div class="price">13.500.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20Victus%20Gaming." target="_blank">Discuter du prix</a>
         </div>
@@ -125,6 +718,7 @@
           <h3>Lenovo ThinkPad L13</h3>
           <p>10ème génération</p>
           <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
           <div class="price">3.000.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20Lenovo%20ThinkPad%20L13." target="_blank">Discuter du prix</a>
         </div>
@@ -134,6 +728,7 @@
           <h3>HP EliteBook 830</h3>
           <p>Core i5, 8ème génération</p>
           <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
           <div class="price">2.800.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20EliteBook%20830." target="_blank">Discuter du prix</a>
         </div>
@@ -143,6 +738,7 @@
           <h3>HP ZBook</h3>
           <p>Core i7, 8ème génération</p>
           <p class="negociable">Prix négociable</p>
+          <p class="stock">Stock limité</p>
           <div class="price">5.500.000 FG</div>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20du%20HP%20ZBook." target="_blank">Discuter du prix</a>
         </div>
@@ -188,6 +784,7 @@
           <p class="negociable">Prix négociable</p>
           <a class="btn" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20veux%20discuter%20du%20prix%20de%20l%27%C3%A9cran." target="_blank">Discuter du prix</a>
         </div>
+
       </div>
     </section>
 
@@ -228,6 +825,10 @@
           <h3>Réinstallation système</h3>
           <p>Réinstallation Windows, optimisation et configuration complète.</p>
         </div>
+        <div class="simple-card">
+          <h3>Mise à niveau</h3>
+          <p>Ajout de RAM, SSD, nettoyage logiciel et amélioration des performances de votre machine.</p>
+        </div>
       </div>
     </section>
 
@@ -239,6 +840,8 @@
           <p>📞 666 03 40 07</p>
           <p>📧 motacomdguinee@gmail.com</p>
           <p>📍 Dixinn Pharmaguinée, juste après le centre de santé, Conakry</p>
+          <p>🕒 Disponible pour la vente, l’assistance et la maintenance informatique.</p>
+          <a class="btn secondary" href="https://wa.me/224625262696?text=Bonjour%20Moriah%20Digital,%20je%20souhaite%20vous%20contacter." target="_blank">Nous contacter sur WhatsApp</a>
         </div>
 
         <iframe
@@ -256,6 +859,53 @@
   <a class="whatsapp" href="https://wa.me/224625262696" target="_blank">💬</a>
   <a class="call" href="tel:625262696">📞</a>
 
-  <script type="module" src="app.js"></script>
+  <script>
+    function showSection(sectionId, element) {
+      const sections = document.querySelectorAll('.section');
+      const links = document.querySelectorAll('nav a[onclick]');
+
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      document.getElementById(sectionId).classList.add('active');
+
+      if (element) {
+        element.classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
+      const allCards = document.querySelectorAll(".product-card");
+      const searchStatus = document.getElementById("searchStatus");
+      let visibleCount = 0;
+
+      allCards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (input === "" || text.includes(input)) {
+          card.classList.remove("hidden-card");
+          visibleCount++;
+        } else {
+          card.classList.add("hidden-card");
+        }
+      });
+
+      if (input === "") {
+        searchStatus.textContent = "";
+      } else if (visibleCount > 0) {
+        searchStatus.textContent = visibleCount + " résultat(s) trouvé(s)";
+      } else {
+        searchStatus.textContent = "Aucun résultat trouvé";
+      }
+    }
+  </script>
+
 </body>
 </html>
