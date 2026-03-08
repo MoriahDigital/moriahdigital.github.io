@@ -235,14 +235,6 @@
       max-width:760px;
     }
 
-    .hero-actions,
-    .client-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:22px;
-    }
-
     .btn{
       display:inline-block;
       padding:14px 20px;
@@ -274,7 +266,6 @@
       background:#f7fff9;
     }
 
-    .cards-grid,
     .products-grid,
     .services-grid,
     .formations-grid,
@@ -321,6 +312,13 @@
       margin-bottom:12px;
       line-height:1.8;
       font-size:1.05rem;
+    }
+
+    .client-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:22px;
     }
 
     .contact-card iframe{
@@ -413,11 +411,6 @@
             la maintenance informatique, la réparation, l’installation de logiciels
             et la vente d’accessoires informatiques.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" onclick="showPage('produits')">Voir les produits</a>
-            <a class="btn btn-outline" href="https://wa.me/224625262696" target="_blank">WhatsApp</a>
-          </div>
         </div>
       </div>
     </div>
@@ -533,8 +526,8 @@
         </p>
 
         <div class="client-actions">
-          <a class="btn btn-primary" href="login.html">Connexion</a>
-          <a class="btn btn-outline" href="login.html">Créer un compte</a>
+          <a class="btn btn-primary" href="login.html?mode=login">Connexion</a>
+          <a class="btn btn-outline" href="login.html?mode=register">Créer un compte</a>
         </div>
       </div>
     </div>
@@ -585,12 +578,12 @@
 
   <script>
     function showPage(page){
-      let pages = document.querySelectorAll(".page");
+      const pages = document.querySelectorAll(".page");
       pages.forEach(p => p.classList.remove("active"));
       document.getElementById(page).classList.add("active");
-      window.scrollTo({top:0,behavior:"smooth"});
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   </script>
 
 </body>
-</html>
+  </html>
