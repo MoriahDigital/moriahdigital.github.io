@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Espace client - Moriah Digital</title>
+  <title>Espace client professionnel - Moriah Digital</title>
+
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
     body{
       font-family:Arial,sans-serif;
-      background:#f4f7f5;
+      background:linear-gradient(180deg,#edf4ef 0%,#f7f7f7 100%);
       color:#1d1d1d;
     }
 
     header{
-      background:#0f6f2e;
+      background:linear-gradient(135deg,#0b6623,#149942 55%,#2ec866);
       color:white;
-      padding:22px 16px;
+      padding:24px 16px;
       text-align:center;
+      box-shadow:0 8px 24px rgba(0,0,0,0.15);
     }
 
     header h1{
@@ -25,13 +31,17 @@
       margin-bottom:8px;
     }
 
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:20px;
+    header p{
+      line-height:1.6;
     }
 
-    .top-bar{
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:22px 16px 40px;
+    }
+
+    .top-actions{
       display:flex;
       flex-wrap:wrap;
       justify-content:space-between;
@@ -39,53 +49,203 @@
       margin-bottom:20px;
     }
 
-    .card{
-      background:white;
-      border-radius:16px;
-      padding:18px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.06);
-    }
-
     .btn{
       display:inline-block;
       padding:12px 18px;
-      border-radius:10px;
-      background:#129a43;
-      color:white;
+      border-radius:12px;
       text-decoration:none;
       border:none;
+      font-weight:700;
       cursor:pointer;
-      font-weight:bold;
+      transition:0.25s ease;
+    }
+
+    .btn-primary{
+      background:#149942;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
     }
 
     .btn-danger{
       background:#c0392b;
+      color:white;
     }
 
-    .grid{
+    .btn-danger:hover{
+      transform:translateY(-2px);
+    }
+
+    .welcome-box{
+      background:white;
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.06);
+      border:1px solid #e4ece6;
+      margin-bottom:20px;
+    }
+
+    .welcome-box h2{
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:1.6rem;
+    }
+
+    .stats-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:18px;
       margin-bottom:22px;
     }
 
-    .card h2{
-      color:#0f6f2e;
-      margin-bottom:12px;
-      font-size:1.3rem;
+    .stat-card{
+      background:white;
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.05);
+      border:1px solid #e6ece8;
     }
 
-    .card p{
+    .stat-card h3{
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:1.05rem;
+    }
+
+    .stat-value{
+      font-size:1.8rem;
+      font-weight:800;
+      color:#222;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+      margin-bottom:22px;
+    }
+
+    .card{
+      background:white;
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.06);
+      border:1px solid #e4ece6;
+    }
+
+    .card h2{
+      color:#0f6f2e;
+      margin-bottom:14px;
+      font-size:1.45rem;
+    }
+
+    .profile-item{
+      margin-bottom:12px;
+      line-height:1.8;
+    }
+
+    .profile-label{
+      font-weight:700;
+      color:#145c29;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:10px;
+      background:white;
+      border-radius:14px;
+      overflow:hidden;
+    }
+
+    th, td{
+      padding:12px;
+      text-align:left;
+      border-bottom:1px solid #ececec;
+      font-size:0.95rem;
+    }
+
+    th{
+      background:#0f6f2e;
+      color:white;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:0.85rem;
+      font-weight:700;
+    }
+
+    .badge-success{
+      background:#d4edda;
+      color:#155724;
+    }
+
+    .badge-warning{
+      background:#fff3cd;
+      color:#856404;
+    }
+
+    .badge-info{
+      background:#d1ecf1;
+      color:#0c5460;
+    }
+
+    .section{
+      background:white;
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 12px 28px rgba(0,0,0,0.06);
+      border:1px solid #e4ece6;
+      margin-bottom:22px;
+    }
+
+    .section h2{
+      color:#0f6f2e;
+      margin-bottom:14px;
+      font-size:1.45rem;
+    }
+
+    .info-note{
+      margin-top:14px;
+      background:#eef8f1;
+      border-left:5px solid #149942;
+      padding:14px;
+      border-radius:10px;
       line-height:1.7;
-      margin-bottom:8px;
     }
 
     footer{
-      text-align:center;
-      padding:22px;
       background:#0b4f20;
       color:white;
-      margin-top:30px;
+      text-align:center;
+      padding:22px;
+      margin-top:20px;
+    }
+
+    @media (max-width:900px){
+      .grid-2{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:700px){
+      header h1{
+        font-size:1.6rem;
+      }
+
+      .stat-value{
+        font-size:1.5rem;
+      }
+
+      table{
+        display:block;
+        overflow-x:auto;
+      }
     }
   </style>
 </head>
@@ -93,34 +253,202 @@
 
   <header>
     <h1>Espace client Moriah Digital</h1>
-    <p>Bienvenue dans votre espace personnel</p>
+    <p>Suivi professionnel de votre compte, commandes, réparations et paiements.</p>
   </header>
 
   <div class="container">
 
-    <div class="top-bar">
-      <a href="index.html" class="btn">Retour au site</a>
+    <div class="top-actions">
+      <a href="index.html" class="btn btn-primary">Retour au site</a>
       <button id="logoutBtn" class="btn btn-danger">Déconnexion</button>
     </div>
 
-    <div class="grid">
+    <div class="welcome-box">
+      <h2>Bienvenue <span id="welcomeName">Client</span></h2>
+      <p>
+        Cet espace vous permet de consulter vos informations personnelles,
+        suivre vos commandes, vos réparations, vos paiements et votre historique.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Commandes</h3>
+        <div class="stat-value" id="ordersCount">2</div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Réparations</h3>
+        <div class="stat-value" id="repairsCount">2</div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Paiements effectués</h3>
+        <div class="stat-value" id="paymentsCount">2</div>
+      </div>
+
+      <div class="stat-card">
+        <h3>Reste à payer</h3>
+        <div class="stat-value" id="remainingAmount">1 300 000 GNF</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
       <div class="card">
-        <h2>Mon compte</h2>
-        <p><strong>Nom :</strong> <span id="clientName">Chargement...</span></p>
-        <p><strong>Numéro :</strong> <span id="clientPhone">Chargement...</span></p>
-        <p><strong>Email :</strong> <span id="clientEmail">Chargement...</span></p>
+        <h2>Profil client</h2>
+
+        <div class="profile-item">
+          <span class="profile-label">Nom et prénom :</span>
+          <span id="clientName">Chargement...</span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Numéro :</span>
+          <span id="clientPhone">Chargement...</span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">E-mail :</span>
+          <span id="clientEmail">Chargement...</span>
+        </div>
+
+        <div class="profile-item">
+          <span class="profile-label">Compte créé le :</span>
+          <span id="clientCreatedAt">Chargement...</span>
+        </div>
       </div>
 
       <div class="card">
-        <h2>Mes informations</h2>
-        <p>Vous pouvez suivre vos commandes, réparations et paiements depuis cet espace.</p>
+        <h2>Résumé du compte</h2>
+        <p>Statut du compte : <span class="badge badge-success">Actif</span></p>
+        <p>Dernière activité : <span id="lastActivity">Aujourd’hui</span></p>
+        <p>Dernière connexion : <span id="lastLogin">Aujourd’hui</span></p>
+
+        <div class="info-note">
+          Pour toute commande, demande de réparation ou précision sur un paiement,
+          contactez directement Moriah Digital via WhatsApp ou téléphone.
+        </div>
       </div>
+    </div>
+
+    <div class="section">
+      <h2>Mes commandes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Produit</th>
+            <th>Montant</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>02/03/2026</td>
+            <td>HP Victus Gaming</td>
+            <td>3 800 000 GNF</td>
+            <td><span class="badge badge-warning">En attente</span></td>
+          </tr>
+          <tr>
+            <td>15/02/2026</td>
+            <td>Chargeur HP</td>
+            <td>250 000 GNF</td>
+            <td><span class="badge badge-success">Payé</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Mes réparations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date dépôt</th>
+            <th>Appareil</th>
+            <th>Panne</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>04/03/2026</td>
+            <td>HP EliteBook</td>
+            <td>Ne s’allume pas</td>
+            <td><span class="badge badge-info">Diagnostic en cours</span></td>
+          </tr>
+          <tr>
+            <td>20/02/2026</td>
+            <td>Dell Latitude</td>
+            <td>Réinstallation Windows</td>
+            <td><span class="badge badge-success">Terminé</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Mes paiements</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Objet</th>
+            <th>Montant payé</th>
+            <th>Reste</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>05/03/2026</td>
+            <td>HP Victus Gaming</td>
+            <td>2 500 000 GNF</td>
+            <td>1 300 000 GNF</td>
+          </tr>
+          <tr>
+            <td>20/02/2026</td>
+            <td>Réinstallation Windows</td>
+            <td>180 000 GNF</td>
+            <td>0 GNF</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Historique</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Action</th>
+            <th>Détail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>05/03/2026</td>
+            <td>Paiement</td>
+            <td>Versement partiel sur HP Victus Gaming</td>
+          </tr>
+          <tr>
+            <td>04/03/2026</td>
+            <td>Réparation</td>
+            <td>Dépôt HP EliteBook pour diagnostic</td>
+          </tr>
+          <tr>
+            <td>02/03/2026</td>
+            <td>Commande</td>
+            <td>Commande HP Victus Gaming enregistrée</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
   </div>
 
   <footer>
-    <p>Moriah Digital - Espace client</p>
+    <p>Moriah Digital - Espace client professionnel</p>
   </footer>
 
   <script type="module">
@@ -135,9 +463,18 @@
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const logoutBtn = document.getElementById("logoutBtn");
+    const welcomeName = document.getElementById("welcomeName");
     const clientName = document.getElementById("clientName");
     const clientPhone = document.getElementById("clientPhone");
     const clientEmail = document.getElementById("clientEmail");
+    const clientCreatedAt = document.getElementById("clientCreatedAt");
+
+    function formatDate(dateString) {
+      if (!dateString) return "Non disponible";
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return "Non disponible";
+      return date.toLocaleDateString("fr-FR");
+    }
 
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
@@ -145,7 +482,7 @@
         return;
       }
 
-      clientEmail.textContent = user.email || "";
+      clientEmail.textContent = user.email || "Non disponible";
 
       try {
         const docRef = doc(db, "clients", user.uid);
@@ -153,16 +490,28 @@
 
         if (docSnap.exists()) {
           const data = docSnap.data();
-          clientName.textContent = data.nomPrenom || "";
-          clientPhone.textContent = data.numero || "";
-          clientEmail.textContent = data.email || user.email || "";
+
+          const nom = data.nomPrenom || "Client";
+          const numero = data.numero || "Non disponible";
+          const email = data.email || user.email || "Non disponible";
+          const dateCreation = data.dateCreation || "";
+
+          welcomeName.textContent = nom;
+          clientName.textContent = nom;
+          clientPhone.textContent = numero;
+          clientEmail.textContent = email;
+          clientCreatedAt.textContent = formatDate(dateCreation);
         } else {
+          welcomeName.textContent = "Client";
           clientName.textContent = "Non disponible";
           clientPhone.textContent = "Non disponible";
+          clientCreatedAt.textContent = "Non disponible";
         }
       } catch (error) {
+        welcomeName.textContent = "Client";
         clientName.textContent = "Erreur";
         clientPhone.textContent = "Erreur";
+        clientCreatedAt.textContent = "Erreur";
       }
     });
 
@@ -175,5 +524,6 @@
       }
     });
   </script>
+
 </body>
 </html>
