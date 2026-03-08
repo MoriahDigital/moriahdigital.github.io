@@ -6,64 +6,173 @@
   <title>Espace client - Moriah Digital</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
+
     body{
       font-family:Arial,sans-serif;
       background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
       color:#1d1d1d;
       min-height:100vh;
     }
-    .container{max-width:560px;margin:36px auto;padding:20px}
-    .card{
-      background:#fff;border-radius:26px;padding:28px 22px;
-      box-shadow:0 18px 35px rgba(0,0,0,0.08);border:1px solid #e7eeea;
+
+    .container{
+      max-width:560px;
+      margin:36px auto;
+      padding:20px;
     }
-    .logo{text-align:center;margin-bottom:18px}
+
+    .card{
+      background:#fff;
+      border-radius:26px;
+      padding:28px 22px;
+      box-shadow:0 18px 35px rgba(0,0,0,0.08);
+      border:1px solid #e7eeea;
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:18px;
+    }
+
     .logo img{
-      width:100px;border-radius:18px;background:#fff;padding:6px;
+      width:100px;
+      border-radius:18px;
+      background:#fff;
+      padding:6px;
       box-shadow:0 10px 20px rgba(0,0,0,0.12);
     }
-    h1{text-align:center;color:#0f6f2e;margin-bottom:10px;font-size:2rem}
-    .subtitle{text-align:center;color:#555;margin-bottom:24px;line-height:1.7}
-    label{display:block;margin:14px 0 8px;color:#145c29;font-weight:700;font-size:1.05rem}
+
+    h1{
+      text-align:center;
+      color:#0f6f2e;
+      margin-bottom:10px;
+      font-size:2rem;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:#555;
+      margin-bottom:24px;
+      line-height:1.7;
+    }
+
+    label{
+      display:block;
+      margin:14px 0 8px;
+      color:#145c29;
+      font-weight:700;
+      font-size:1.05rem;
+    }
+
     input{
-      width:100%;padding:16px;border:1px solid #cfd8d3;border-radius:18px;
-      font-size:1rem;outline:none;
+      width:100%;
+      padding:16px;
+      border:1px solid #cfd8d3;
+      border-radius:18px;
+      font-size:1rem;
+      outline:none;
     }
-    .password-wrap{position:relative}
-    .password-wrap input{padding-right:56px}
+
+    input:focus{
+      border-color:#129a43;
+      box-shadow:0 0 0 3px rgba(18,154,67,0.12);
+    }
+
+    .password-wrap{
+      position:relative;
+    }
+
+    .password-wrap input{
+      padding-right:56px;
+    }
+
     .eye-btn{
-      position:absolute;right:12px;top:50%;transform:translateY(-50%);
-      border:none;background:transparent;font-size:22px;cursor:pointer;
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      border:none;
+      background:transparent;
+      font-size:22px;
+      cursor:pointer;
+      line-height:1;
     }
+
     .main-btn{
-      width:100%;margin-top:18px;padding:16px;border:none;border-radius:18px;
-      color:#fff;font-size:1.1rem;font-weight:700;cursor:pointer;background:#148c3a;
+      width:100%;
+      margin-top:18px;
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      color:#fff;
+      font-size:1.1rem;
+      font-weight:700;
+      cursor:pointer;
+      background:#148c3a;
     }
+
     .link-btn{
-      display:block;width:100%;margin-top:14px;padding:14px;border:none;border-radius:16px;
-      background:#7a7a7a;color:#fff;font-size:1rem;font-weight:700;cursor:pointer;
+      display:block;
+      width:100%;
+      margin-top:14px;
+      padding:14px;
+      border:none;
+      border-radius:16px;
+      background:#7a7a7a;
+      color:#fff;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
     }
-    .message{margin-top:18px;text-align:center;font-weight:700;min-height:28px;line-height:1.5}
-    .success{color:#148c3a}.error{color:#b3261e}
-    .muted{text-align:center;color:#666;margin-top:16px;line-height:1.7}
+
+    .message{
+      margin-top:18px;
+      text-align:center;
+      font-weight:700;
+      min-height:28px;
+      line-height:1.5;
+    }
+
+    .success{color:#148c3a}
+    .error{color:#b3261e}
+
+    .muted{
+      text-align:center;
+      color:#666;
+      margin-top:16px;
+      line-height:1.7;
+    }
+
     .switch-link{
-      display:block;text-align:center;margin-top:18px;color:#0f6f2e;
-      font-weight:700;text-decoration:none;
+      display:block;
+      text-align:center;
+      margin-top:18px;
+      color:#0f6f2e;
+      font-weight:700;
+      text-decoration:none;
     }
+
     .back-link{
-      display:inline-block;margin-top:14px;text-align:center;width:100%;
-      color:#0f6f2e;font-weight:700;text-decoration:none;
+      display:inline-block;
+      margin-top:14px;
+      text-align:center;
+      width:100%;
+      color:#0f6f2e;
+      font-weight:700;
+      text-decoration:none;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="card">
-      <div class="logo"><img src="logo.png" alt="Logo Moriah Digital"></div>
+      <div class="logo">
+        <img src="logo.png" alt="Logo Moriah Digital">
+      </div>
 
       <h1 id="pageTitle">Connexion</h1>
       <p class="subtitle" id="pageSubtitle">Connectez-vous à votre espace client.</p>
 
+      <!-- CONNEXION -->
       <form id="loginForm">
         <label for="loginEmail">Adresse e-mail</label>
         <input type="email" id="loginEmail" placeholder="Entrez votre adresse e-mail" required>
@@ -78,6 +187,7 @@
         <button type="button" class="link-btn" id="forgotBtn">Mot de passe oublié / Réinitialiser</button>
       </form>
 
+      <!-- CREER UN COMPTE -->
       <form id="registerForm" style="display:none;">
         <label for="fullName">Nom et prénom</label>
         <input type="text" id="fullName" placeholder="Entrez votre nom et prénom" required>
@@ -105,10 +215,14 @@
 
       <div id="message" class="message"></div>
 
-      <a href="login.html?mode=register" id="toRegister" class="switch-link" style="display:none;">Créer un compte</a>
-      <a href="login.html?mode=login" id="toLogin" class="switch-link" style="display:none;">Retour à la connexion</a>
+      <a href="login.html?mode=login" id="toLogin" class="switch-link" style="display:none;">
+        Retour à la connexion
+      </a>
 
-      <p class="muted">Votre espace client vous permet de suivre vos commandes, réparations et paiements.</p>
+      <p class="muted">
+        Votre espace client vous permet de suivre vos commandes, réparations et paiements.
+      </p>
+
       <a href="index.html" class="back-link">← Retour au site</a>
     </div>
   </div>
@@ -132,7 +246,6 @@
     const pageSubtitle = document.getElementById("pageSubtitle");
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
-    const toRegister = document.getElementById("toRegister");
     const toLogin = document.getElementById("toLogin");
     const message = document.getElementById("message");
 
@@ -153,7 +266,7 @@
       pageSubtitle.textContent = "Connectez-vous à votre espace client.";
       loginForm.style.display = "block";
       registerForm.style.display = "none";
-      toRegister.style.display = "block";
+      toLogin.style.display = "none";
     }
 
     document.querySelectorAll(".eye-btn").forEach(btn => {
@@ -165,13 +278,16 @@
 
     loginForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const email = document.getElementById("loginEmail").value.trim();
       const password = document.getElementById("loginPassword").value.trim();
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
         showMessage("Connexion réussie. Redirection...", "success");
-        setTimeout(() => window.location.href = "dashboard.html", 1000);
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
       } catch (error) {
         showMessage("Erreur : e-mail ou mot de passe incorrect.", "error");
       }
@@ -179,11 +295,17 @@
 
     registerForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const fullName = document.getElementById("fullName").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const email = document.getElementById("registerEmail").value.trim();
       const password = document.getElementById("registerPassword").value.trim();
       const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      if (!fullName || !phone) {
+        showMessage("Veuillez remplir le nom et le numéro.", "error");
+        return;
+      }
 
       if (password !== confirmPassword) {
         showMessage("Les mots de passe ne correspondent pas.", "error");
@@ -192,14 +314,18 @@
 
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
         await setDoc(doc(db, "clients", userCredential.user.uid), {
           nomPrenom: fullName,
           numero: phone,
           email: email,
           dateCreation: new Date().toISOString()
         });
+
         showMessage("Compte créé avec succès. Redirection...", "success");
-        setTimeout(() => window.location.href = "dashboard.html", 1000);
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
       } catch (error) {
         showMessage("Erreur : impossible de créer le compte.", "error");
       }
@@ -207,6 +333,7 @@
 
     document.getElementById("forgotBtn").addEventListener("click", async () => {
       const email = document.getElementById("loginEmail").value.trim();
+
       if (!email) {
         showMessage("Entrez votre adresse e-mail pour réinitialiser le mot de passe.", "error");
         return;
