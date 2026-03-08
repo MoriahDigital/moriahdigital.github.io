@@ -1,368 +1,261 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Moriah Digital | Informatique à Conakry</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Arial,sans-serif;
-      background:linear-gradient(180deg,#eef6f0 0%,#f7f7f7 100%);
-      color:#1d1d1d;
-      line-height:1.6;
-    }
-    header{
-      background:linear-gradient(135deg,#0b6623,#149942 55%,#2ec866);
-      color:white;
-      text-align:center;
-      padding:34px 16px 28px;
-      position:relative;
-      overflow:hidden;
-    }
-    .logo{
-      width:110px;
-      height:auto;
-      border-radius:20px;
-      background:white;
-      padding:8px;
-      display:block;
-      margin:0 auto 16px auto;
-      box-shadow:0 12px 30px rgba(0,0,0,0.20);
-    }
-    .brand-title{
-      font-size:2.4rem;
-      font-weight:800;
-      margin-bottom:12px;
-      text-shadow:0 4px 12px rgba(0,0,0,0.25);
-    }
-    .brand-subtitle{
-      max-width:900px;
-      margin:0 auto;
-      font-size:1.05rem;
-      line-height:1.8;
-    }
-    nav{
-      background:#0c5e26;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:12px;
-      padding:16px 10px;
-      position:sticky;
-      top:0;
-      z-index:100;
-      box-shadow:0 8px 20px rgba(0,0,0,0.12);
-    }
-    nav a{
-      color:white;
-      font-weight:700;
-      text-decoration:none;
-      padding:10px 16px;
-      border-radius:12px;
-      cursor:pointer;
-    }
-    nav a:hover{background:#18853b}
-    .container{
-      max-width:1180px;
-      margin:auto;
-      padding:22px 16px 50px;
-    }
-    .page{
-      display:none;
-      background:white;
-      padding:24px;
-      border-radius:22px;
-      margin-top:20px;
-      box-shadow:0 16px 34px rgba(0,0,0,0.08);
-      border:1px solid #e4ece6;
-    }
-    .page.active{display:block}
-    .section-title{
-      color:#0f6f2e;
-      font-size:1.9rem;
-      margin-bottom:18px;
-      font-weight:800;
-    }
-    .hero-3d{
-      background:linear-gradient(135deg,#f8fff9,#edf8f1 55%,#dff5e6);
-      border:1px solid #d8eadc;
-      border-radius:28px;
-      padding:34px 24px;
-      box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    }
-    .hero-title-3d{
-      font-size:2.1rem;
-      line-height:1.2;
-      color:#0c5e26;
-      margin-bottom:16px;
-      font-weight:800;
-      text-shadow:0 3px 10px rgba(0,0,0,0.10);
-    }
-    .hero-text{
-      font-size:1.08rem;
-      line-height:1.9;
-      color:#2b2b2b;
-      max-width:760px;
-    }
-    .btn{
-      display:inline-block;
-      padding:14px 20px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:700;
-      transition:0.25s ease;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#149942,#27c95d);
-      color:white;
-      box-shadow:0 12px 24px rgba(20,153,66,0.25);
-    }
-    .btn-outline{
-      background:white;
-      color:#149942;
-      border:2px solid #149942;
-    }
-    .products-grid,.services-grid,.formations-grid,.contact-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:18px;
-      margin-top:20px;
-    }
-    .card,.product,.client-box{
-      background:#fff;
-      border:1px solid #e6ece8;
-      border-radius:18px;
-      padding:18px;
-      box-shadow:0 8px 18px rgba(0,0,0,0.04);
-    }
-    .card h3,.product h3{
-      color:#0f6f2e;
-      margin-bottom:10px;
-      font-size:1.2rem;
-    }
-    .product img{
-      width:100%;
-      border-radius:12px;
-      display:block;
-      margin-bottom:12px;
-    }
-    .client-box{
-      background:linear-gradient(135deg,#f8fff9,#edf8f1);
-      border:1px solid #d8eadc;
-      border-radius:24px;
-      padding:26px;
-    }
-    .client-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:22px;
-    }
-    .contact-card iframe{
-      width:100%;
-      height:250px;
-      border:0;
-      border-radius:12px;
-      margin-top:10px;
-    }
-    .whatsapp-float{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      width:60px;
-      height:60px;
-      background:#25d366;
-      color:white;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:28px;
-      text-decoration:none;
-      box-shadow:0 10px 20px rgba(0,0,0,0.22);
-      z-index:999;
-    }
-    footer{
-      background:#0b4f20;
-      color:white;
-      text-align:center;
-      padding:22px;
-      margin-top:30px;
-    }
-    @media (max-width:700px){
-      .brand-title{font-size:2rem}
-      .hero-title-3d{font-size:1.7rem}
-      .hero-text{font-size:1rem}
-      .section-title{font-size:1.6rem}
-    }
-  </style>
+<title>Moriah Digital - Conakry</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f7f6;
+color:#222;
+}
+
+header{
+background:#0f6f2e;
+padding:18px;
+text-align:center;
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
+nav{
+background:#0f6f2e;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+padding:8px 12px;
+border-radius:8px;
+}
+
+nav a:hover{
+background:#1fa44c;
+}
+
+section{
+padding:30px 20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+margin-top:20px;
+}
+
+h2{
+color:#0f6f2e;
+margin-bottom:15px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 22px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.btn-primary{
+background:#22b455;
+color:white;
+}
+
+.btn-outline{
+border:2px solid #22b455;
+color:#22b455;
+}
+
+footer{
+background:#0f6f2e;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:28px;
+text-decoration:none;
+}
+
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="logo.png" class="logo" alt="Logo Moriah Digital">
-    <div class="brand-title">Moriah Digital</div>
-    <div class="brand-subtitle">
-      Vente d’ordinateurs • Maintenance informatique • Accessoires • Formation
-    </div>
-  </header>
+<header>
+Moriah Digital - Conakry
+</header>
 
-  <nav>
-    <a onclick="showPage('accueil')">Accueil</a>
-    <a onclick="showPage('produits')">Produits</a>
-    <a onclick="showPage('services')">Services</a>
-    <a onclick="showPage('formations')">Formations</a>
-    <a onclick="showPage('client')">Espace client</a>
-    <a onclick="showPage('contact')">Contact</a>
-  </nav>
+<nav>
 
-  <div class="container">
+<a href="#accueil">Accueil</a>
+<a href="#produits">Produits</a>
+<a href="#services">Services</a>
+<a href="#formations">Formations</a>
+<a href="#client">Espace client</a>
+<a href="#contact">Contact</a>
 
-    <div id="accueil" class="page active">
-      <div class="hero-3d">
-        <h2 class="hero-title-3d">Votre partenaire informatique de confiance à Conakry</h2>
-        <p class="hero-text">
-          Moriah Digital vous accompagne pour l’achat d’ordinateurs,
-          la maintenance informatique, la réparation, l’installation de logiciels
-          et la vente d’accessoires informatiques.
-        </p>
-      </div>
-    </div>
+</nav>
 
-    <div id="produits" class="page">
-      <h2 class="section-title">Produits</h2>
-      <div class="products-grid">
-        <div class="product">
-          <img src="Victus.jpg" alt="HP Victus Gaming">
-          <h3>HP Victus Gaming</h3>
-          <p>Ordinateur puissant pour travail et gaming.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<section id="accueil">
 
-        <div class="product">
-          <img src="X360.jpg" alt="Lenovo X360">
-          <h3>Lenovo X360</h3>
-          <p>Ordinateur pliable tactile pour travail et études.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<div class="card">
 
-        <div class="product">
-          <img src="Zbook.jpg" alt="HP ZBook">
-          <h3>HP ZBook</h3>
-          <p>Ordinateur puissant pour professionnels.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<h2>Bienvenue chez Moriah Digital</h2>
 
-        <div class="product">
-          <img src="l13.jpg" alt="ThinkPad L13">
-          <h3>ThinkPad L13</h3>
-          <p>Ordinateur fiable pour bureau et études.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<p>
+Votre partenaire informatique de confiance à Conakry.
+</p>
 
-        <div class="product">
-          <img src="x13.jpg" alt="ThinkPad X13">
-          <h3>ThinkPad X13</h3>
-          <p>Ordinateur compact et rapide.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<p>
+Nous vous accompagnons pour :
+</p>
 
-        <div class="product">
-          <img src="elibook830i5.jpg" alt="EliteBook 830 i5">
-          <h3>EliteBook 830 i5</h3>
-          <p>Ordinateur performant pour travail.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
+<ul>
+<li>Vente d’ordinateurs</li>
+<li>Maintenance informatique</li>
+<li>Installation de logiciels</li>
+<li>Réparation d’ordinateurs</li>
+<li>Vente d’accessoires informatiques</li>
+</ul>
 
-        <div class="product">
-          <img src="elibook830i7.jpg" alt="EliteBook 830 i7">
-          <h3>EliteBook 830 i7</h3>
-          <p>Ordinateur puissant pour professionnels.</p>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Discuter le prix</a>
-        </div>
-      </div>
-    </div>
+</div>
 
-    <div id="services" class="page">
-      <h2 class="section-title">Services</h2>
-      <div class="services-grid">
-        <div class="card"><h3>Maintenance informatique</h3><p>Diagnostic, entretien et optimisation de vos appareils.</p></div>
-        <div class="card"><h3>Installation logiciels</h3><p>Installation de logiciels utiles et professionnels.</p></div>
-        <div class="card"><h3>Réinstallation Windows</h3><p>Réinstallation propre et configuration complète.</p></div>
-        <div class="card"><h3>Conseil informatique</h3><p>Accompagnement et orientation selon vos besoins.</p></div>
-        <div class="card"><h3>Vente accessoires</h3><p>Chargeurs, souris, claviers, écrans, RAM, SSD, clés USB.</p></div>
-      </div>
-    </div>
+</section>
 
-    <div id="formations" class="page">
-      <h2 class="section-title">Formations</h2>
-      <div class="formations-grid">
-        <div class="card"><h3>Initiation informatique</h3><p>Premiers pas avec l’ordinateur et les fonctions essentielles.</p></div>
-        <div class="card"><h3>Utilisation Windows</h3><p>Apprendre à utiliser Windows correctement au quotidien.</p></div>
-        <div class="card"><h3>Internet et bureautique</h3><p>Navigation web, Word, Excel et outils de travail.</p></div>
-        <div class="card"><h3>Maintenance informatique</h3><p>Formation pratique sur l’entretien et les réparations de base.</p></div>
-      </div>
-    </div>
+<section id="produits">
 
-    <div id="client" class="page">
-      <h2 class="section-title">Espace client</h2>
-      <div class="client-box">
-        <p>
-          Accédez à votre espace client pour suivre vos commandes,
-          vos réparations et vos paiements.
-        </p>
-        <div class="client-actions">
-          <a class="btn btn-primary" href="login.html?mode=login">Connexion</a>
-          <a class="btn btn-outline" href="login.html?mode=register">Créer un compte</a>
-        </div>
-      </div>
-    </div>
+<div class="card">
 
-    <div id="contact" class="page">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-grid">
-        <div class="card contact-card">
-          <h3>Téléphone</h3>
-          <p>625 26 26 96</p>
-          <p>666 03 40 07</p>
-        </div>
-        <div class="card contact-card">
-          <h3>Email</h3>
-          <p>motacomdguinee@gmail.com</p>
-        </div>
-        <div class="card contact-card">
-          <h3>Adresse</h3>
-          <p>Dixinn Pharmaguinée, Conakry</p>
-        </div>
-        <div class="card contact-card">
-          <h3>WhatsApp</h3>
-          <a class="btn btn-primary" href="https://wa.me/224625262696" target="_blank">Écrire sur WhatsApp</a>
-        </div>
-        <div class="card contact-card">
-          <h3>Localisation</h3>
-          <iframe src="https://maps.google.com/maps?q=Dixinn%20Pharmaguinee%20Conakry&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
-        </div>
-      </div>
-    </div>
+<h2>Produits</h2>
 
-  </div>
+<p>
+Nous proposons plusieurs ordinateurs et accessoires :
+</p>
 
-  <footer>
-    <p>Moriah Digital - Conakry</p>
-  </footer>
+<ul>
+<li>Ordinateurs HP, Dell, Lenovo</li>
+<li>Chargeurs ordinateur</li>
+<li>Souris</li>
+<li>Claviers</li>
+<li>Clés USB</li>
+<li>Disques durs</li>
+<li>Écrans</li>
+<li>RAM</li>
+</ul>
 
-  <a href="https://wa.me/224625262696" class="whatsapp-float" target="_blank">💬</a>
+</div>
 
-  <script>
-    function showPage(page){
-      const pages = document.querySelectorAll(".page");
-      pages.forEach(p => p.classList.remove("active"));
-      document.getElementById(page).classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  </script>
+</section>
+
+<section id="services">
+
+<div class="card">
+
+<h2>Services</h2>
+
+<ul>
+<li>Réparation d'ordinateur</li>
+<li>Réinstallation Windows</li>
+<li>Installation logiciels</li>
+<li>Maintenance informatique</li>
+<li>Conseils techniques</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="formations">
+
+<div class="card">
+
+<h2>Formations</h2>
+
+<ul>
+<li>Formation informatique pratique</li>
+<li>Formation bureautique</li>
+<li>Initiation au développement web</li>
+<li>Formation en communication digitale</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="client">
+
+<div class="card">
+
+<h2>Espace client</h2>
+
+<p>
+Accédez à votre espace client pour suivre vos commandes,
+vos réparations et vos paiements.
+</p>
+
+<a href="login.html?mode=login" class="btn btn-primary">
+Connexion
+</a>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="card">
+
+<h2>Contact</h2>
+
+<p><b>Téléphone :</b> 625 26 26 96 / 666 03 40 07</p>
+
+<p><b>Email :</b> motacomdguinee@gmail.com</p>
+
+<p><b>Adresse :</b> Dixinn Pharmaguinee, Conakry</p>
+
+</div>
+
+</section>
+
+<footer>
+
+Moriah Digital - Conakry
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/224625262696">💬</a>
 
 </body>
 </html>
