@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connexion - Moriah Digital</title>
+  <title>Espace client - Moriah Digital</title>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
     body{
       font-family:Arial,sans-serif;
       background:linear-gradient(180deg,#edf4ef 0%,#f8f8f8 100%);
       color:#1d1d1d;
       min-height:100vh;
     }
+
     .container{
       max-width:520px;
       margin:40px auto;
       padding:20px;
     }
+
     .card{
       background:#fff;
       border-radius:26px;
@@ -24,7 +31,12 @@
       box-shadow:0 18px 35px rgba(0,0,0,0.08);
       border:1px solid #e7eeea;
     }
-    .logo{text-align:center;margin-bottom:18px}
+
+    .logo{
+      text-align:center;
+      margin-bottom:18px;
+    }
+
     .logo img{
       width:100px;
       border-radius:18px;
@@ -32,18 +44,21 @@
       padding:6px;
       box-shadow:0 10px 20px rgba(0,0,0,0.12);
     }
+
     h1{
       text-align:center;
       color:#0f6f2e;
       margin-bottom:10px;
       font-size:2rem;
     }
+
     .subtitle{
       text-align:center;
       color:#555;
       margin-bottom:24px;
       line-height:1.7;
     }
+
     label{
       display:block;
       margin:14px 0 8px;
@@ -51,6 +66,7 @@
       font-weight:700;
       font-size:1.1rem;
     }
+
     input{
       width:100%;
       padding:16px;
@@ -59,6 +75,12 @@
       font-size:1.05rem;
       outline:none;
     }
+
+    input:focus{
+      border-color:#129a43;
+      box-shadow:0 0 0 3px rgba(18,154,67,0.12);
+    }
+
     button{
       width:100%;
       margin-top:16px;
@@ -70,9 +92,23 @@
       font-weight:700;
       cursor:pointer;
     }
-    #mainBtn{background:#148c3a}
-    #switchBtn{background:#0f6f2e}
-    #forgotBtn{background:#7a7a7a}
+
+    #mainBtn{
+      background:#148c3a;
+    }
+
+    #switchBtn{
+      background:#0f6f2e;
+    }
+
+    #forgotBtn{
+      background:#7a7a7a;
+    }
+
+    button:hover{
+      opacity:0.96;
+    }
+
     .message{
       margin-top:18px;
       text-align:center;
@@ -80,20 +116,29 @@
       min-height:28px;
       line-height:1.5;
     }
-    .success{color:#148c3a}
-    .error{color:#b3261e}
-    .muted{
-      text-align:center;
-      color:#666;
-      margin-top:14px;
-      line-height:1.7;
+
+    .success{
+      color:#148c3a;
     }
+
+    .error{
+      color:#b3261e;
+    }
+
     .divider{
       margin:18px 0 8px;
       text-align:center;
       color:#666;
       font-weight:bold;
     }
+
+    .muted{
+      text-align:center;
+      color:#666;
+      margin-top:14px;
+      line-height:1.7;
+    }
+
     .back-link{
       display:inline-block;
       margin-top:18px;
