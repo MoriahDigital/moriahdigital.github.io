@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Espace client - Moriah Digital</title>
-
+  <title>Connexion - Moriah Digital</title>
   <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
+    *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:Arial,sans-serif;
       background:linear-gradient(180deg,#eef4ef,#f8f8f8);
@@ -21,7 +15,6 @@
       justify-content:center;
       align-items:flex-start;
     }
-
     .container{
       background:white;
       width:100%;
@@ -30,7 +23,6 @@
       border-radius:26px;
       box-shadow:0 12px 28px rgba(0,0,0,0.14);
     }
-
     .logo{
       width:110px;
       display:block;
@@ -38,27 +30,23 @@
       border-radius:18px;
       box-shadow:0 8px 18px rgba(0,0,0,0.12);
     }
-
     h1{
       color:#1b7c36;
       text-align:center;
       margin-bottom:10px;
       font-size:2rem;
     }
-
     .subtitle{
       text-align:center;
       color:#555;
       margin-bottom:22px;
       line-height:1.7;
     }
-
     hr{
       margin:28px 0;
       border:none;
       border-top:1px solid #d9d9d9;
     }
-
     label{
       display:block;
       text-align:left;
@@ -67,12 +55,10 @@
       color:#1b7c36;
       font-size:1rem;
     }
-
     .field-wrap{
       position:relative;
       margin-top:6px;
     }
-
     .field-wrap input{
       width:100%;
       padding:14px 50px 14px 14px;
@@ -82,12 +68,10 @@
       outline:none;
       background:white;
     }
-
     .field-wrap input:focus{
       border-color:#1f9c47;
       box-shadow:0 0 0 3px rgba(31,156,71,0.12);
     }
-
     .eye-btn{
       position:absolute;
       right:14px;
@@ -103,7 +87,6 @@
       line-height:1;
       color:#666;
     }
-
     .main-btn{
       width:100%;
       padding:16px;
@@ -114,26 +97,9 @@
       cursor:pointer;
       font-weight:bold;
     }
-
-    .login{
-      background:#1f9c47;
-      color:white;
-    }
-
-    .register{
-      background:#0f6f2e;
-      color:white;
-    }
-
-    .reset{
-      background:#777;
-      color:white;
-    }
-
-    .main-btn:hover{
-      opacity:0.94;
-    }
-
+    .login{background:#1f9c47;color:white}
+    .register{background:#0f6f2e;color:white}
+    .reset{background:#777;color:white}
     .message{
       margin-top:16px;
       text-align:center;
@@ -141,15 +107,8 @@
       line-height:1.6;
       min-height:24px;
     }
-
-    .error{
-      color:#b3261e;
-    }
-
-    .success{
-      color:#1b7c36;
-    }
-
+    .error{color:#b3261e}
+    .success{color:#1b7c36}
     .small{
       margin-top:18px;
       font-size:14px;
@@ -157,7 +116,6 @@
       color:#666;
       line-height:1.7;
     }
-
     .back-link{
       display:block;
       text-align:center;
@@ -243,7 +201,8 @@
     import {
       signInWithEmailAndPassword,
       createUserWithEmailAndPassword,
-      sendPasswordResetEmail
+      sendPasswordResetEmail,
+      onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     import {
       doc,
@@ -266,6 +225,13 @@
       });
     });
 
+    onAuthStateChanged(auth, (user) => {
+      if (user && window.location.pathname.includes("login.html")) {
+        // tu peux laisser ceci ou le commenter si tu préfères
+        // window.location.href = "dashboard.html";
+      }
+    });
+
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -277,9 +243,107 @@
       try {
         await signInWithEmailAndPassword(auth, email, password);
         showMessage(loginMessage, "Connexion réussie. Redirection...", "success");
-
         setTimeout(() => {
           window.location.href = "dashboard.html";
-        }, 1000);
+        }, 800);
       } catch (error) {
-        let
+        let msg = "Impossible de se connecter.";
+
+        if (error.code === "auth/invalid-credential") {
+          msg = "E-mail ou mot de passe incorrect.";
+        } else if (error.code === "auth/invalid-email") {
+          msg = "Adresse e-mail invalide.";
+        } else if (error.code === "auth/network-request-failed") {
+          msg = "Problème de connexion Internet.";
+        }
+
+        showMessage(loginMessage, msg, "error");
+        console.error("Erreur connexion :", error.code, error.message);
+      }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("registerEmail").value.trim();
+      const password = document.getElementById("registerPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      showMessage(registerMessage, "", "");
+
+      if (!fullName || !phone || !email || !password || !confirmPassword) {
+        showMessage(registerMessage, "Veuillez remplir tous les champs.", "error");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        showMessage(registerMessage, "Les mots de passe ne correspondent pas.", "error");
+        return;
+      }
+
+      if (password.length < 6) {
+        showMessage(registerMessage, "Le mot de passe doit contenir au moins 6 caractères.", "error");
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+        try {
+          await setDoc(doc(db, "clients", userCredential.user.uid), {
+            nomPrenom: fullName,
+            numero: phone,
+            email: email,
+            dateCreation: serverTimestamp()
+          });
+        } catch (firestoreError) {
+          console.error("Erreur Firestore :", firestoreError.code, firestoreError.message);
+        }
+
+        showMessage(registerMessage, "Compte créé avec succès. Vous pouvez vous connecter.", "success");
+      } catch (error) {
+        let msg = "Impossible de créer le compte.";
+
+        if (error.code === "auth/email-already-in-use") {
+          msg = "Cette adresse e-mail est déjà utilisée. Connectez-vous directement.";
+        } else if (error.code === "auth/invalid-email") {
+          msg = "Adresse e-mail invalide.";
+        } else if (error.code === "auth/weak-password") {
+          msg = "Mot de passe trop faible.";
+        } else if (error.code === "auth/network-request-failed") {
+          msg = "Problème de connexion Internet.";
+        }
+
+        showMessage(registerMessage, msg, "error");
+        console.error("Erreur création compte :", error.code, error.message);
+      }
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", async () => {
+      const email = document.getElementById("loginEmail").value.trim();
+
+      if (!email) {
+        showMessage(loginMessage, "Entrez votre adresse e-mail pour réinitialiser le mot de passe.", "error");
+        return;
+      }
+
+      try {
+        await sendPasswordResetEmail(auth, email);
+        showMessage(loginMessage, "E-mail de réinitialisation envoyé.", "success");
+      } catch (error) {
+        let msg = "Impossible d’envoyer l’e-mail de réinitialisation.";
+
+        if (error.code === "auth/invalid-email") {
+          msg = "Adresse e-mail invalide.";
+        }
+
+        showMessage(loginMessage, msg, "error");
+        console.error("Erreur reset password :", error.code, error.message);
+      }
+    });
+  </script>
+
+</body>
+</html>
