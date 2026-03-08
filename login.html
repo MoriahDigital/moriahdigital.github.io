@@ -19,8 +19,8 @@
     }
 
     .container{
-      max-width:520px;
-      margin:40px auto;
+      max-width:560px;
+      margin:36px auto;
       padding:20px;
     }
 
@@ -59,12 +59,42 @@
       line-height:1.7;
     }
 
+    .tabs{
+      display:flex;
+      gap:10px;
+      margin-bottom:22px;
+    }
+
+    .tab-btn{
+      flex:1;
+      padding:14px;
+      border:none;
+      border-radius:14px;
+      font-weight:700;
+      cursor:pointer;
+      background:#e9f3ec;
+      color:#0f6f2e;
+    }
+
+    .tab-btn.active{
+      background:#148c3a;
+      color:#fff;
+    }
+
+    .form-section{
+      display:none;
+    }
+
+    .form-section.active{
+      display:block;
+    }
+
     label{
       display:block;
       margin:14px 0 8px;
       color:#145c29;
       font-weight:700;
-      font-size:1.1rem;
+      font-size:1.05rem;
     }
 
     input{
@@ -72,7 +102,7 @@
       padding:16px;
       border:1px solid #cfd8d3;
       border-radius:18px;
-      font-size:1.05rem;
+      font-size:1rem;
       outline:none;
     }
 
@@ -81,32 +111,48 @@
       box-shadow:0 0 0 3px rgba(18,154,67,0.12);
     }
 
-    button{
+    .password-row{
+      position:relative;
+    }
+
+    .toggle-password{
+      margin-top:8px;
+      display:inline-block;
+      font-size:0.95rem;
+      color:#0f6f2e;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    button.main-btn{
       width:100%;
-      margin-top:16px;
+      margin-top:18px;
       padding:16px;
       border:none;
       border-radius:18px;
       color:#fff;
-      font-size:1.15rem;
+      font-size:1.1rem;
       font-weight:700;
       cursor:pointer;
-    }
-
-    #mainBtn{
       background:#148c3a;
     }
 
-    #switchBtn{
-      background:#0f6f2e;
-    }
-
-    #forgotBtn{
-      background:#7a7a7a;
-    }
-
-    button:hover{
+    button.main-btn:hover{
       opacity:0.96;
+    }
+
+    .link-btn{
+      display:block;
+      width:100%;
+      margin-top:14px;
+      padding:14px;
+      border:none;
+      border-radius:16px;
+      background:#7a7a7a;
+      color:#fff;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
     }
 
     .message{
@@ -125,17 +171,10 @@
       color:#b3261e;
     }
 
-    .divider{
-      margin:18px 0 8px;
-      text-align:center;
-      color:#666;
-      font-weight:bold;
-    }
-
     .muted{
       text-align:center;
       color:#666;
-      margin-top:14px;
+      margin-top:16px;
       line-height:1.7;
     }
 
@@ -148,6 +187,16 @@
       font-weight:700;
       text-decoration:none;
     }
+
+    @media (max-width:600px){
+      h1{
+        font-size:1.8rem;
+      }
+
+      .card{
+        padding:24px 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -159,30 +208,60 @@
 
       <h1 id="pageTitle">Connexion</h1>
       <p class="subtitle" id="pageSubtitle">
-        Connectez-vous à votre compte existant pour accéder à votre espace client.
+        Connectez-vous à votre espace client.
       </p>
 
-      <form id="authForm">
-        <label for="email">Adresse e-mail</label>
-        <input type="email" id="email" placeholder="Entrez votre adresse e-mail" required>
+      <div class="tabs">
+        <button class="tab-btn active" id="tabLogin" type="button">Connexion</button>
+        <button class="tab-btn" id="tabRegister" type="button">Créer un compte</button>
+      </div>
 
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" placeholder="Entrez votre mot de passe" required>
+      <!-- CONNEXION -->
+      <div class="form-section active" id="loginSection">
+        <form id="loginForm">
+          <label for="loginEmail">Adresse e-mail</label>
+          <input type="email" id="loginEmail" placeholder="Entrez votre adresse e-mail" required>
 
-        <button type="submit" id="mainBtn">Se connecter</button>
-      </form>
+          <label for="loginPassword">Mot de passe</label>
+          <div class="password-row">
+            <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+          </div>
+          <span class="toggle-password" data-target="loginPassword">Afficher / Masquer le mot de passe</span>
 
-      <div class="divider" id="switchText">Pas encore de compte ?</div>
-      <button type="button" id="switchBtn">Créer un compte</button>
+          <button type="submit" class="main-btn" id="loginBtn">Se connecter</button>
+        </form>
 
-      <div class="divider">Mot de passe oublié ?</div>
-      <button type="button" id="forgotBtn">Réinitialiser le mot de passe</button>
+        <button type="button" class="link-btn" id="forgotBtn">Mot de passe oublié / Réinitialiser</button>
+      </div>
+
+      <!-- CREER UN COMPTE -->
+      <div class="form-section" id="registerSection">
+        <form id="registerForm">
+          <label for="fullName">Nom et prénom</label>
+          <input type="text" id="fullName" placeholder="Entrez votre nom et prénom" required>
+
+          <label for="phone">Numéro</label>
+          <input type="tel" id="phone" placeholder="Entrez votre numéro" required>
+
+          <label for="registerEmail">Adresse e-mail</label>
+          <input type="email" id="registerEmail" placeholder="Entrez votre adresse e-mail" required>
+
+          <label for="registerPassword">Mot de passe</label>
+          <input type="password" id="registerPassword" placeholder="Entrez votre mot de passe" required>
+
+          <label for="confirmPassword">Confirmer mot de passe</label>
+          <input type="password" id="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+
+          <span class="toggle-password" data-target="registerPassword,confirmPassword">Afficher / Masquer le mot de passe</span>
+
+          <button type="submit" class="main-btn" id="registerBtn">Créer un compte</button>
+        </form>
+      </div>
 
       <div id="message" class="message"></div>
 
       <p class="muted">
-        En vous connectant, vous pouvez retrouver plus facilement les services,
-        produits et informations de Moriah Digital.
+        Votre espace client vous permet de suivre vos commandes, réparations et paiements.
       </p>
 
       <a href="index.html" class="back-link">← Retour au site</a>
@@ -200,16 +279,13 @@
     const params = new URLSearchParams(window.location.search);
     let mode = params.get("mode") === "register" ? "register" : "login";
 
-    const form = document.getElementById("authForm");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const mainBtn = document.getElementById("mainBtn");
-    const switchBtn = document.getElementById("switchBtn");
-    const forgotBtn = document.getElementById("forgotBtn");
-    const message = document.getElementById("message");
     const pageTitle = document.getElementById("pageTitle");
     const pageSubtitle = document.getElementById("pageSubtitle");
-    const switchText = document.getElementById("switchText");
+    const tabLogin = document.getElementById("tabLogin");
+    const tabRegister = document.getElementById("tabRegister");
+    const loginSection = document.getElementById("loginSection");
+    const registerSection = document.getElementById("registerSection");
+    const message = document.getElementById("message");
 
     function showMessage(text, type = "") {
       message.textContent = text;
@@ -217,57 +293,109 @@
       if (type) message.classList.add(type);
     }
 
-    function updateMode() {
+    function setMode(newMode) {
+      mode = newMode;
+
       if (mode === "login") {
         pageTitle.textContent = "Connexion";
-        pageSubtitle.textContent = "Connectez-vous à votre compte existant pour accéder à votre espace client.";
-        mainBtn.textContent = "Se connecter";
-        switchText.textContent = "Pas encore de compte ?";
-        switchBtn.textContent = "Créer un compte";
+        pageSubtitle.textContent = "Connectez-vous à votre espace client.";
+        tabLogin.classList.add("active");
+        tabRegister.classList.remove("active");
+        loginSection.classList.add("active");
+        registerSection.classList.remove("active");
       } else {
         pageTitle.textContent = "Créer un compte";
         pageSubtitle.textContent = "Créez votre compte pour accéder à votre espace client.";
-        mainBtn.textContent = "Créer un compte";
-        switchText.textContent = "Vous avez déjà un compte ?";
-        switchBtn.textContent = "Connexion";
+        tabRegister.classList.add("active");
+        tabLogin.classList.remove("active");
+        registerSection.classList.add("active");
+        loginSection.classList.remove("active");
       }
+
+      showMessage("");
     }
 
-    updateMode();
+    setMode(mode);
 
-    switchBtn.addEventListener("click", () => {
-      mode = mode === "login" ? "register" : "login";
-      updateMode();
-      showMessage("");
+    tabLogin.addEventListener("click", () => setMode("login"));
+    tabRegister.addEventListener("click", () => setMode("register"));
+
+    // afficher / masquer mot de passe
+    document.querySelectorAll(".toggle-password").forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const ids = toggle.dataset.target.split(",");
+        ids.forEach(id => {
+          const input = document.getElementById(id.trim());
+          if (input) {
+            input.type = input.type === "password" ? "text" : "password";
+          }
+        });
+      });
     });
 
-    form.addEventListener("submit", async (e) => {
+    // Connexion
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-      showMessage("");
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
 
       try {
-        if (mode === "login") {
-          await signInWithEmailAndPassword(auth, email, password);
-          showMessage("Connexion réussie. Redirection...", "success");
-        } else {
-          await createUserWithEmailAndPassword(auth, email, password);
-          showMessage("Compte créé avec succès. Redirection...", "success");
-        }
+        await signInWithEmailAndPassword(auth, email, password);
+        showMessage("Connexion réussie. Redirection...", "success");
 
         setTimeout(() => {
           window.location.href = "dashboard.html";
         }, 1000);
 
       } catch (error) {
-        let errorText = "Impossible de continuer pour le moment.";
+        let errorText = "Impossible de se connecter pour le moment.";
+
+        if (error.code === "auth/invalid-credential") {
+          errorText = "E-mail ou mot de passe incorrect.";
+        } else if (error.code === "auth/invalid-email") {
+          errorText = "Adresse e-mail invalide.";
+        } else if (error.code === "auth/network-request-failed") {
+          errorText = "Problème de connexion Internet.";
+        }
+
+        showMessage("Erreur : " + errorText, "error");
+      }
+    });
+
+    // Création de compte
+    document.getElementById("registerForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("registerEmail").value.trim();
+      const password = document.getElementById("registerPassword").value.trim();
+      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+      if (!fullName || !phone) {
+        showMessage("Veuillez remplir le nom et le numéro.", "error");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        showMessage("Les mots de passe ne correspondent pas.", "error");
+        return;
+      }
+
+      try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        showMessage("Compte créé avec succès. Redirection...", "success");
+
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
+
+      } catch (error) {
+        let errorText = "Impossible de créer le compte.";
 
         if (error.code === "auth/email-already-in-use") {
           errorText = "Cette adresse e-mail est déjà utilisée.";
-        } else if (error.code === "auth/invalid-credential") {
-          errorText = "E-mail ou mot de passe incorrect.";
         } else if (error.code === "auth/invalid-email") {
           errorText = "Adresse e-mail invalide.";
         } else if (error.code === "auth/weak-password") {
@@ -280,8 +408,9 @@
       }
     });
 
-    forgotBtn.addEventListener("click", async () => {
-      const email = emailInput.value.trim();
+    // Réinitialisation mot de passe
+    document.getElementById("forgotBtn").addEventListener("click", async () => {
+      const email = document.getElementById("loginEmail").value.trim();
 
       if (!email) {
         showMessage("Entrez votre adresse e-mail pour réinitialiser le mot de passe.", "error");
