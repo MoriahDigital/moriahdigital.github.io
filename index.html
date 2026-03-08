@@ -162,110 +162,116 @@
       font-weight:800;
     }
 
-    .hero{
-      background:linear-gradient(135deg,#f8fff9,#edf8f1);
-      border:1px solid #d8eadc;
-      border-radius:24px;
-      padding:26px;
+    .hero-3d{
       position:relative;
+      background:linear-gradient(135deg,#f8fff9,#edf8f1 55%,#dff5e6);
+      border:1px solid #d8eadc;
+      border-radius:28px;
+      padding:34px 24px;
       overflow:hidden;
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      transform:perspective(1000px) rotateX(2deg);
     }
 
-    .hero::before{
+    .hero-3d::before{
       content:"";
       position:absolute;
+      top:-60px;
+      right:-60px;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:rgba(46,200,102,0.12);
+      filter:blur(4px);
+    }
+
+    .hero-3d::after{
+      content:"";
+      position:absolute;
+      bottom:-70px;
+      left:-70px;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:rgba(15,111,46,0.08);
+      filter:blur(6px);
+    }
+
+    .hero-overlay{
+      position:absolute;
       inset:0;
-      background:radial-gradient(circle at top right, rgba(46,200,102,0.15), transparent 35%);
+      background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0.18) 0%,
+        rgba(255,255,255,0.00) 35%,
+        rgba(255,255,255,0.12) 100%
+      );
       pointer-events:none;
     }
 
-    .hero h2{
+    .hero-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-title-3d{
       font-size:2.2rem;
       line-height:1.2;
       color:#0c5e26;
       margin-bottom:16px;
-      position:relative;
-      z-index:1;
+      font-weight:800;
+      text-shadow:
+        0 1px 0 #ffffff,
+        0 2px 0 #d8f0df,
+        0 3px 10px rgba(0,0,0,0.10);
     }
 
-    .hero p{
+    .hero-text{
       font-size:1.08rem;
-      line-height:1.8;
+      line-height:1.9;
       color:#2b2b2b;
-      position:relative;
-      z-index:1;
+      max-width:760px;
     }
 
-    .hero-highlight{
-      margin-top:18px;
-      background:white;
-      border-left:6px solid #23b55c;
-      padding:16px;
-      border-radius:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.05);
-      font-weight:700;
-      color:#145c29;
-      position:relative;
-      z-index:1;
-    }
-
-    .hero-actions{
+    .hero-actions,
+    .client-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:14px;
       margin-top:22px;
-      position:relative;
-      z-index:1;
     }
 
     .btn{
       display:inline-block;
-      padding:13px 18px;
+      padding:14px 20px;
       border-radius:14px;
       text-decoration:none;
       font-weight:700;
       transition:0.25s ease;
-      border:none;
-      cursor:pointer;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg,#149942,#20bc54);
+      background:linear-gradient(135deg,#149942,#27c95d);
       color:white;
-      box-shadow:0 10px 22px rgba(20,153,66,0.28);
+      box-shadow:0 12px 24px rgba(20,153,66,0.25);
     }
 
     .btn-primary:hover{
-      transform:translateY(-2px);
+      transform:translateY(-2px) scale(1.02);
     }
 
     .btn-outline{
       background:white;
       color:#149942;
       border:2px solid #149942;
+      box-shadow:0 10px 20px rgba(0,0,0,0.05);
     }
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:16px;
-      margin-top:22px;
-    }
-
-    .stat-card{
-      background:white;
-      border-radius:18px;
-      padding:18px;
-      text-align:center;
-      box-shadow:0 10px 22px rgba(0,0,0,0.05);
-      border:1px solid #e6efe8;
-    }
-
-    .stat-card strong{
-      display:block;
-      font-size:1.6rem;
-      color:#0f6f2e;
-      margin-bottom:6px;
+    .btn-outline:hover{
+      transform:translateY(-2px);
+      background:#f7fff9;
     }
 
     .cards-grid,
@@ -280,7 +286,8 @@
     }
 
     .card,
-    .product{
+    .product,
+    .client-box{
       background:#fff;
       border:1px solid #e6ece8;
       border-radius:18px;
@@ -302,14 +309,6 @@
       margin-bottom:12px;
     }
 
-    .contact-card iframe{
-      width:100%;
-      height:250px;
-      border:0;
-      border-radius:12px;
-      margin-top:10px;
-    }
-
     .client-box{
       background:linear-gradient(135deg,#f8fff9,#edf8f1);
       border:1px solid #d8eadc;
@@ -324,40 +323,12 @@
       font-size:1.05rem;
     }
 
-    .client-list{
-      margin:14px 0 18px 20px;
-    }
-
-    .client-list li{
-      margin-bottom:8px;
-    }
-
-    .client-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:20px;
-    }
-
-    .feature-strip{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:16px;
-      margin-top:18px;
-    }
-
-    .feature-mini{
-      background:white;
-      border:1px solid #e5ede7;
-      border-radius:16px;
-      padding:16px;
-      box-shadow:0 8px 18px rgba(0,0,0,0.04);
-    }
-
-    .feature-mini strong{
-      color:#0f6f2e;
-      display:block;
-      margin-bottom:8px;
+    .contact-card iframe{
+      width:100%;
+      height:250px;
+      border:0;
+      border-radius:12px;
+      margin-top:10px;
     }
 
     .whatsapp-float{
@@ -391,8 +362,12 @@
         font-size:2rem;
       }
 
-      .hero h2{
-        font-size:1.75rem;
+      .hero-title-3d{
+        font-size:1.7rem;
+      }
+
+      .hero-text{
+        font-size:1rem;
       }
 
       .section-title{
@@ -429,59 +404,20 @@
   <div class="container">
 
     <div id="accueil" class="page active">
-      <div class="hero">
-        <h2>Votre partenaire informatique de confiance à Conakry</h2>
-        <p>
-          Moriah Digital vous accompagne pour l’achat d’ordinateurs,
-          la réparation, la maintenance, l’installation de logiciels
-          et la vente d’accessoires informatiques de qualité.
-        </p>
+      <div class="hero-3d">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <h2 class="hero-title-3d">Votre partenaire informatique de confiance à Conakry</h2>
+          <p class="hero-text">
+            Moriah Digital vous accompagne pour l’achat d’ordinateurs,
+            la maintenance informatique, la réparation, l’installation de logiciels
+            et la vente d’accessoires informatiques.
+          </p>
 
-        <div class="hero-highlight">
-          Des solutions simples, modernes, professionnelles et adaptées à vos besoins.
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" onclick="showPage('produits')">Voir les produits</a>
-          <a class="btn btn-outline" href="https://wa.me/224625262696" target="_blank">WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="stats">
-        <div class="stat-card">
-          <strong>7+</strong>
-          Ordinateurs disponibles
-        </div>
-        <div class="stat-card">
-          <strong>24h</strong>
-          Réponse rapide
-        </div>
-        <div class="stat-card">
-          <strong>Pro</strong>
-          Service fiable
-        </div>
-        <div class="stat-card">
-          <strong>Local</strong>
-          Basé à Conakry
-        </div>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Ordinateurs</h3>
-          <p>Des machines adaptées aux étudiants, entreprises et particuliers.</p>
-        </div>
-        <div class="card">
-          <h3>Maintenance</h3>
-          <p>Réparation, diagnostic, nettoyage et réinstallation système.</p>
-        </div>
-        <div class="card">
-          <h3>Accessoires</h3>
-          <p>Chargeurs, souris, claviers, écrans, RAM, SSD et clés USB.</p>
-        </div>
-        <div class="card">
-          <h3>Formation</h3>
-          <p>Formation pratique en informatique pour débutants et professionnels.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" onclick="showPage('produits')">Voir les produits</a>
+            <a class="btn btn-outline" href="https://wa.me/224625262696" target="_blank">WhatsApp</a>
+          </div>
         </div>
       </div>
     </div>
@@ -592,29 +528,9 @@
       <h2 class="section-title">Espace client</h2>
       <div class="client-box">
         <p>
-          Dans votre espace client, vous pouvez consulter les produits,
-          faire une commande, demander une réparation, suivre vos paiements
-          et voir le reste à payer.
+          Accédez à votre espace client pour suivre vos commandes,
+          vos réparations et vos paiements.
         </p>
-
-        <ul class="client-list">
-          <li>Voir les produits</li>
-          <li>Faire une commande</li>
-          <li>Demander réparation</li>
-          <li>Voir paiement effectué</li>
-          <li>Voir reste à payer</li>
-        </ul>
-
-        <div class="feature-strip">
-          <div class="feature-mini">
-            <strong>Créer un compte</strong>
-            Créez rapidement votre compte client pour accéder à votre espace personnel.
-          </div>
-          <div class="feature-mini">
-            <strong>Connexion</strong>
-            Connectez-vous pour retrouver vos commandes, réparations et paiements.
-          </div>
-        </div>
 
         <div class="client-actions">
           <a class="btn btn-primary" href="login.html">Connexion</a>
@@ -677,4 +593,4 @@
   </script>
 
 </body>
-                                       </html>
+</html>
