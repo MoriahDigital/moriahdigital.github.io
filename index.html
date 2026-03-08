@@ -1,259 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Moriah Digital</title>
-
 <style>
-
-body{
-font-family:Arial;
-margin:0;
-background:#f4f6f5;
-}
-
-header{
-background:#0f6f2e;
-color:white;
-padding:20px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-}
-
-nav{
-background:#0f6f2e;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:15px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-cursor:pointer;
-}
-
-section{
-display:none;
-padding:30px;
-max-width:900px;
-margin:auto;
-}
-
-.active{
-display:block;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
-}
-
-h2{
-color:#0f6f2e;
-}
-
-.btn{
-display:inline-block;
-padding:14px 22px;
-background:#22b455;
-color:white;
-text-decoration:none;
-border-radius:12px;
-margin-top:15px;
-font-weight:bold;
-}
-
-footer{
-background:#0f6f2e;
-color:white;
-text-align:center;
-padding:15px;
-margin-top:40px;
-}
-
-.whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-font-size:28px;
-text-decoration:none;
-}
-
+body{font-family:Arial;margin:0;background:#f4f6f5}
+header{background:#0f6f2e;color:#fff;padding:20px;text-align:center;font-size:22px;font-weight:bold}
+nav{background:#0f6f2e;display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:15px}
+nav a{color:#fff;text-decoration:none;font-weight:bold;cursor:pointer}
+section{display:none;padding:30px;max-width:900px;margin:auto}
+section.active{display:block}
+.card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.btn{display:inline-block;padding:14px 22px;background:#22b455;color:#fff;text-decoration:none;border-radius:12px;margin-top:15px;font-weight:bold}
 </style>
-
 </head>
-
 <body>
 
-<header>
-Moriah Digital - Conakry
-</header>
+<header>Moriah Digital - Conakry</header>
 
 <nav>
-
 <a onclick="showPage('accueil')">Accueil</a>
 <a onclick="showPage('produits')">Produits</a>
 <a onclick="showPage('services')">Services</a>
 <a onclick="showPage('formations')">Formations</a>
 <a onclick="showPage('client')">Espace client</a>
 <a onclick="showPage('contact')">Contact</a>
-
 </nav>
 
 <section id="accueil" class="active">
-
-<div class="card">
-
-<h2>Bienvenue chez Moriah Digital</h2>
-
-<p>
-Votre partenaire informatique à Conakry.
-</p>
-
-<ul>
-<li>Vente d’ordinateurs</li>
-<li>Maintenance informatique</li>
-<li>Réparation</li>
-<li>Installation logiciels</li>
-<li>Accessoires informatiques</li>
-</ul>
-
-</div>
-
+  <div class="card">
+    <h2>Bienvenue chez Moriah Digital</h2>
+    <p>Votre partenaire informatique à Conakry.</p>
+  </div>
 </section>
 
 <section id="produits">
-
-<div class="card">
-
-<h2>Produits</h2>
-
-<ul>
-<li>Ordinateurs HP, Dell, Lenovo</li>
-<li>Chargeurs</li>
-<li>Souris</li>
-<li>Claviers</li>
-<li>Clés USB</li>
-<li>Disques durs</li>
-<li>RAM</li>
-
-</ul>
-
-</div>
-
+  <div class="card">
+    <h2>Produits</h2>
+    <p>Ordinateurs, chargeurs, souris, claviers, RAM, SSD, écrans…</p>
+  </div>
 </section>
 
 <section id="services">
-
-<div class="card">
-
-<h2>Services</h2>
-
-<ul>
-
-<li>Réparation d'ordinateur</li>
-<li>Réinstallation Windows</li>
-<li>Installation logiciels</li>
-<li>Maintenance informatique</li>
-
-</ul>
-
-</div>
-
+  <div class="card">
+    <h2>Services</h2>
+    <p>Réparation, maintenance, installation logiciels, réinstallation Windows.</p>
+  </div>
 </section>
 
 <section id="formations">
-
-<div class="card">
-
-<h2>Formations</h2>
-
-<ul>
-
-<li>Formation informatique</li>
-<li>Bureautique</li>
-<li>Développement web</li>
-<li>Communication digitale</li>
-
-</ul>
-
-</div>
-
+  <div class="card">
+    <h2>Formations</h2>
+    <p>Formation informatique, bureautique, développement web, communication digitale.</p>
+  </div>
 </section>
 
 <section id="client">
-
-<div class="card">
-
-<h2>Espace client</h2>
-
-<p>
-Accédez à votre espace client pour suivre vos commandes,
-réparations et paiements.
-</p>
-
-<a href="login.html?mode=login" class="btn">
-Connexion
-</a>
-
-</div>
-
+  <div class="card">
+    <h2>Espace client</h2>
+    <p>Accédez à votre espace client pour suivre vos commandes, réparations et paiements.</p>
+    <a href="login.html?mode=login" class="btn">Connexion</a>
+  </div>
 </section>
 
 <section id="contact">
-
-<div class="card">
-
-<h2>Contact</h2>
-
-<p><b>Téléphone :</b> 625 26 26 96 / 666 03 40 07</p>
-
-<p><b>Email :</b> motacomdguinee@gmail.com</p>
-
-<p><b>Adresse :</b> Dixinn Pharmaguinee</p>
-
-</div>
-
+  <div class="card">
+    <h2>Contact</h2>
+    <p>Téléphone : 625 26 26 96 / 666 03 40 07</p>
+    <p>Email : motacomdguinee@gmail.com</p>
+    <p>Adresse : Dixinn Pharmaguinee, Conakry</p>
+  </div>
 </section>
 
-<footer>
-
-Moriah Digital - Conakry
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/224625262696">💬</a>
-
 <script>
-
 function showPage(page){
-
-document.querySelectorAll("section").forEach(sec=>{
-sec.classList.remove("active")
-})
-
-document.getElementById(page).classList.add("active")
-
+  document.querySelectorAll("section").forEach(sec=>{
+    sec.classList.remove("active");
+  });
+  document.getElementById(page).classList.add("active");
 }
-
 </script>
 
 </body>
