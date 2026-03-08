@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Moriah Digital - Conakry</title>
+<title>Moriah Digital</title>
 
 <style>
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial;
 margin:0;
-background:#f5f7f6;
-color:#222;
+background:#f4f6f5;
 }
 
 header{
 background:#0f6f2e;
+color:white;
 padding:20px;
 text-align:center;
-color:white;
 font-size:22px;
 font-weight:bold;
 }
@@ -37,46 +37,40 @@ nav a{
 color:white;
 text-decoration:none;
 font-weight:bold;
-font-size:16px;
-padding:8px 12px;
-border-radius:8px;
-}
-
-nav a:hover{
-background:#1fa44c;
+cursor:pointer;
 }
 
 section{
-padding:30px 20px;
+display:none;
+padding:30px;
 max-width:900px;
 margin:auto;
 }
 
+.active{
+display:block;
+}
+
 .card{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-margin-top:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
 h2{
 color:#0f6f2e;
-margin-bottom:15px;
 }
 
 .btn{
 display:inline-block;
 padding:14px 22px;
-border-radius:14px;
-text-decoration:none;
-font-weight:bold;
-margin-top:15px;
-}
-
-.btn-primary{
 background:#22b455;
 color:white;
+text-decoration:none;
+border-radius:12px;
+margin-top:15px;
+font-weight:bold;
 }
 
 footer{
@@ -104,6 +98,7 @@ text-decoration:none;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -114,35 +109,31 @@ Moriah Digital - Conakry
 
 <nav>
 
-<a href="#accueil">Accueil</a>
-<a href="#produits">Produits</a>
-<a href="#services">Services</a>
-<a href="#formations">Formations</a>
-<a href="#client">Espace client</a>
-<a href="#contact">Contact</a>
+<a onclick="showPage('accueil')">Accueil</a>
+<a onclick="showPage('produits')">Produits</a>
+<a onclick="showPage('services')">Services</a>
+<a onclick="showPage('formations')">Formations</a>
+<a onclick="showPage('client')">Espace client</a>
+<a onclick="showPage('contact')">Contact</a>
 
 </nav>
 
-<section id="accueil">
+<section id="accueil" class="active">
 
 <div class="card">
 
 <h2>Bienvenue chez Moriah Digital</h2>
 
 <p>
-Votre partenaire informatique de confiance à Conakry.
-</p>
-
-<p>
-Nous vous accompagnons pour :
+Votre partenaire informatique à Conakry.
 </p>
 
 <ul>
 <li>Vente d’ordinateurs</li>
 <li>Maintenance informatique</li>
-<li>Réparation d’ordinateurs</li>
-<li>Installation de logiciels</li>
-<li>Vente d’accessoires informatiques</li>
+<li>Réparation</li>
+<li>Installation logiciels</li>
+<li>Accessoires informatiques</li>
 </ul>
 
 </div>
@@ -155,17 +146,15 @@ Nous vous accompagnons pour :
 
 <h2>Produits</h2>
 
-<p>Nous proposons plusieurs équipements :</p>
-
 <ul>
 <li>Ordinateurs HP, Dell, Lenovo</li>
-<li>Chargeurs ordinateur</li>
+<li>Chargeurs</li>
 <li>Souris</li>
 <li>Claviers</li>
 <li>Clés USB</li>
 <li>Disques durs</li>
-<li>Écrans</li>
 <li>RAM</li>
+
 </ul>
 
 </div>
@@ -179,11 +168,12 @@ Nous vous accompagnons pour :
 <h2>Services</h2>
 
 <ul>
+
 <li>Réparation d'ordinateur</li>
 <li>Réinstallation Windows</li>
 <li>Installation logiciels</li>
 <li>Maintenance informatique</li>
-<li>Conseils techniques</li>
+
 </ul>
 
 </div>
@@ -197,10 +187,12 @@ Nous vous accompagnons pour :
 <h2>Formations</h2>
 
 <ul>
-<li>Formation informatique pratique</li>
-<li>Formation bureautique</li>
-<li>Initiation au développement web</li>
-<li>Formation en communication digitale</li>
+
+<li>Formation informatique</li>
+<li>Bureautique</li>
+<li>Développement web</li>
+<li>Communication digitale</li>
+
 </ul>
 
 </div>
@@ -215,10 +207,10 @@ Nous vous accompagnons pour :
 
 <p>
 Accédez à votre espace client pour suivre vos commandes,
-vos réparations et vos paiements.
+réparations et paiements.
 </p>
 
-<a href="login.html?mode=login" class="btn btn-primary">
+<a href="login.html?mode=login" class="btn">
 Connexion
 </a>
 
@@ -236,7 +228,7 @@ Connexion
 
 <p><b>Email :</b> motacomdguinee@gmail.com</p>
 
-<p><b>Adresse :</b> Dixinn Pharmaguinee, Conakry</p>
+<p><b>Adresse :</b> Dixinn Pharmaguinee</p>
 
 </div>
 
@@ -249,6 +241,20 @@ Moriah Digital - Conakry
 </footer>
 
 <a class="whatsapp" href="https://wa.me/224625262696">💬</a>
+
+<script>
+
+function showPage(page){
+
+document.querySelectorAll("section").forEach(sec=>{
+sec.classList.remove("active")
+})
+
+document.getElementById(page).classList.add("active")
+
+}
+
+</script>
 
 </body>
 </html>
