@@ -25,7 +25,7 @@
     .container{
       background:white;
       width:100%;
-      max-width:460px;
+      max-width:470px;
       padding:32px 22px;
       border-radius:26px;
       box-shadow:0 12px 28px rgba(0,0,0,0.14);
@@ -247,7 +247,8 @@
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
     import {
       doc,
-      setDoc
+      setDoc,
+      serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const loginMessage = document.getElementById("loginMessage");
@@ -269,7 +270,9 @@
       e.preventDefault();
 
       const email = document.getElementById("loginEmail").value.trim();
-      const password = document.getElementById("loginPassword").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      showMessage(loginMessage, "", "");
 
       try {
         await signInWithEmailAndPassword(auth, email, password);
@@ -279,92 +282,4 @@
           window.location.href = "dashboard.html";
         }, 1000);
       } catch (error) {
-        let msg = "Impossible de se connecter.";
-
-        if (error.code === "auth/invalid-credential") {
-          msg = "E-mail ou mot de passe incorrect.";
-        } else if (error.code === "auth/invalid-email") {
-          msg = "Adresse e-mail invalide.";
-        } else if (error.code === "auth/network-request-failed") {
-          msg = "Problème de connexion Internet.";
-        }
-
-        showMessage(loginMessage, msg, "error");
-      }
-    });
-
-    document.getElementById("registerForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const fullName = document.getElementById("fullName").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const email = document.getElementById("registerEmail").value.trim();
-      const password = document.getElementById("registerPassword").value.trim();
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
-
-      if (!fullName || !phone) {
-        showMessage(registerMessage, "Veuillez remplir le nom complet et le numéro.", "error");
-        return;
-      }
-
-      if (password !== confirmPassword) {
-        showMessage(registerMessage, "Les mots de passe ne correspondent pas.", "error");
-        return;
-      }
-
-      if (password.length < 6) {
-        showMessage(registerMessage, "Le mot de passe doit contenir au moins 6 caractères.", "error");
-        return;
-      }
-
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-
-        await setDoc(doc(db, "clients", userCredential.user.uid), {
-          nomPrenom: fullName,
-          numero: phone,
-          email: email,
-          dateCreation: new Date().toISOString()
-        });
-
-        showMessage(registerMessage, "Compte créé avec succès. Redirection...", "success");
-
-        setTimeout(() => {
-          window.location.href = "dashboard.html";
-        }, 1200);
-      } catch (error) {
-        let msg = "Impossible de créer le compte.";
-
-        if (error.code === "auth/email-already-in-use") {
-          msg = "Cette adresse e-mail est déjà utilisée.";
-        } else if (error.code === "auth/invalid-email") {
-          msg = "Adresse e-mail invalide.";
-        } else if (error.code === "auth/weak-password") {
-          msg = "Mot de passe trop faible.";
-        } else if (error.code === "auth/network-request-failed") {
-          msg = "Problème de connexion Internet.";
-        }
-
-        showMessage(registerMessage, msg, "error");
-      }
-    });
-
-    document.getElementById("resetBtn").addEventListener("click", async () => {
-      const email = document.getElementById("loginEmail").value.trim();
-
-      if (!email) {
-        showMessage(loginMessage, "Entrez votre adresse e-mail pour réinitialiser le mot de passe.", "error");
-        return;
-      }
-
-      try {
-        await sendPasswordResetEmail(auth, email);
-        showMessage(loginMessage, "E-mail de réinitialisation envoyé.", "success");
-      } catch (error) {
-        showMessage(loginMessage, "Impossible d’envoyer l’e-mail de réinitialisation.", "error");
-      }
-    });
-  </script>
-
-</body>
-</html>
+        let
