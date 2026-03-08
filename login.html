@@ -1,145 +1,364 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espace client - Moriah Digital</title>
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-<title>Espace client - Moriah Digital</title>
+    body{
+      font-family:Arial,sans-serif;
+      background:linear-gradient(180deg,#eef4ef,#f8f8f8);
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      padding:24px 12px;
+    }
 
-<style>
+    .container{
+      background:white;
+      padding:32px 24px;
+      border-radius:26px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      width:100%;
+      max-width:460px;
+    }
 
-body{
-font-family:Arial;
-background:linear-gradient(180deg,#eef4ef,#f8f8f8);
-margin:0;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
+    .logo{
+      width:110px;
+      display:block;
+      margin:0 auto 16px;
+      border-radius:18px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.12);
+    }
 
-.container{
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-width:90%;
-max-width:420px;
-text-align:center;
-}
+    h1{
+      color:#1b7c36;
+      margin-bottom:10px;
+      text-align:center;
+      font-size:2rem;
+    }
 
-.logo{
-width:110px;
-margin-bottom:15px;
-}
+    p.subtitle{
+      color:#555;
+      margin-bottom:22px;
+      text-align:center;
+      line-height:1.7;
+    }
 
-h1{
-color:#1b7c36;
-margin-bottom:10px;
-}
+    hr{
+      margin:28px 0;
+      border:none;
+      border-top:1px solid #d9d9d9;
+    }
 
-p{
-color:#555;
-margin-bottom:20px;
-}
+    label{
+      display:block;
+      text-align:left;
+      margin-top:14px;
+      font-weight:bold;
+      color:#1b7c36;
+      font-size:1rem;
+    }
 
-label{
-display:block;
-text-align:left;
-margin-top:12px;
-font-weight:bold;
-color:#1b7c36;
-}
+    .field-wrap{
+      position:relative;
+      margin-top:6px;
+    }
 
-input{
-width:100%;
-padding:14px;
-margin-top:6px;
-border-radius:15px;
-border:1px solid #ccc;
-font-size:16px;
-}
+    input{
+      width:100%;
+      padding:14px 48px 14px 14px;
+      border-radius:18px;
+      border:1px solid #ccc;
+      font-size:16px;
+      outline:none;
+    }
 
-button{
-width:100%;
-padding:16px;
-border:none;
-border-radius:18px;
-font-size:16px;
-margin-top:18px;
-cursor:pointer;
-}
+    input:focus{
+      border-color:#1f9c47;
+      box-shadow:0 0 0 3px rgba(31,156,71,0.12);
+    }
 
-.login{
-background:#1f9c47;
-color:white;
-}
+    .eye-btn{
+      position:absolute;
+      right:12px;
+      top:50%;
+      transform:translateY(-50%);
+      border:none;
+      background:transparent;
+      font-size:20px;
+      cursor:pointer;
+    }
 
-.register{
-background:#0f6f2e;
-color:white;
-}
+    button{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:18px;
+      font-size:16px;
+      margin-top:18px;
+      cursor:pointer;
+      font-weight:bold;
+    }
 
-.reset{
-background:#777;
-color:white;
-}
+    .login{
+      background:#1f9c47;
+      color:white;
+    }
 
-button:hover{
-opacity:0.9;
-}
+    .register{
+      background:#0f6f2e;
+      color:white;
+    }
 
-.small{
-margin-top:15px;
-font-size:14px;
-}
+    .reset{
+      background:#777;
+      color:white;
+    }
 
-</style>
+    button:hover{
+      opacity:0.94;
+    }
+
+    .message{
+      margin-top:16px;
+      text-align:center;
+      font-weight:bold;
+      line-height:1.6;
+      min-height:24px;
+    }
+
+    .error{
+      color:#b3261e;
+    }
+
+    .success{
+      color:#1b7c36;
+    }
+
+    .small{
+      margin-top:18px;
+      font-size:14px;
+      text-align:center;
+      color:#666;
+      line-height:1.7;
+    }
+
+    .back-link{
+      display:block;
+      text-align:center;
+      margin-top:16px;
+      text-decoration:none;
+      color:#1b7c36;
+      font-weight:bold;
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="container">
+  <img src="logo.png" class="logo" alt="Logo Moriah Digital">
 
-<img src="logo.png" class="logo">
+  <h1>Connexion</h1>
+  <p class="subtitle">Connectez-vous à votre espace client.</p>
 
-<h1>Connexion</h1>
+  <form id="loginForm">
+    <label for="loginEmail">Adresse e-mail</label>
+    <div class="field-wrap">
+      <input type="email" id="loginEmail" placeholder="Entrez votre adresse e-mail" required>
+    </div>
 
-<p>Connectez-vous à votre espace client.</p>
+    <label for="loginPassword">Mot de passe</label>
+    <div class="field-wrap">
+      <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+      <button type="button" class="eye-btn" data-target="loginPassword">👁</button>
+    </div>
 
-<label>Adresse e-mail</label>
-<input type="email" placeholder="Entrez votre adresse e-mail">
+    <button type="submit" class="login">Se connecter</button>
+    <button type="button" class="reset" id="resetBtn">Mot de passe oublié / Réinitialiser</button>
+  </form>
 
-<label>Mot de passe</label>
-<input type="password" placeholder="Entrez votre mot de passe">
+  <div id="loginMessage" class="message"></div>
 
-<button class="login">Se connecter</button>
+  <hr>
 
-<button class="reset">Mot de passe oublié / Réinitialiser</button>
+  <h1>Créer un compte</h1>
 
-<hr style="margin:25px 0">
+  <form id="registerForm">
+    <label for="fullName">Nom complet</label>
+    <div class="field-wrap">
+      <input type="text" id="fullName" placeholder="Votre nom complet" required>
+    </div>
 
-<h1>Créer un compte</h1>
+    <label for="phone">Numéro</label>
+    <div class="field-wrap">
+      <input type="tel" id="phone" placeholder="Votre numéro" required>
+    </div>
 
-<label>Nom complet</label>
-<input type="text" placeholder="Votre nom">
+    <label for="registerEmail">Adresse e-mail</label>
+    <div class="field-wrap">
+      <input type="email" id="registerEmail" placeholder="Votre email" required>
+    </div>
 
-<label>Adresse e-mail</label>
-<input type="email" placeholder="Votre email">
+    <label for="registerPassword">Mot de passe</label>
+    <div class="field-wrap">
+      <input type="password" id="registerPassword" placeholder="Créer un mot de passe" required>
+      <button type="button" class="eye-btn" data-target="registerPassword">👁</button>
+    </div>
 
-<label>Mot de passe</label>
-<input type="password" placeholder="Créer un mot de passe">
+    <label for="confirmPassword">Confirmer mot de passe</label>
+    <div class="field-wrap">
+      <input type="password" id="confirmPassword" placeholder="Confirmer votre mot de passe" required>
+      <button type="button" class="eye-btn" data-target="confirmPassword">👁</button>
+    </div>
 
-<label>Confirmer mot de passe</label>
-<input type="password" placeholder="Confirmer votre mot de passe">
+    <button type="submit" class="register">Créer mon compte</button>
+  </form>
 
-<button class="register">Créer mon compte</button>
+  <div id="registerMessage" class="message"></div>
 
-<p class="small">
-Votre espace client vous permet de suivre vos commandes, réparations et paiements.
-</p>
+  <p class="small">
+    Votre espace client vous permet de suivre vos commandes, réparations et paiements.
+  </p>
 
+  <a href="index.html" class="back-link">← Retour au site</a>
 </div>
+
+<script type="module">
+  import { auth, db } from "./firebase-config.js";
+  import {
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    sendPasswordResetEmail
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import {
+    doc,
+    setDoc
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const loginMessage = document.getElementById("loginMessage");
+  const registerMessage = document.getElementById("registerMessage");
+
+  function showMessage(element, text, type) {
+    element.textContent = text;
+    element.className = "message " + type;
+  }
+
+  document.querySelectorAll(".eye-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const input = document.getElementById(btn.dataset.target);
+      input.type = input.type === "password" ? "text" : "password";
+    });
+  });
+
+  document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      showMessage(loginMessage, "Connexion réussie. Redirection...", "success");
+
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1000);
+    } catch (error) {
+      let msg = "Impossible de se connecter.";
+
+      if (error.code === "auth/invalid-credential") {
+        msg = "E-mail ou mot de passe incorrect.";
+      } else if (error.code === "auth/invalid-email") {
+        msg = "Adresse e-mail invalide.";
+      } else if (error.code === "auth/network-request-failed") {
+        msg = "Problème de connexion Internet.";
+      }
+
+      showMessage(loginMessage, msg, "error");
+    }
+  });
+
+  document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+    if (!fullName || !phone) {
+      showMessage(registerMessage, "Veuillez remplir le nom complet et le numéro.", "error");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      showMessage(registerMessage, "Les mots de passe ne correspondent pas.", "error");
+      return;
+    }
+
+    if (password.length < 6) {
+      showMessage(registerMessage, "Le mot de passe doit contenir au moins 6 caractères.", "error");
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      await setDoc(doc(db, "clients", userCredential.user.uid), {
+        nomPrenom: fullName,
+        numero: phone,
+        email: email,
+        dateCreation: new Date().toISOString()
+      });
+
+      showMessage(registerMessage, "Compte créé avec succès. Redirection...", "success");
+
+      setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 1200);
+    } catch (error) {
+      let msg = "Impossible de créer le compte.";
+
+      if (error.code === "auth/email-already-in-use") {
+        msg = "Cette adresse e-mail est déjà utilisée.";
+      } else if (error.code === "auth/invalid-email") {
+        msg = "Adresse e-mail invalide.";
+      } else if (error.code === "auth/weak-password") {
+        msg = "Mot de passe trop faible.";
+      } else if (error.code === "auth/network-request-failed") {
+        msg = "Problème de connexion Internet.";
+      }
+
+      showMessage(registerMessage, msg, "error");
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", async () => {
+    const email = document.getElementById("loginEmail").value.trim();
+
+    if (!email) {
+      showMessage(loginMessage, "Entrez votre adresse e-mail pour réinitialiser le mot de passe.", "error");
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email);
+      showMessage(loginMessage, "E-mail de réinitialisation envoyé.", "success");
+    } catch (error) {
+      showMessage(loginMessage, "Impossible d’envoyer l’e-mail de réinitialisation.", "error");
+    }
+  });
+</script>
 
 </body>
 </html>
