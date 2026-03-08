@@ -111,10 +111,6 @@
       box-shadow:0 0 0 3px rgba(18,154,67,0.12);
     }
 
-    .password-row{
-      position:relative;
-    }
-
     .toggle-password{
       margin-top:8px;
       display:inline-block;
@@ -135,10 +131,6 @@
       font-weight:700;
       cursor:pointer;
       background:#148c3a;
-    }
-
-    button.main-btn:hover{
-      opacity:0.96;
     }
 
     .link-btn{
@@ -223,12 +215,11 @@
           <input type="email" id="loginEmail" placeholder="Entrez votre adresse e-mail" required>
 
           <label for="loginPassword">Mot de passe</label>
-          <div class="password-row">
-            <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
-          </div>
+          <input type="password" id="loginPassword" placeholder="Entrez votre mot de passe" required>
+
           <span class="toggle-password" data-target="loginPassword">Afficher / Masquer le mot de passe</span>
 
-          <button type="submit" class="main-btn" id="loginBtn">Se connecter</button>
+          <button type="submit" class="main-btn">Se connecter</button>
         </form>
 
         <button type="button" class="link-btn" id="forgotBtn">Mot de passe oublié / Réinitialiser</button>
@@ -254,7 +245,7 @@
 
           <span class="toggle-password" data-target="registerPassword,confirmPassword">Afficher / Masquer le mot de passe</span>
 
-          <button type="submit" class="main-btn" id="registerBtn">Créer un compte</button>
+          <button type="submit" class="main-btn">Créer un compte</button>
         </form>
       </div>
 
@@ -269,12 +260,16 @@
   </div>
 
   <script type="module">
-    import { auth } from "./firebase-config.js";
+    import { auth, db } from "./firebase-config.js";
     import {
       signInWithEmailAndPassword,
       createUserWithEmailAndPassword,
       sendPasswordResetEmail
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import {
+      doc,
+      setDoc
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const params = new URLSearchParams(window.location.search);
     let mode = params.get("mode") === "register" ? "register" : "login";
@@ -320,7 +315,6 @@
     tabLogin.addEventListener("click", () => setMode("login"));
     tabRegister.addEventListener("click", () => setMode("register"));
 
-    // afficher / masquer mot de passe
     document.querySelectorAll(".toggle-password").forEach(toggle => {
       toggle.addEventListener("click", () => {
         const ids = toggle.dataset.target.split(",");
@@ -333,7 +327,6 @@
       });
     });
 
-    // Connexion
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -363,7 +356,6 @@
       }
     });
 
-    // Création de compte
     document.getElementById("registerForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -384,7 +376,15 @@
       }
 
       try {
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+        await setDoc(doc(db, "clients", userCredential.user.uid), {
+          nomPrenom: fullName,
+          numero: phone,
+          email: email,
+          dateCreation: new Date().toISOString()
+        });
+
         showMessage("Compte créé avec succès. Redirection...", "success");
 
         setTimeout(() => {
@@ -408,7 +408,6 @@
       }
     });
 
-    // Réinitialisation mot de passe
     document.getElementById("forgotBtn").addEventListener("click", async () => {
       const email = document.getElementById("loginEmail").value.trim();
 
